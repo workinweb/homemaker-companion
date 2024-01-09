@@ -1,0 +1,18 @@
+.side {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+
+    position: fixed;
+    top: 45%;
+    left: auto;
+    right: 20px;
+    bottom: auto;
+}
+
+@media (min-width: 1024px) {
+    .side {
+        display: flex;
+    }
+}

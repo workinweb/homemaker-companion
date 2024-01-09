@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+.custom-shape-divider-bottom-1702225207 {
+    display: none;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1702225207 svg {
+    position: relative;
+    display: block;
+    width: calc(159% + 1.3px);
+    height: 149px;
+}
+
+.custom-shape-divider-bottom-1702225207 .shape-fill {
+    fill: #2B7FA8;
+}
+
+@media (min-width: 1024px) {
+    .custom-shape-divider-bottom-1702225207 {
+        display: block;
+    }
+}
