@@ -12,6 +12,7 @@ export function EmploymentForm() {
     const [date, setDate] = React.useState<Date | undefined>(new Date());
 
     const clearSignature = () => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         signatureRef.current.clear();
     };
 
