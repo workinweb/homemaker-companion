@@ -9,7 +9,7 @@ import {
 } from "~/components/Icons/Icons";
 
 export function SideButtons() {
-    const clickLink = (url) => {
+    const clickLink = (url: string) => {
         window.open(url, "_blank");
     };
 
