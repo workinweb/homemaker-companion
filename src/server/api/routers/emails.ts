@@ -31,7 +31,7 @@ export const mailRouter = createTRPCRouter({
             // @ts-expect-error
             const data = await resend.emails.send({
                 from: 'Evan Home Care <evanhomecare@resend.dev>',
-                to: ['kbueno1077@gmail.com'],
+                to: ['kbueno1077@gmail.com', 'ezlomar62@gmail.com', 'vadiae@gmail.com'],
                 subject: `New Contact Us Inquiry from ${name}`,
                 react: EmailTemplate({name, email, message, phone}),
             });

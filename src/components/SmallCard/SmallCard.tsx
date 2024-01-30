@@ -9,14 +9,16 @@ type SmallCardProps = {
     type?: string;
 };
 
-export function SmallCard({img, title, text, type}: SmallCardProps) {
+export function SmallCard({ img, title, text, type }: SmallCardProps) {
     return (
         <div
-            className={`border-solid rounded-lg border-3 p-10 ${
+            className={`rounded-lg border-3 border-solid p-10 ${
                 type === "filled" ? "bg-primary" : ""
             }`}
         >
-            <img alt="image" src={img}/>
+            <div className="mb-2 flex w-full justify-center">
+                <img alt="image" src={img} style={{ width: "50%" }} />
+            </div>
 
             <div>
                 <h2

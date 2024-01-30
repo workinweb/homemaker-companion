@@ -13,8 +13,8 @@ export default {
             colors: {
                 transparent: "transparent",
                 current: "currentColor",
-                primary: "#547DA7",
-                secondary: "#2B7FA8",
+                primary: "#2B7FA8",
+                secondary: "#547DA7",
             },
             fontFamily: {
                 sans: ["var(--font-sans)", ...fontFamily.sans],

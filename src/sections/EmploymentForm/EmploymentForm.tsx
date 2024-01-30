@@ -1,8 +1,11 @@
+//@ts-nocheck
+
 "use client";
 
 import React from "react";
 import { Button, Input } from "@nextui-org/react";
 import SignatureCanvas from "react-signature-canvas";
+import { enqueueSnackbar } from "notistack";
 
 export function EmploymentForm() {
     const signatureRef = React.useRef(null);
@@ -45,6 +48,12 @@ export function EmploymentForm() {
                     size="lg"
                     color="primary"
                     aria-label="Submit Employment Form"
+                    onClick={() => {
+                        enqueueSnackbar(
+                            "This functionality is not working yet",
+                            { variant: "info" },
+                        );
+                    }}
                 >
                     Submit
                 </Button>
