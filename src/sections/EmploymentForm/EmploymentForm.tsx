@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import { Button } from "@nextui-org/react";
+import { Button, Input } from "@nextui-org/react";
 import SignatureCanvas from "react-signature-canvas";
-import { Calendar } from "@/shcn-components/ui/calendar";
 
 export function EmploymentForm() {
     const signatureRef = React.useRef(null);
@@ -36,12 +35,9 @@ export function EmploymentForm() {
                     </Button>
                 </div>
 
-                <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                    className="rounded-md border"
-                />
+                <div className="w-[200px] cursor-pointer">
+                    <Input type="date" />
+                </div>
             </div>
 
             <div className="mt-10 flex justify-center">
