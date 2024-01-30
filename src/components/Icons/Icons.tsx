@@ -1,8 +1,6 @@
-//@ts-nocheck
-
 import React from "react";
 
-export const SearchIcon = (props) => (
+export const SearchIcon = (props: any) => (
     <svg
         aria-hidden="true"
         fill="none"
@@ -30,7 +28,7 @@ export const SearchIcon = (props) => (
     </svg>
 );
 
-export const FacebookIcon = (props) => (
+export const FacebookIcon = (props: any) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -51,7 +49,7 @@ export const FacebookIcon = (props) => (
     </svg>
 );
 
-export const InstagramIcon = (props) => (
+export const InstagramIcon = (props: any) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -107,7 +105,7 @@ export const InstagramIcon = (props) => (
     </svg>
 );
 
-export const LinkedinIcon = (props) => (
+export const LinkedinIcon = (props: any) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"

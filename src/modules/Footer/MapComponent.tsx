@@ -26,7 +26,7 @@ export function MapComponent() {
 
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: "AIzaSyDwFMHUzK4CWPQh-WRwH4oSRa7Xa9MEPPk",
-        libraries: libraries as any,
+        libraries: libraries as never,
     });
 
     if (!isLoaded) {
