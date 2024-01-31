@@ -64,37 +64,6 @@ export function AboutUsSection() {
                     {dictionary.AboutUs.texts.whyChooseUsText}
                 </p>
             </div>
-
-            <div className="my-10 grid grid-cols-1 gap-10 gap-y-20 lg:grid-cols-2">
-                <SmallCard
-                    img="/ourPeople.svg"
-                    alt="Draw of 3 co-workers"
-                    type="filled"
-                    title={dictionary.AboutUs.texts.ourPleopleTitle as string}
-                    text={dictionary.AboutUs.texts.ourPleopleText as string}
-                />
-                <SmallCard
-                    img="/ourProcess.svg"
-                    alt="Draw of a whiteboard with bussiness cards"
-                    title={dictionary.AboutUs.texts.ourProcessTitle as string}
-                    text={dictionary.AboutUs.texts.ourProcessText as string}
-                />
-
-                <SmallCard
-                    img="/ourPromise.svg"
-                    alt="Draw of a gift "
-                    title={dictionary.AboutUs.texts.ourPromiseTitle as string}
-                    text={dictionary.AboutUs.texts.ourPromiseText as string}
-                />
-
-                <SmallCard
-                    img="/ourProduct.svg"
-                    alt="Draw of people jumping"
-                    type="filled"
-                    title={dictionary.AboutUs.texts.ourProductTitle as string}
-                    text={dictionary.AboutUs.texts.ourProductText as string}
-                />
-            </div>
         </div>
     );
 }

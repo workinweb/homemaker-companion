@@ -3,6 +3,7 @@
 import React, { useMemo } from "react";
 import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
 import { Card, CardBody, Skeleton } from "@nextui-org/react";
+import Image from "next/image";
 
 export function MapComponent() {
     const libraries = useMemo(() => ["places"], []);
@@ -42,8 +43,25 @@ export function MapComponent() {
     }
 
     return (
-        <Card className="h-[420px] w-full max-w-[420px] ">
+        <Card className="h-[680px] w-full max-w-[520px]">
             <CardBody>
+                <div className="flex justify-center p-4">
+                    <Image
+                        width={100}
+                        height={100}
+                        src="/logo.webp"
+                        alt={"Evan Home Care Logo"}
+                    />
+                </div>
+
+                <p className="mb-2 text-center font-bold text-primary">
+                    Find Us on the Map
+                </p>
+
+                <p className="mb-2 text-center text-primary">
+                    1101 Miranda Ln. Suite 127 Kissimmee, FL 34741{" "}
+                </p>
+
                 <GoogleMap
                     options={mapOptions}
                     zoom={18}
