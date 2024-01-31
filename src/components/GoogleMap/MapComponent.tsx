@@ -32,10 +32,10 @@ export function MapComponent() {
 
     if (!isLoaded) {
         return (
-            <Card className="h-[420px] w-full max-w-[420px]">
+            <Card className="h-[680px] w-full max-w-[520px]">
                 <CardBody>
                     <Skeleton className="rounded-lg">
-                        <div className="h-[330px] rounded-lg bg-default-300"></div>
+                        <div className="h-[680px] rounded-lg bg-default-300"></div>
                     </Skeleton>
                 </CardBody>
             </Card>

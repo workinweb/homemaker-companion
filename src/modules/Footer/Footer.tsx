@@ -32,8 +32,8 @@ export function Footer() {
                     <FooterActionsWrapper />
                 </div>
 
-                <div className="mt-[-5px] flex items-center justify-center p-10">
-                    <div className="flex flex-col gap-10 rounded-2xl bg-white px-8 py-5 lg:flex-row">
+                <div className="mt-[-40px] flex items-center justify-center py-10">
+                    <div className="flex w-full max-w-[520px] flex-col gap-10 rounded-2xl bg-white px-8 py-5 lg:w-auto lg:max-w-max lg:flex-row">
                         <div className="flex items-center gap-2">
                             <ImLocation className="h-6 w-6 text-primary" />
                             <span>1101 Miranda Ln.Kissimmee, Fl. 34741</span>
