@@ -229,26 +229,13 @@ export function SearchInput() {
                                                 </p>
                                             )}
 
-                                        {/*{foundSearch.map((f) => {*/}
-                                        {/*    return (<div className='py-2'>*/}
-                                        {/*        <Link onClick={onClose} className='hover:text-primary text-2xl'*/}
-                                        {/*              href={f.link}>{f.section}*/}
-                                        {/*        </Link>*/}
-
-                                        {/*        {f.parts.map((p) => {*/}
-                                        {/*            return <p className='mt-2'>{p}</p>*/}
-                                        {/*        })}*/}
-                                        {/*    </div>)*/}
-                                        {/*})*/}
-                                        {/*}*/}
-
                                         {foundSearch.map((f) => {
                                             if (f)
                                                 return (
                                                     <div className="py-2">
                                                         <Link
                                                             onClick={onClose}
-                                                            className="text-2xl hover:text-primary"
+                                                            className="text-2xl underline underline-offset-4  hover:text-primary"
                                                             href={f.link}
                                                         >
                                                             {f.section}

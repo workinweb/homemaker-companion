@@ -1,13 +1,12 @@
 import { api } from "~/trpc/server";
-import { HomeSection } from "~/sections/HomeSection/HomeSection";
-import { AboutUsSection } from "~/sections/AboutUsSection/AboutUsSection";
+import { HomeSection } from "~/sections/Home/HomeSection";
+import { AboutUsSection } from "~/sections/AboutUs/AboutUsSection";
 import { Footer } from "~/modules/Footer/Footer";
-import { ServicesSection } from "~/sections/ServicesSection/ServicesSection";
+import { ServicesSection } from "~/sections/Services/ServicesSection";
 import { SideButtons } from "~/modules/SideButtons/SideButtons";
 import { FloatingButton } from "~/modules/FloatingButton/FloatingButton";
 
 export default async function Home() {
-
     return (
         <main>
             <SideButtons />

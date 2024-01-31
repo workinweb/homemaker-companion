@@ -1,12 +1,12 @@
 "use client";
 
 import { Button } from "@nextui-org/react";
-import styles from "./SideButtons.module.css";
 import {
     FacebookIcon,
     InstagramIcon,
     LinkedinIcon,
 } from "~/components/Icons/Icons";
+import styles from "./SideButtons.module.css";
 
 export function SideButtons() {
     const clickLink = (url: string) => {

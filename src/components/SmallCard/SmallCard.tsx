@@ -1,15 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 
 type SmallCardProps = {
     img: string;
+    alt: string;
     title: string;
     text: string;
     type?: string;
 };
 
-export function SmallCard({ img, title, text, type }: SmallCardProps) {
+export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
     return (
         <div
             className={`rounded-lg border-3 border-solid p-10 ${
@@ -17,7 +19,14 @@ export function SmallCard({ img, title, text, type }: SmallCardProps) {
             }`}
         >
             <div className="mb-2 flex w-full justify-center">
-                <img alt="image" src={img} style={{ width: "50%" }} />
+                <Image
+                    width={500}
+                    height={500}
+                    quality={100}
+                    alt={alt}
+                    src={img}
+                    style={{ width: "50%" }}
+                />
             </div>
 
             <div>

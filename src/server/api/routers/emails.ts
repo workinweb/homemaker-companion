@@ -3,7 +3,7 @@ import {z} from "zod";
 import {createTRPCRouter, publicProcedure} from "~/server/api/trpc";
 
 import {Resend} from 'resend';
-import {EmailTemplate} from "~/components/EmailTemplate/EmailTemplate";
+import {ContactUsEmailTemplate} from "~/components/EmailTemplates/ContactUsTemplate/ContactUsTemplate";
 
 const resend = new Resend("re_bk97hei7_CEzFhTfxUCbUcMbBB1fRYEc1");
 
@@ -27,13 +27,12 @@ export const mailRouter = createTRPCRouter({
         .mutation(async ({input}) => {
             const {name, email, phone, message} = input;
 
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-expect-error
             const data = await resend.emails.send({
                 from: 'Evan Home Care <evanhomecare@resend.dev>',
                 to: ['kbueno1077@gmail.com', 'ezlomar62@gmail.com', 'vadiae@gmail.com'],
                 subject: `New Contact Us Inquiry from ${name}`,
-                react: EmailTemplate({name, email, message, phone}),
+                react: ContactUsEmailTemplate({name, email, message, phone}),
             });
 
 
