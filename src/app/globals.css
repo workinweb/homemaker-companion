@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://db.onlinewebfonts.com/c/7655d129d0addb2f08a5c1dc994aaa4b?family=Brush+Script+MT+Italic");
+
 html {
     scroll-behavior: smooth;
-    font-family: 'Calibri' , 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-family: "Calibri", "Gill Sans", "Gill Sans MT", "Trebuchet MS",
+        sans-serif;
 }
 
 .custom-shape-divider-bottom-1702225207 {
@@ -25,7 +28,7 @@ html {
 }
 
 .custom-shape-divider-bottom-1702225207 .shape-fill {
-    fill: #2B7FA8;
+    fill: #2b7fa8;
 }
 
 @media (min-width: 1024px) {
