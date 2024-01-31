@@ -31,7 +31,7 @@ export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
 
             <div>
                 <h2
-                    className={`my-5 mb-10 text-center text-2xl font-bold ${
+                    className={`my-5 mb-10 text-center text-xl font-bold ${
                         type === "filled" ? "text-white" : "text-primary"
                     }`}
                 >
@@ -41,7 +41,7 @@ export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
 
             <div>
                 <p
-                    className={`text-justify text-xl ${
+                    className={`text-justify text-lg ${
                         type === "filled" ? "text-white" : "text-primary"
                     }`}
                 >

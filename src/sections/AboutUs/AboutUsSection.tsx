@@ -8,13 +8,13 @@ export function AboutUsSection() {
     return (
         <div id="AboutUs" className="pt-16">
             <div>
-                <h2 className="text-center text-5xl font-bold text-primary">
+                <h2 className="text-center text-4xl font-bold text-primary">
                     {dictionary.AboutUs.texts.sectionName}
                 </h2>
             </div>
 
-            <Card className="mt-16 bg-primary px-10 py-10 text-white">
-                <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 py-2 lg:flex-row lg:gap-10">
+            <Card className="mt-16 bg-primary px-10 py-5 text-white">
+                <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 lg:flex-row lg:gap-10">
                     <Image
                         width={500}
                         height={500}
@@ -25,10 +25,10 @@ export function AboutUsSection() {
                     />
 
                     <div>
-                        <h2 className="mb-10 mt-10 text-center text-4xl font-bold text-white lg:mt-0">
+                        <h2 className="mb-10 mt-10 text-center text-3xl font-bold text-white lg:mt-0">
                             {dictionary.AboutUs.texts.whatWeDoTitle}
                         </h2>
-                        <p className="text-justify text-2xl text-white">
+                        <p className="text-justify text-xl text-white">
                             {dictionary.AboutUs.texts.whatWeDoText}
                         </p>
                     </div>
@@ -37,10 +37,10 @@ export function AboutUsSection() {
             <div className="mt-12 py-10 text-primary">
                 <div className="flex flex-col items-center justify-between overflow-visible p-0 py-2 lg:flex-row lg:gap-10">
                     <div>
-                        <h2 className="mb-2 mt-10 text-2xl font-bold lg:mt-0">
+                        <h2 className="mb-2 mt-10 text-xl font-bold lg:mt-0">
                             {dictionary.AboutUs.texts.independenceTitle}
                         </h2>
-                        <p className="text-justify text-xl">
+                        <p className="text-justify text-lg">
                             {dictionary.AboutUs.texts.independenceText}
                         </p>
                     </div>
@@ -57,10 +57,10 @@ export function AboutUsSection() {
             </div>
 
             <div className="py-8">
-                <h2 className="mb-2 text-2xl font-bold text-primary">
+                <h2 className="mb-2 text-xl font-bold text-primary">
                     {dictionary.AboutUs.texts.whyChooseUsTitle}
                 </h2>
-                <p className="text-justify text-xl text-primary">
+                <p className="text-justify text-lg text-primary">
                     {dictionary.AboutUs.texts.whyChooseUsText}
                 </p>
             </div>

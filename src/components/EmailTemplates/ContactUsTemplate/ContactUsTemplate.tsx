@@ -18,7 +18,6 @@ export const ContactUsEmailTemplate: React.FC<
         <p>Name: {name}</p>
         <p>Email: {email}</p>
         <p>Phone: {phone}</p>
-
         <h3>Message: </h3>
         <p>{message} </p>
     </div>

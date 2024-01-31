@@ -6,20 +6,12 @@ import { PiPhoneCallThin } from "react-icons/pi";
 import { LiaFaxSolid } from "react-icons/lia";
 import { ImLocation } from "react-icons/im";
 import { FooterActionsWrapper } from "./FooterWrapper";
-import dictionary from "~/dictionary/dictionaryLink";
+import { ContactUsSection } from "~/sections/ContactUs/ContactUsSection";
 
 export function Footer() {
     return (
-        <div id="ContactUs" className="pt-16">
-            <div className="mb-16">
-                <h2 className="mb-5 text-center text-5xl font-bold text-primary">
-                    {dictionary.ContactUs.texts.sectionName}
-                </h2>
-
-                <h3 className="text-center text-3xl text-primary">
-                    {dictionary.ContactUs.texts.contactUsText}
-                </h3>
-            </div>
+        <div className="pt-16">
+            <ContactUsSection />
 
             <div className="custom-shape-divider-bottom-1702225207">
                 <svg

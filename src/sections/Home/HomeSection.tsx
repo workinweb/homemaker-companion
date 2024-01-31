@@ -27,9 +27,9 @@ export function HomeSection() {
                 <SearchInput />
             </div>
 
-            <Card className="mt-12 bg-primary px-10 py-10 text-white">
-                <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 py-2 lg:flex-row lg:gap-10">
-                    <p className="text-justify text-xl sm:text-2xl">
+            <Card className="mt-12 bg-primary px-10 py-8 text-white">
+                <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 lg:flex-row lg:gap-10">
+                    <p className="text-justify text-lg sm:text-xl">
                         {dictionary.Home.texts.agencyFor}
                     </p>
 
@@ -46,26 +46,26 @@ export function HomeSection() {
 
             <div>
                 <div className="pb-8 pt-20">
-                    <p className="text-justify text-xl text-primary">
+                    <p className="text-justify text-lg text-primary">
                         {dictionary.Home.texts.mission}
                     </p>
                 </div>
 
                 <div className="py-8">
-                    <h2 className="mb-2 text-2xl font-bold text-primary">
+                    <h2 className="mb-2 text-xl font-bold text-primary">
                         {dictionary.Home.texts.goalsTitle}
                     </h2>
 
-                    <p className="text-justify text-xl text-primary">
+                    <p className="text-justify text-lg text-primary">
                         {dictionary.Home.texts.goalsText}
                     </p>
                 </div>
 
                 <div className="py-8">
-                    <h2 className="mb-2 text-2xl font-bold text-primary">
+                    <h2 className="mb-2 text-xl font-bold text-primary">
                         {dictionary.Home.texts.servicesTo}
                     </h2>
-                    <ul className="text-xl text-primary">
+                    <ul className="text-lg text-primary">
                         {Array.isArray(dictionary.Home?.texts?.disabilities) &&
                             dictionary.Home?.texts?.disabilities?.map(
                                 (disability) => (
@@ -83,10 +83,10 @@ export function HomeSection() {
                 </div>
 
                 <div className="py-8">
-                    <h2 className="mb-2 text-2xl font-bold text-primary">
+                    <h2 className="mb-2 text-xl font-bold text-primary">
                         {dictionary.Home.texts.support}
                     </h2>
-                    <p className="text-justify text-xl text-primary">
+                    <p className="text-justify text-lg text-primary">
                         {dictionary.Home.texts.serviceQuality}
                     </p>
                 </div>
