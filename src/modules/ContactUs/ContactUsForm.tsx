@@ -51,11 +51,20 @@ export function ContactUsForm() {
     return (
         <Card className="h-[680px] w-full max-w-[520px]  px-2 py-8">
             <CardBody>
+                <div id="ContactUs" className="mb-5">
+                    <h2 className="text-xl font-bold text-primary">
+                        Contact Us
+                    </h2>
+                    <p className="text-lg  text-primary">
+                        Your messages are important to us.
+                    </p>
+                </div>
+
                 <form
                     onSubmit={submit}
                     className="flex h-full flex-col justify-between"
                 >
-                    <div className="flex flex-col gap-10">
+                    <div className="flex flex-col gap-8">
                         <Input
                             fullWidth
                             required={true}
@@ -82,8 +91,8 @@ export function ContactUsForm() {
 
                         <Textarea
                             fullWidth
-                            maxRows={11}
-                            minRows={11}
+                            maxRows={8}
+                            minRows={8}
                             labelPlacement="outside"
                             placeholder="Special requests? Add them here"
                             className="w-full"

@@ -6,13 +6,10 @@ import { PiPhoneCallThin } from "react-icons/pi";
 import { LiaFaxSolid } from "react-icons/lia";
 import { ImLocation } from "react-icons/im";
 import { FooterActionsWrapper } from "./FooterWrapper";
-import { ContactUsSection } from "~/sections/ContactUs/ContactUsSection";
 
 export function Footer() {
     return (
         <div className="pt-16">
-            <ContactUsSection />
-
             <div className="custom-shape-divider-bottom-1702225207">
                 <svg
                     data-name="Layer 1"
