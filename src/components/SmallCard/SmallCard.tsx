@@ -25,7 +25,7 @@ export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
                     quality={100}
                     alt={alt}
                     src={img}
-                    style={{ width: "50%" }}
+                    style={{ width: "25%" }}
                 />
             </div>
 

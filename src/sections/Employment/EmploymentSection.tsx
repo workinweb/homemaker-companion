@@ -28,7 +28,7 @@ export function EmploymentSection() {
                 </div>
 
                 <Card className="mt-12 bg-primary px-10 py-10 text-white">
-                    <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 py-2 lg:flex-row lg:gap-10">
+                    <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 py-4 lg:flex-row lg:gap-10">
                         <p className="text-justify text-xl sm:text-2xl">
                             {dictionary.Employment.texts.agencyFor}
                         </p>
@@ -45,7 +45,7 @@ export function EmploymentSection() {
                 </Card>
             </div>
 
-            <div className="mt-12 flex flex-grow flex-col justify-evenly py-8 lg:flex-row">
+            <div className="mt-12 flex flex-grow flex-col justify-evenly py-4 lg:flex-row">
                 <List
                     title={
                         dictionary.Employment.texts.requirementsTitle as string
@@ -61,18 +61,18 @@ export function EmploymentSection() {
                 />
             </div>
 
-            <div className="mt-12 py-8">
+            <div className="mt-12 py-4">
                 <h2 className="text-center text-3xl font-bold text-primary">
                     {dictionary.Employment.texts.applyTitle}
                 </h2>
             </div>
 
-            <div className="py-8">
+            <div className="py-4">
                 <h2 className="mb-2 text-2xl font-bold text-primary">
                     {dictionary.Employment.texts.employmentApplication}
                 </h2>
                 <p className="text-justify text-xl text-primary">
-                    {dictionary.Employment.texts.readBefore}{" "}
+                    {dictionary.Employment.texts.needHelp}{" "}
                     <span className="font-bold underline">
                         <a
                             href={`mailto:${
@@ -86,13 +86,13 @@ export function EmploymentSection() {
                 </p>
             </div>
 
-            <div className="py-8">
+            <div className="py-4">
                 <p className="text-justify text-xl text-primary">
                     {dictionary.Employment.texts.policy}
                 </p>
             </div>
 
-            <div className="py-8">
+            <div className="py-4">
                 <h2 className="mb-2 text-2xl font-bold text-primary">
                     {dictionary.Employment.texts.certRelease}
                 </h2>
@@ -105,7 +105,7 @@ export function EmploymentSection() {
                 </p>
             </div>
 
-            <div className="py-8">
+            <div className="py-4">
                 <h2 className="mb-2 text-2xl font-bold text-primary">
                     {dictionary.Employment.texts.covenant}
                 </h2>

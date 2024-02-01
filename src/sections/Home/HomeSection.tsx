@@ -28,7 +28,7 @@ export function HomeSection() {
                 <SearchInput />
             </div>
 
-            <Card className="mt-12 bg-primary px-10 py-8 text-white">
+            <Card className="mt-12 bg-primary px-10 py-4 text-white">
                 <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 lg:flex-row lg:gap-10">
                     <p className="text-justify text-lg sm:text-xl">
                         {dictionary.Home.texts.agencyFor}
@@ -46,13 +46,13 @@ export function HomeSection() {
             </Card>
 
             <div>
-                <div className="pb-8 pt-20">
+                <div className="pb-4 pt-12">
                     <p className="text-justify text-lg text-primary">
                         {dictionary.Home.texts.mission}
                     </p>
                 </div>
 
-                <div className="py-8">
+                <div className="py-4">
                     <h2 className="mb-2 text-xl font-bold text-primary">
                         {dictionary.Home.texts.goalsTitle}
                     </h2>
@@ -62,7 +62,7 @@ export function HomeSection() {
                     </p>
                 </div>
 
-                <div className="py-8">
+                <div className="py-4">
                     <h2 className="mb-2 text-xl font-bold text-primary">
                         {dictionary.Home.texts.servicesTo}
                     </h2>
@@ -107,14 +107,14 @@ export function HomeSection() {
                     />
                 </div>
 
-                <div className="py-8">
+                <div className="py-4">
                     <p className="text-justify text-xl text-primary">
                         <strong>{dictionary.Home.texts.companyName}</strong>{" "}
                         {dictionary.Home.texts.agencyFor2}
                     </p>
                 </div>
 
-                <div className="py-8">
+                <div className="py-4">
                     <h2 className="mb-2 text-xl font-bold text-primary">
                         {dictionary.Home.texts.support}
                     </h2>

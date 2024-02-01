@@ -25,9 +25,6 @@ export function AboutUsSection() {
                     />
 
                     <div>
-                        <h2 className="mb-10 mt-10 text-center text-3xl font-bold text-white lg:mt-0">
-                            {dictionary.AboutUs.texts.whatWeDoTitle}
-                        </h2>
                         <p className="text-justify text-xl text-white">
                             {dictionary.AboutUs.texts.whatWeDoText}
                         </p>
