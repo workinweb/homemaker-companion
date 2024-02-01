@@ -24,7 +24,9 @@ export function AccordionCard({
     );
 
     return (
-        <div className={`w-[500px] rounded-lg border-3 border-solid p-10`}>
+        <div
+            className={`w-full rounded-lg border-3 border-solid p-10 sm:w-[350px] md:w-[400px] lg:w-[500px]`}
+        >
             <div className="mb-2 flex w-full justify-center">
                 <Image
                     width={500}

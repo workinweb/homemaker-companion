@@ -17,7 +17,7 @@ export function ServicesSection() {
                 </h3>
             </div>
 
-            <div className="flex items-start gap-8">
+            <div className="flex flex-col items-start justify-evenly gap-8 sm:flex-row sm:flex-wrap lg:flex-nowrap">
                 <AccordionCard
                     img="/service1.webp"
                     alt="Draw of a whiteboard with bussiness cards"
