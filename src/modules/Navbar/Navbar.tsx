@@ -2,6 +2,11 @@
 
 import React from "react";
 import {
+    Button,
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownTrigger,
     Navbar,
     NavbarContent,
     NavbarItem,
@@ -59,14 +64,31 @@ export function CustomNavbar() {
                     </Link>
                 </NavbarItem>
 
-                <NavbarItem className="hidden sm:flex">
-                    <Link
-                        className={`transition hover:text-gray-400 `}
-                        href="/#Services"
-                    >
-                        Services
-                    </Link>
-                </NavbarItem>
+                <Dropdown>
+                    <DropdownTrigger>
+                        <button className={`transition hover:text-gray-400`}>
+                            Services
+                        </button>
+                    </DropdownTrigger>
+                    <DropdownMenu aria-label="Static Actions">
+                        <DropdownItem key="services">
+                            <Link
+                                className={`transition hover:text-gray-400 `}
+                                href="/#Services"
+                            >
+                                Services
+                            </Link>
+                        </DropdownItem>
+                        <DropdownItem key="copy">
+                            <Link
+                                className={`transition hover:text-gray-400 `}
+                                href="/Apd"
+                            >
+                                APD Service
+                            </Link>
+                        </DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
 
                 <NavbarItem className="hidden sm:flex">
                     <Link
