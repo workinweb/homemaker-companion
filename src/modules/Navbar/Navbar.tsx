@@ -24,7 +24,8 @@ export function CustomNavbar() {
     const menuItems = [
         { label: "Home", href: "/" },
         { label: "About Us", href: "#AboutUs", parent: "home" },
-        { label: "Services", href: "#Services", parent: "home" },
+        { label: "Our Services", href: "#Services", parent: "home" },
+        { label: "Apd Service", href: "/apd", parent: "services" },
         { label: "Contact Us", href: "#ContactUs", parent: "home" },
         { label: "Employment", href: "/employment" },
         { label: "Training", href: "/training" },
@@ -65,7 +66,7 @@ export function CustomNavbar() {
                 </NavbarItem>
 
                 <Dropdown>
-                    <DropdownTrigger>
+                    <DropdownTrigger className="hidden sm:flex">
                         <button className={`transition hover:text-gray-400`}>
                             Services
                         </button>
@@ -82,7 +83,7 @@ export function CustomNavbar() {
                         <DropdownItem key="copy">
                             <Link
                                 className={`transition hover:text-gray-400 `}
-                                href="/Apd"
+                                href="/apd"
                             >
                                 APD Service
                             </Link>
