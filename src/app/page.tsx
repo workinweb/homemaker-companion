@@ -4,26 +4,10 @@ import { Footer } from "~/modules/Footer/Footer";
 import { ServicesSection } from "~/sections/Services/ServicesSection";
 import { SideButtons } from "~/modules/SideButtons/SideButtons";
 import { FloatingButton } from "~/modules/FloatingButton/FloatingButton";
-import Head from "next/head";
 
 export default async function Home() {
     return (
         <>
-            <Head>
-                <link
-                    href="https://db.onlinewebfonts.com/c/7655d129d0addb2f08a5c1dc994aaa4b?family=Brush+Script+MT"
-                    rel="stylesheet"
-                    type="text/css"
-                    as="font"
-                />
-
-                <link
-                    href="https://db.onlinewebfonts.com/c/7655d129d0addb2f08a5c1dc994aaa4b?family=Brush+Script+MT"
-                    rel="preload"
-                    type="text/css"
-                    as="font"
-                />
-            </Head>
             <main>
                 <SideButtons />
 
