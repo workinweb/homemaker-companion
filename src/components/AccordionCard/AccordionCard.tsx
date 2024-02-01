@@ -56,6 +56,7 @@ export function AccordionCard({
                         key="1"
                         aria-label="Read More"
                         subtitle={
+                            //@ts-ignore
                             selectedKeys.size > 0 ? "Read less" : "Read more"
                         }
                         title=""
