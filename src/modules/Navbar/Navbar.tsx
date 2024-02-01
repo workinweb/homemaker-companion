@@ -17,18 +17,41 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { IoHome } from "react-icons/io5";
+import { MdOutlineMedicalInformation } from "react-icons/md";
+import { MdOutlineMedicalServices } from "react-icons/md";
+import { MdConnectWithoutContact } from "react-icons/md";
+import { SiReacthookform } from "react-icons/si";
+import { MdOutlineSchool } from "react-icons/md";
+
 export function CustomNavbar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const pathName = usePathname();
 
     const menuItems = [
-        { label: "Home", href: "/" },
-        { label: "About Us", href: "#AboutUs", parent: "home" },
-        { label: "Our Services", href: "#Services", parent: "home" },
-        { label: "Apd Service", href: "/apd", parent: "services" },
-        { label: "Contact Us", href: "#ContactUs", parent: "home" },
-        { label: "Employment", href: "/employment" },
-        { label: "Training", href: "/training" },
+        { icon: <IoHome />, label: "Home", href: "/" },
+        {
+            icon: <MdOutlineMedicalInformation />,
+            label: "About Us",
+            href: "#AboutUs",
+        },
+        {
+            icon: <MdOutlineMedicalServices />,
+            label: "Our Services",
+            href: "#Services",
+        },
+        {
+            icon: <MdOutlineMedicalServices />,
+            label: "Apd Service",
+            href: "/apd",
+        },
+        {
+            icon: <MdConnectWithoutContact />,
+            label: "Contact Us",
+            href: "#ContactUs",
+        },
+        { icon: <SiReacthookform />, label: "Employment", href: "/employment" },
+        { icon: <MdOutlineSchool />, label: "Training", href: "/training" },
     ];
 
     return (
@@ -125,11 +148,11 @@ export function CustomNavbar() {
                 </NavbarItem>
             </NavbarContent>
 
-            <NavbarMenu className="flex w-full flex-col items-center gap-5 pt-5">
+            <NavbarMenu className="flex w-full flex-col gap-8 pt-5">
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item.label}-${index}`}>
                         <Link
-                            className={`w-full text-2xl transition hover:text-gray-400 ${
+                            className={`w-full text-2xl font-bold transition hover:text-gray-400 ${
                                 pathName === item.href ? "text-primary" : ""
                             }`}
                             href={item.href}
@@ -137,8 +160,10 @@ export function CustomNavbar() {
                                 setIsMenuOpen(false);
                             }}
                         >
-                            <span>{item.parent ? " - " : ""}</span>
-                            {item.label}
+                            <div className="flex items-center gap-2">
+                                {item.icon}
+                                <span> {item.label}</span>
+                            </div>
                         </Link>
                     </NavbarMenuItem>
                 ))}
