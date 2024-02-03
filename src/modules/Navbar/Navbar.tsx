@@ -37,13 +37,13 @@ export function CustomNavbar() {
         },
         {
             icon: <MdOutlineMedicalServices />,
-            label: "Our Services",
+            label: "Apd Waiver Services",
             href: "#Services",
         },
         {
             icon: <MdOutlineMedicalServices />,
-            label: "Apd Service",
-            href: "/apd",
+            label: "Homemaker & Companion",
+            href: "/homemaker",
         },
         {
             icon: <MdConnectWithoutContact />,
@@ -100,15 +100,25 @@ export function CustomNavbar() {
                                 className={`transition hover:text-gray-400 `}
                                 href="/#Services"
                             >
-                                Services
+                                <p className="font-bold text-primary">
+                                    APD WAIVER SERVICES:
+                                </p>
+
+                                <p className="my-2 ml-5">- Personal Supports</p>
+                                <p className="my-2 ml-5">
+                                    - Life Skills Development 1
+                                </p>
+                                <p className="my-2 ml-5">- Respite Care</p>
                             </Link>
                         </DropdownItem>
                         <DropdownItem key="copy">
                             <Link
                                 className={`transition hover:text-gray-400 `}
-                                href="/apd"
+                                href="/homemaker"
                             >
-                                APD Service
+                                <p className="font-bold text-primary">
+                                    HOMEMAKER & COMPANION
+                                </p>
                             </Link>
                         </DropdownItem>
                     </DropdownMenu>

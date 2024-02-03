@@ -20,7 +20,7 @@ export function AboutUsSection() {
                         height={500}
                         quality={100}
                         alt="Two happy persons, one in a wheelchair"
-                        className="mb-[-20px] object-cover lg:mb-[0px] lg:h-[520px] lg:w-full"
+                        className="mb-[20px] object-cover lg:mb-[0px] lg:h-[520px] lg:w-full"
                         src="/aboutus.webp"
                     />
 
