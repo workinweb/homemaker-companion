@@ -34,14 +34,14 @@ export function Footer() {
                         <div className="flex w-full max-w-[520px] flex-col gap-10 rounded-2xl bg-white px-8 py-5 lg:w-auto lg:max-w-max lg:flex-row">
                             <div className="flex items-center gap-2">
                                 <ImLocation className="h-6 w-6 text-primary" />
-                                <span>
+                                <span className="text-primary">
                                     1101 Miranda Ln.Kissimmee, Fl. 34741
                                 </span>
                             </div>
 
                             <div className="flex items-center gap-2">
                                 <PiPhoneCallThin className="h-6 w-6 text-primary" />
-                                <span className="underline">
+                                <span className="text-primary">
                                     <a href="tel:+13213009077">
                                         (321) 300-9077
                                     </a>
@@ -50,12 +50,14 @@ export function Footer() {
 
                             <div className="flex items-center gap-2">
                                 <LiaFaxSolid className="h-6 w-6 text-primary" />
-                                <span>(321) 291-5124</span>
+                                <span className="text-primary">
+                                    (321) 291-5124
+                                </span>
                             </div>
 
                             <div className="flex items-center gap-2">
                                 <IoMail className="h-6 w-6 text-primary" />
-                                <span className="underline">
+                                <span className="text-primary underline">
                                     <a href="mailto:evanhomecare@gmail.com">
                                         evanhomecare@gmail.com
                                     </a>

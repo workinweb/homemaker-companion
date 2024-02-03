@@ -25,7 +25,7 @@ export function AboutUsSection() {
                     />
 
                     <div>
-                        <p className="text-justify text-xl text-white">
+                        <p className="text-left text-xl text-white">
                             {dictionary.AboutUs.texts.whatWeDoText}
                         </p>
                     </div>
@@ -37,7 +37,7 @@ export function AboutUsSection() {
                         <h2 className="mb-2 mt-10 text-xl font-bold lg:mt-0">
                             {dictionary.AboutUs.texts.independenceTitle}
                         </h2>
-                        <p className="text-justify text-lg">
+                        <p className="text-left text-lg">
                             {dictionary.AboutUs.texts.independenceText}
                         </p>
                     </div>
@@ -57,7 +57,7 @@ export function AboutUsSection() {
                 <h2 className="mb-2 text-xl font-bold text-primary">
                     {dictionary.AboutUs.texts.whyChooseUsTitle}
                 </h2>
-                <p className="text-justify text-lg text-primary">
+                <p className="text-left text-lg text-primary">
                     {dictionary.AboutUs.texts.whyChooseUsText}
                 </p>
             </div>

@@ -29,7 +29,7 @@ export function EmploymentSection() {
 
                 <Card className="mt-12 bg-primary px-10 py-10 text-white">
                     <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 py-4 lg:flex-row lg:gap-10">
-                        <p className="text-justify text-xl sm:text-2xl">
+                        <p className="text-left text-xl sm:text-2xl">
                             {dictionary.Employment.texts.agencyFor}
                         </p>
 
@@ -71,7 +71,7 @@ export function EmploymentSection() {
                 <h2 className="mb-2 text-2xl font-bold text-primary">
                     {dictionary.Employment.texts.employmentApplication}
                 </h2>
-                <p className="text-justify text-xl text-primary">
+                <p className="text-left text-xl text-primary">
                     {dictionary.Employment.texts.needHelp}{" "}
                     <span className="font-bold underline">
                         <a
@@ -87,7 +87,7 @@ export function EmploymentSection() {
             </div>
 
             <div className="py-4">
-                <p className="text-justify text-xl text-primary">
+                <p className="text-left text-xl text-primary">
                     {dictionary.Employment.texts.policy}
                 </p>
             </div>
@@ -96,11 +96,11 @@ export function EmploymentSection() {
                 <h2 className="mb-2 text-2xl font-bold text-primary">
                     {dictionary.Employment.texts.certRelease}
                 </h2>
-                <p className="text-justify text-xl text-primary">
+                <p className="text-left text-xl text-primary">
                     {dictionary.Employment.texts.certify}
                 </p>
 
-                <p className="mt-2 text-justify text-xl text-primary">
+                <p className="mt-2 text-left text-xl text-primary">
                     {dictionary.Employment.texts.authorize}{" "}
                 </p>
             </div>
@@ -109,7 +109,7 @@ export function EmploymentSection() {
                 <h2 className="mb-2 text-2xl font-bold text-primary">
                     {dictionary.Employment.texts.covenant}
                 </h2>
-                <p className="text-justify text-xl text-primary">
+                <p className="text-left text-xl text-primary">
                     {dictionary.Employment.texts.agree}
                 </p>
             </div>

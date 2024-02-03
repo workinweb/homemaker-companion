@@ -10,7 +10,10 @@ export function HomeSection() {
     return (
         <div id="Home">
             <div className="mt-[20px] flex flex-col items-center justify-between gap-5 sm:mt-[0] sm:flex-row lg:mt-[-20px]">
-                <div className="hidden sm:block" style={{ zIndex: 10 }}>
+                <div
+                    className="max-w-[120px] sm:max-w-max"
+                    style={{ zIndex: 10 }}
+                >
                     <Image
                         width={150}
                         height={150}
@@ -30,7 +33,7 @@ export function HomeSection() {
 
             <Card className="mt-12 bg-primary px-10 py-4 text-white">
                 <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 lg:flex-row lg:gap-10">
-                    <p className="text-justify text-lg sm:text-xl">
+                    <p className="text-left text-lg sm:text-xl">
                         {dictionary.Home.texts.agencyFor}
                     </p>
 
@@ -47,7 +50,7 @@ export function HomeSection() {
 
             <div>
                 <div className="pb-4 pt-12">
-                    <p className="text-justify text-lg text-primary">
+                    <p className="text-left text-lg text-primary">
                         {dictionary.Home.texts.mission}
                     </p>
                 </div>
@@ -57,7 +60,7 @@ export function HomeSection() {
                         {dictionary.Home.texts.goalsTitle}
                     </h2>
 
-                    <p className="text-justify text-lg text-primary">
+                    <p className="text-left text-lg text-primary">
                         {dictionary.Home.texts.goalsText}
                     </p>
                 </div>
@@ -76,7 +79,7 @@ export function HomeSection() {
                     </ul>
                 </div>
 
-                <div className="my-10 grid grid-cols-1 gap-10 gap-y-20 lg:grid-cols-2">
+                <div className="my-10 grid grid-cols-1 gap-10 gap-y-10 lg:grid-cols-2">
                     <SmallCard
                         img="/ourPeople.svg"
                         alt="Draw of 3 co-workers"
@@ -108,7 +111,7 @@ export function HomeSection() {
                 </div>
 
                 <div className="py-4">
-                    <p className="text-justify text-xl text-primary">
+                    <p className="text-left text-xl text-primary">
                         <strong>{dictionary.Home.texts.companyName}</strong>{" "}
                         {dictionary.Home.texts.agencyFor2}
                     </p>
@@ -118,7 +121,7 @@ export function HomeSection() {
                     <h2 className="mb-2 text-xl font-bold text-primary">
                         {dictionary.Home.texts.support}
                     </h2>
-                    <p className="text-justify text-lg text-primary">
+                    <p className="text-left text-lg text-primary">
                         {dictionary.Home.texts.serviceQuality}
                     </p>
                 </div>

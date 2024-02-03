@@ -48,7 +48,7 @@ const dictionary: DictionaryType = {
             ],
 
             ourPleopleTitle: `Our People:`,
-            ourPleopleText: `The Evan Home Care caregiver must be a Certified Nursing Assistant (CNA) and/or Home Health Aide (HHA) with experience in home care. The caregiver must also pass a background Screening Level 2 check and provide proof of a APD certifications and CPR and First Aid certification. Once all those items are completed, each caregiver is interviewed by Evan Home Care Administrator to guarantee that we are hiring the best talent available.`,
+            ourPleopleText: `Evan Home Care caregiver must be a Certified Nursing Assistant (CNA) and/or Home Health Aide (HHA) with experience in home care. The caregiver must also pass a background Screening Level 2 check and provide proof of a APD certifications and CPR and First Aid certification. Once all those items are completed, each caregiver is interviewed by Evan Home Care Administrator to guarantee that we are hiring the best talent available.`,
 
             ourProcessTitle: `Our Process:`,
             ourProcessText: `We develop a client-caregiver relationship plan with a synergistic approach, bearing in mind the personalities and conditions of the client, ensuring that they receive personalized care with high quality.`,
@@ -78,7 +78,7 @@ const dictionary: DictionaryType = {
             independenceText: `Our goal is to provide high quality care to all our clients with a continuous focus on the individual needs in detail of each person we care for, thus increasing their independence and improving their quality of life.`,
 
             whyChooseUsTitle: `Why choose Us:`,
-            whyChooseUsText: `Evan Home Care team consists of passionate, compassionate, and good character people along with a positive work environment built on mutual respect and professionalism., that are our attractive characteristics, forming a great professional team to satisfy the needs of our clients with a high level of quality.`,
+            whyChooseUsText: `Evan Home Care team consists of passionate, compassionate, and good character people along with a positive work environment built on mutual respect and professionalism, that are our attractive characteristics, forming a great professional team to satisfy the needs of our clients with a high level of quality.`,
         },
     },
 

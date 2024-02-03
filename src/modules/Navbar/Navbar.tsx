@@ -104,11 +104,15 @@ export function CustomNavbar() {
                                     APD WAIVER SERVICES:
                                 </p>
 
-                                <p className="my-2 ml-5">- Personal Supports</p>
-                                <p className="my-2 ml-5">
+                                <p className="my-2 ml-5 text-primary">
+                                    - Personal Supports
+                                </p>
+                                <p className="my-2 ml-5 text-primary">
                                     - Life Skills Development 1
                                 </p>
-                                <p className="my-2 ml-5">- Respite Care</p>
+                                <p className="my-2 ml-5 text-primary">
+                                    - Respite Care
+                                </p>
                             </Link>
                         </DropdownItem>
                         <DropdownItem key="copy">

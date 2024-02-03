@@ -41,7 +41,7 @@ export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
 
             <div>
                 <p
-                    className={`text-justify text-lg ${
+                    className={`text-left text-lg ${
                         type === "filled" ? "text-white" : "text-primary"
                     }`}
                 >

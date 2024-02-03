@@ -16,7 +16,7 @@ export function Title({
     paragraph = "",
     classNames = {
         titleClassName: "text-2xl mb-2 font-bold text-primary",
-        paragraphClassName: "text-xl text-justify text-primary",
+        paragraphClassName: "text-xl text-left text-primary",
     },
 }: TitleProps) {
     return (

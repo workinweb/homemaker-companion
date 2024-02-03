@@ -86,7 +86,7 @@ export function ServicesSection() {
                         <h2 className="mb-10 mt-10 text-center text-xl font-bold text-white lg:mt-0">
                             {dictionary.Services.texts.personalSupportTilte}
                         </h2>
-                        <p className="text-justify text-lg text-white">
+                        <p className="text-left text-lg text-white">
                             {dictionary.Services.texts.personalSupportText}
                         </p>
                     </div>

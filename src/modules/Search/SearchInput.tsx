@@ -176,7 +176,7 @@ export function SearchInput() {
                             <ModalBody>
                                 <div className="flex w-full flex-col justify-center gap-5">
                                     <div className="max-w-5xl">
-                                        <h1 className="text-2xl font-bold">
+                                        <h1 className="text-2xl font-bold text-primary">
                                             Search for content in the page
                                         </h1>
                                     </div>
@@ -212,7 +212,7 @@ export function SearchInput() {
                                         </div>
 
                                         {foundSearch.length > 0 && (
-                                            <p className="pb-5 pt-2">
+                                            <p className="pb-5 pt-2 text-primary">
                                                 {foundSearch.length} item
                                                 {foundSearch.length > 1 &&
                                                     "s"}{" "}
@@ -223,7 +223,7 @@ export function SearchInput() {
                                         {foundSearch.length === 0 &&
                                             searchQuery !== "" &&
                                             searchDone && (
-                                                <p className="pb-5 pt-5 text-xl font-bold">
+                                                <p className="pb-5 pt-5 text-xl font-bold text-primary">
                                                     No items found for "
                                                     {searchQuery}"
                                                 </p>
@@ -235,7 +235,7 @@ export function SearchInput() {
                                                     <div className="py-2">
                                                         <Link
                                                             onClick={onClose}
-                                                            className="text-2xl underline underline-offset-4  hover:text-primary"
+                                                            className="text-2xl  font-bold text-primary underline underline-offset-4 hover:text-primary"
                                                             href={f.link}
                                                         >
                                                             {f.section}
@@ -245,7 +245,7 @@ export function SearchInput() {
                                                             (p) => {
                                                                 return (
                                                                     <div
-                                                                        className="mt-b-2 mt-2"
+                                                                        className="mt-b-2 mt-2  text-primary"
                                                                         dangerouslySetInnerHTML={{
                                                                             __html: p,
                                                                         }}
