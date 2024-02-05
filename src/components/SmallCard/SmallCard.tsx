@@ -12,6 +12,8 @@ type SmallCardProps = {
 };
 
 export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
+    const innerWidth = window.innerWidth;
+
     return (
         <div
             className={`rounded-lg border-3 border-solid p-10 ${
@@ -25,13 +27,13 @@ export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
                     quality={100}
                     alt={alt}
                     src={img}
-                    style={{ width: "25%" }}
+                    style={{ width: innerWidth < 768 ? "70%" : "40%" }}
                 />
             </div>
 
             <div>
                 <h2
-                    className={`my-5 mb-10 text-center text-xl font-bold ${
+                    className={`mb-5 mt-8 text-center text-2xl font-bold ${
                         type === "filled" ? "text-white" : "text-primary"
                     }`}
                 >

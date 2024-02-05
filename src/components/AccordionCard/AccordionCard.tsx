@@ -34,18 +34,18 @@ export function AccordionCard({
                     quality={100}
                     alt={alt}
                     src={img}
-                    style={{ width: "50%" }}
+                    style={{ width: "75%" }}
                 />
             </div>
 
             <div className="mt-4 py-2">
-                <h2 className={`text-center text-xl font-bold text-primary `}>
+                <h2 className={`text-center text-2xl font-bold text-primary `}>
                     {title}
                 </h2>
             </div>
 
             <div className="py-2">
-                <p className={`text-left text-lg text-primary`}>{text}</p>
+                <p className={`text-left text-xl text-primary`}>{text}</p>
             </div>
 
             {hiddenText && hiddenText?.length > 0 && (
@@ -64,22 +64,22 @@ export function AccordionCard({
                         }
                         title=""
                     >
-                        <p className={`text-left text-lg text-primary`}>
+                        <p className={`text-left text-xl text-primary`}>
                             {hiddenText.length > 0 && hiddenText[0]}
                         </p>
 
                         <h3
-                            className={`mb-2 mt-4 text-left text-lg font-bold text-primary`}
+                            className={`mb-2 mt-4 text-left text-xl font-bold text-primary`}
                         >
                             {hiddenText.length > 1 && hiddenText[1]}
                         </h3>
 
-                        <p className={`text-left text-lg text-primary `}>
+                        <p className={`text-left text-xl text-primary `}>
                             {hiddenText.length > 2 && hiddenText[2]}
                         </p>
 
                         <div className="py-4">
-                            <ul className="xt-justify text-lg text-primary ">
+                            <ul className="xt-justify text-xl text-primary ">
                                 {hiddenText.length > 3 &&
                                     hiddenText[3] &&
                                     Array.isArray(hiddenText[3]) &&

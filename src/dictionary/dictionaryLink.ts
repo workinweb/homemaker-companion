@@ -3,6 +3,8 @@ type RequiredKeys = {
     AboutUs: DicType;
     Services: DicType;
     ContactUs: DicType;
+    ChooseUs: DicType;
+    Team: DicType;
     Employment: DicType;
 };
 
@@ -31,38 +33,21 @@ const dictionary: DictionaryType = {
         texts: {
             sectionName: `Home`,
             agencyFor: `Evan Home Care is an agency that provides services for people with disabilities, and we are passionate about serving the community, making a difference through compassion and commitment to caring for and helping people with disabilities improve their quality of life.`,
-            mission: `The mission is to provide a personalized high-quality home care service focused on each client to satisfy their needs, helping people with disabilities and their families to improve their quality of life; promoting social education focused on their independence, for this we have a group of highly qualified professionals committed to serving the community with our high-quality services.`,
 
-            goalsTitle: `Goals:`,
-            goalsText: `Participate in social and community activities to be more independent. Practice appropriate physical activities to maintain good health. Help people to be more secure and healthier. Let clients experience a rise in the quality of livelihood through ease of access to community services.`,
+            missionTitle: "Mission",
+            missionText:
+                "Provide a personalized high-quality home care service focused on each client to satisfy their needs, helping people with disabilities and their families to improve their quality of life; promoting social education focused on their independence, for this we have a group of highly qualified professionals committed to serving the community with our high-quality services.",
 
-            servicesTo: `The Agency serves people with:`,
-            disabilities: [
-                `People severely impaired by autism.`,
-                `Cerebral palsy.`,
-                `Spina bifida.`,
-                `Intellectual disabilities.`,
-                `Down syndrome.`,
-                `Prader-Willi syndrome.`,
-                `Phelan-McDermid syndrome.`,
-            ],
+            goalsTitle: `Goals`,
+            goalsText: `Our goal is to provide high quality care to all our clients with a continued focus on the detailed individual needs of each person we serve, such as participating in social and community activities to become more independent. practicing appropriate physical activities to maintain good health, thus helping people to be safer and healthier and in turn thus increasing their independence and improving their quality of life. `,
 
             ourPleopleTitle: `Our People:`,
-            ourPleopleText: `Evan Home Care caregiver must be a Certified Nursing Assistant (CNA) and/or Home Health Aide (HHA) with experience in home care. The caregiver must also pass a background Screening Level 2 check and provide proof of a APD certifications and CPR and First Aid certification. Once all those items are completed, each caregiver is interviewed by Evan Home Care Administrator to guarantee that we are hiring the best talent available.`,
-
-            ourProcessTitle: `Our Process:`,
-            ourProcessText: `We develop a client-caregiver relationship plan with a synergistic approach, bearing in mind the personalities and conditions of the client, ensuring that they receive personalized care with high quality.`,
+            ourPleopleText: `Evan Home Care Agency providers and employees must be 18 years of age or older, have a 75-hour Home Health Aide Certificate or a High School Diploma or GED, and have at least one year of verifiable practical experience working directly with persons receiving services in a medical, psychiatric, nursing, or childcare setting or working with beneficiaries who have a developmental disability.
+            In lieu of required work experience, providers and employees may have 30 semester hours, 45 quarter hours, or 720 college or vocational school class hours per the Budget Waiver Services Manual, AHCA, May 2023.`,
 
             ourPromiseTitle: `Our Promise:`,
-            ourPromiseText: `At Evan Home Care Agency, we work continuously to provide you with the highest quality customer service experience, if you want a partner who goes the extra mile for you and your family members, choose Evan Home Care. That is our commitment to you and your family, and we hope that we will exceed that expectation.`,
-
-            ourProductTitle: `Our Product:`,
-            ourProductText: `Success is achieved through values when clients and their families obtain the benefits through our systematic services, allowing themselves to be helped and guided, increasing their independence and raising their quality of life.`,
-
-            companyName: `Evan Home Care`,
-            agencyFor2: `is an agency that provides services for people with disabilities with home care and serves the community with love and passion. Our caregivers support you and your family so that you can raise your quality of life and make it more pleasant and independent. We offer personal support and life skills development services 1 (companion) and Repeat Care (under 21), where Evan Home Care's trained and certified providers offer the best personalized care to each person with intellectual, functional, and sensory limitations in your own home.`,
-            support: `The Personal Supports you need:`,
-            serviceQuality: `Evan Home Care works hard to achieve excellence in the services we provide. The quality of services for our recipients will always be our top priority. If you have any questions or need to get in touch with us, visit our contact page for more information.`,
+            ourPromiseText: `At Evan Home Care Agency, we develop a client-provider relationship plan with a synergistic approach, considering the conditions and personalities of each client, ensuring that they receive a personalized service of the highest quality. \n
+            If you want a provider who will go the extra mile for you and your family members, choose Evan Home Care. That is our commitment to you and your family, we hope to exceed that expectation. Success is achieved through values when clients and their families obtain the benefits through our systematic services, allowing themselves to be helped and guided, increasing their independence, and raising their quality of life.`,
         },
     },
 
@@ -71,14 +56,37 @@ const dictionary: DictionaryType = {
         name: `About Us`,
         texts: {
             sectionName: `About Us`,
-            whatWeDoTitle: `What we do?`,
-            whatWeDoText: `Evan Home Care guarantees the quality of care and full-time services through ongoing training of employees, specialized care plans designed to meet the individual needs in detail of each client, on-site visits to observe the care and services offered, communication and systematic contact with the client, family members and employees to ensure that customer attention is provided to detail ensuring quality and the client manages to remain independent for as long as possible, thus raising their quality of life. We are passionate about caring for and helping people in need. To contact us click here to request a call. We look forward to being part of your family!`,
+            aboutUsBanner: `Evan Home Care guarantees the quality of care and full-time services through ongoing training of employees, specialized care plans designed to meet the individual needs in detail of each client, on-site visits to observe the care and services offered, communication and systematic contact with the client, family members and employees to ensure that customer attention is provided to detail ensuring quality and the client manages to remain independent for as long as possible, thus raising their quality of life. We are passionate about caring for and helping people in need. To contact us click `,
+            aboutUsBanner2: ` to request a call. We look forward to being part of your family!`,
+        },
+    },
 
-            independenceTitle: `Getting Better Independence Together:`,
-            independenceText: `Our goal is to provide high quality care to all our clients with a continuous focus on the individual needs in detail of each person we care for, thus increasing their independence and improving their quality of life.`,
+    Team: {
+        link: `/#OurTeam`,
+        name: "OurTeam",
+        texts: {},
+    },
 
-            whyChooseUsTitle: `Why choose Us:`,
+    ChooseUs: {
+        link: `#ChooseUs`,
+        name: `Why Choose Us`,
+        texts: {
+            whyChooseUsTitle: "Why choose Us",
             whyChooseUsText: `Evan Home Care team consists of passionate, compassionate, and good character people along with a positive work environment built on mutual respect and professionalism, that are our attractive characteristics, forming a great professional team to satisfy the needs of our clients with a high level of quality.`,
+            medicalServicesTitle: `Medicaid Waiver Services`,
+            medicalServicesText: `Evan Home Care works hard to achieve excellence in the services we provide. The quality of services for our recipients will always be our top priority. If you have any questions or need to get in touch with us, visit our contact page for more information.
+            Evan Home Care providers and employees are trustworthy and trained to assist with all types of needs and provide exceptional care experience in any setting as needed.`,
+
+            approvedAgency: `Evan Home Care is an Approved APD Medicaid Waiver Agency.`,
+            intellectualDisabilities: `Intellectual Disabilities:`,
+            disabilities: [
+                `Down Syndrome`,
+                `Prader-Willi Syndrome`,
+                `Cerebral Palsy`,
+                `Spinal Bifida`,
+                `Severe Autism.`,
+                `Rett Syndrome`,
+            ],
         },
     },
 

@@ -1,12 +1,10 @@
 import React from "react";
-import { Card, CardBody } from "@nextui-org/react";
 import dictionary from "~/dictionary/dictionaryLink";
-import Image from "next/image";
 import { AccordionCard } from "~/components/AccordionCard/AccordionCard";
 
 export function ServicesSection() {
     return (
-        <div id="Services" className="pt-16">
+        <div id="Services" className="mt-10 sm:mt-20">
             <div>
                 <h2 className="mb-5 text-center text-4xl font-bold text-primary">
                     {dictionary.Services.texts.serviceTitle}
@@ -19,7 +17,7 @@ export function ServicesSection() {
 
             <div className="flex flex-col items-start justify-evenly gap-8 sm:flex-row sm:flex-wrap lg:flex-nowrap">
                 <AccordionCard
-                    img="/service1.webp"
+                    img="/10-Personal Supports.jpg"
                     alt="Draw of a whiteboard with bussiness cards"
                     title={
                         dictionary.Services.texts.personalSupportTilte as string
@@ -38,7 +36,7 @@ export function ServicesSection() {
                 />
 
                 <AccordionCard
-                    img="/service2.webp"
+                    img="/11-Life Skill D.png"
                     alt="Draw of a whiteboard with bussiness cards"
                     title={dictionary.Services.texts.lifeSkillsTilte as string}
                     text={
@@ -57,7 +55,7 @@ export function ServicesSection() {
                 />
 
                 <AccordionCard
-                    img="/service1.webp"
+                    img="/12-Respite Care.jpg"
                     alt="Draw of a whiteboard with bussiness cards"
                     title={dictionary.Services.texts.under21Title as string}
                     text={dictionary.Services.texts.under21ShowText as string}
@@ -70,28 +68,6 @@ export function ServicesSection() {
                     ]}
                 />
             </div>
-
-            {/* <Card className="mt-16 bg-primary px-10 py-5 text-white xl:translate-x-[-200px]">
-                <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 lg:flex-row lg:gap-10">
-                    <Image
-                        width={1024}
-                        height={1024}
-                        quality={100}
-                        alt="Two happy persons, one in a wheelchair"
-                        className="mb-[-20px] object-cover lg:mb-[0px] lg:h-[520px] lg:w-full"
-                        src="/service1.webp"
-                    />
-
-                    <div>
-                        <h2 className="mb-10 mt-10 text-center text-xl font-bold text-white lg:mt-0">
-                            {dictionary.Services.texts.personalSupportTilte}
-                        </h2>
-                        <p className="text-left text-lg text-white">
-                            {dictionary.Services.texts.personalSupportText}
-                        </p>
-                    </div>
-                </CardBody>
-            </Card> */}
         </div>
     );
 }

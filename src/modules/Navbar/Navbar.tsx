@@ -37,7 +37,7 @@ export function CustomNavbar() {
         },
         {
             icon: <MdOutlineMedicalServices />,
-            label: "Apd Waiver Services",
+            label: "Medicaid Waiver Services:",
             href: "#Services",
         },
         {
@@ -101,17 +101,7 @@ export function CustomNavbar() {
                                 href="/#Services"
                             >
                                 <p className="font-bold text-primary">
-                                    APD WAIVER SERVICES:
-                                </p>
-
-                                <p className="my-2 ml-5 text-primary">
-                                    - Personal Supports
-                                </p>
-                                <p className="my-2 ml-5 text-primary">
-                                    - Life Skills Development 1
-                                </p>
-                                <p className="my-2 ml-5 text-primary">
-                                    - Respite Care
+                                    MEDICAID WAIVER SERVICES
                                 </p>
                             </Link>
                         </DropdownItem>

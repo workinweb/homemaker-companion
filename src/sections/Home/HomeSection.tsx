@@ -31,8 +31,8 @@ export function HomeSection() {
                 <SearchInput />
             </div>
 
-            <Card className="mt-12 bg-primary px-10 py-4 text-white">
-                <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 lg:flex-row lg:gap-10">
+            <Card className="mt-12 rounded-lg bg-primary px-10 py-4 text-white">
+                <CardBody className="flex flex-col items-center justify-between gap-5 overflow-visible p-0 lg:flex-row lg:gap-10">
                     <p className="text-left text-lg sm:text-xl">
                         {dictionary.Home.texts.agencyFor}
                     </p>
@@ -42,88 +42,42 @@ export function HomeSection() {
                         height={500}
                         quality={100}
                         alt="Doctor Image"
-                        className="mb-[-20px] object-cover lg:mb-[0px] lg:mr-[-35px] lg:h-[380px] lg:w-full"
-                        src="/woofer.webp"
+                        className="object-cover lg:mb-[0px] lg:mr-[-35px] lg:h-[380px] lg:w-full"
+                        src="/1-Home Banner azul.jpg"
                     />
                 </CardBody>
             </Card>
 
-            <div>
-                <div className="pb-4 pt-12">
-                    <p className="text-left text-lg text-primary">
-                        {dictionary.Home.texts.mission}
-                    </p>
-                </div>
-
-                <div className="py-4">
-                    <h2 className="mb-2 text-xl font-bold text-primary">
-                        {dictionary.Home.texts.goalsTitle}
-                    </h2>
-
-                    <p className="text-left text-lg text-primary">
-                        {dictionary.Home.texts.goalsText}
-                    </p>
-                </div>
-
-                <div className="py-4">
-                    <h2 className="mb-2 text-xl font-bold text-primary">
-                        {dictionary.Home.texts.servicesTo}
-                    </h2>
-                    <ul className="text-lg text-primary">
-                        {Array.isArray(dictionary.Home?.texts?.disabilities) &&
-                            dictionary.Home?.texts?.disabilities?.map(
-                                (disability) => (
-                                    <li key={disability}>{disability}</li>
-                                ),
-                            )}
-                    </ul>
-                </div>
-
+            <div className="mt-10 sm:mt-20">
                 <div className="my-10 grid grid-cols-1 gap-10 gap-y-10 lg:grid-cols-2">
                     <SmallCard
-                        img="/ourPeople.svg"
-                        alt="Draw of 3 co-workers"
+                        img="/2- Mission.JPG"
+                        alt="Draw of a gift "
                         type="filled"
+                        title={dictionary.Home.texts.missionTitle as string}
+                        text={dictionary.Home.texts.missionText as string}
+                    />
+
+                    <SmallCard
+                        img="/3-Goals.jpg"
+                        alt="Draw of people jumping"
+                        title={dictionary.Home.texts.goalsTitle as string}
+                        text={dictionary.Home.texts.goalsText as string}
+                    />
+
+                    <SmallCard
+                        img="/4-Our people.JPG"
+                        alt="Draw of 3 co-workers"
                         title={dictionary.Home.texts.ourPleopleTitle as string}
                         text={dictionary.Home.texts.ourPleopleText as string}
                     />
                     <SmallCard
-                        img="/ourProcess.svg"
+                        img="/5-Our promise.JPG"
                         alt="Draw of a whiteboard with bussiness cards"
-                        title={dictionary.Home.texts.ourProcessTitle as string}
-                        text={dictionary.Home.texts.ourProcessText as string}
-                    />
-
-                    <SmallCard
-                        img="/ourPromise.svg"
-                        alt="Draw of a gift "
+                        type="filled"
                         title={dictionary.Home.texts.ourPromiseTitle as string}
                         text={dictionary.Home.texts.ourPromiseText as string}
                     />
-
-                    <SmallCard
-                        img="/ourProduct.svg"
-                        alt="Draw of people jumping"
-                        type="filled"
-                        title={dictionary.Home.texts.ourProductTitle as string}
-                        text={dictionary.Home.texts.ourProductText as string}
-                    />
-                </div>
-
-                <div className="py-4">
-                    <p className="text-left text-xl text-primary">
-                        <strong>{dictionary.Home.texts.companyName}</strong>{" "}
-                        {dictionary.Home.texts.agencyFor2}
-                    </p>
-                </div>
-
-                <div className="py-4">
-                    <h2 className="mb-2 text-xl font-bold text-primary">
-                        {dictionary.Home.texts.support}
-                    </h2>
-                    <p className="text-left text-lg text-primary">
-                        {dictionary.Home.texts.serviceQuality}
-                    </p>
                 </div>
             </div>
         </div>

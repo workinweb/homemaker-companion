@@ -9,7 +9,10 @@ export function EmploymentSection() {
         <div id="Employment">
             <div>
                 <div className="mt-[20px] flex flex-col items-center justify-between gap-5 sm:mt-[0] sm:flex-row lg:mt-[-20px]">
-                    <div className="hidden sm:block" style={{ zIndex: 10 }}>
+                    <div
+                        className="max-w-[120px] sm:max-w-max"
+                        style={{ zIndex: 10 }}
+                    >
                         <Image
                             width={150}
                             height={150}
@@ -27,7 +30,7 @@ export function EmploymentSection() {
                     <div></div>
                 </div>
 
-                <Card className="mt-12 bg-primary px-10 py-10 text-white">
+                <Card className="mt-2 bg-primary p-10 text-white sm:mt-10">
                     <CardBody className="flex flex-col items-center justify-between overflow-visible p-0 py-4 lg:flex-row lg:gap-10">
                         <p className="text-left text-xl sm:text-2xl">
                             {dictionary.Employment.texts.agencyFor}
@@ -39,13 +42,13 @@ export function EmploymentSection() {
                             quality={100}
                             alt="Doctor Image"
                             className="mb-[-20px] object-cover lg:mb-[0px] lg:mr-[-35px] lg:h-[380px] lg:w-full"
-                            src="/woofer.webp"
+                            src="/13-Employment.PNG"
                         />
                     </CardBody>
                 </Card>
             </div>
 
-            <div className="mt-12 flex flex-grow flex-col justify-evenly py-4 lg:flex-row">
+            <div className="mt-12 flex flex-grow flex-col justify-evenly gap-5 py-4 sm:gap-0 lg:flex-row">
                 <List
                     title={
                         dictionary.Employment.texts.requirementsTitle as string

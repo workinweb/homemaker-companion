@@ -5,6 +5,11 @@
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+    webpack: (cfg) => {
+        cfg.resolve.alias.canvas = false;
+        return cfg;
+    },
+};
 
 export default config;
