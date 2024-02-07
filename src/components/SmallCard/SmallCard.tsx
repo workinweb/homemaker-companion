@@ -12,7 +12,7 @@ type SmallCardProps = {
 };
 
 export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
-    const innerWidth = window.innerWidth;
+    const innerWidth = window ? window.innerWidth : 0;
 
     return (
         <div

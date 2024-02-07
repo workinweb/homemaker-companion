@@ -43,7 +43,7 @@ export function ChooseUsSection() {
                         quality={100}
                         alt=""
                         className="object-cover sm:max-w-[700px] lg:mb-[0px] lg:h-[520px] lg:w-full"
-                        src="/9-Medicaid Waiver Services.jpg"
+                        src="/9-Medicaid Waiver Services.png"
                     />
 
                     <div className="py-4">

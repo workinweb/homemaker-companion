@@ -17,7 +17,7 @@ export function ServicesSection() {
 
             <div className="flex flex-col items-start justify-evenly gap-8 sm:flex-row sm:flex-wrap lg:flex-nowrap">
                 <AccordionCard
-                    img="/10-Personal Supports.jpg"
+                    img="/10-Personal Supports.png"
                     alt="Draw of a whiteboard with bussiness cards"
                     title={
                         dictionary.Services.texts.personalSupportTilte as string
@@ -36,7 +36,7 @@ export function ServicesSection() {
                 />
 
                 <AccordionCard
-                    img="/11-Life Skill D.png"
+                    img="/11-Life Skill.png"
                     alt="Draw of a whiteboard with bussiness cards"
                     title={dictionary.Services.texts.lifeSkillsTilte as string}
                     text={
@@ -55,7 +55,7 @@ export function ServicesSection() {
                 />
 
                 <AccordionCard
-                    img="/12-Respite Care.jpg"
+                    img="/12-Respite Care.png"
                     alt="Draw of a whiteboard with bussiness cards"
                     title={dictionary.Services.texts.under21Title as string}
                     text={dictionary.Services.texts.under21ShowText as string}
