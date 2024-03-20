@@ -50,7 +50,11 @@ export function CustomNavbar() {
             label: "Contact Us",
             href: "#ContactUs",
         },
-        { icon: <SiReacthookform />, label: "Employment", href: "/employment" },
+        {
+            icon: <SiReacthookform />,
+            label: "Employment",
+            href: "/apryser-pdf",
+        },
         { icon: <MdOutlineSchool />, label: "Training", href: "/training" },
     ];
 
@@ -130,11 +134,11 @@ export function CustomNavbar() {
                 <NavbarItem className="hidden sm:flex">
                     <Link
                         className={`hover:text-gray-400 ${
-                            pathName.includes("employment")
+                            pathName.includes("apryser-pdf")
                                 ? "text-primary"
                                 : ""
                         }`}
-                        href="/employment"
+                        href="/apryser-pdf"
                     >
                         Employment
                     </Link>

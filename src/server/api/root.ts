@@ -1,6 +1,6 @@
-import {postRouter} from "~/server/api/routers/post";
-import {createTRPCRouter} from "~/server/api/trpc";
-import {mailRouter} from "~/server/api/routers/emails";
+import { postRouter } from "~/server/api/routers/post";
+import { createTRPCRouter } from "~/server/api/trpc";
+import { mailRouter } from "~/server/api/routers/emails";
 
 /**
  * This is the primary router for your server.
@@ -9,7 +9,7 @@ import {mailRouter} from "~/server/api/routers/emails";
  */
 export const appRouter = createTRPCRouter({
     post: postRouter,
-    mail: mailRouter
+    mail: mailRouter,
 });
 
 // export type definition of API
