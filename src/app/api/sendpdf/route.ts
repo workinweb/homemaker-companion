@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { ContactUsEmailTemplate } from "~/components/EmailTemplates/ContactUsTemplate/ContactUsTemplate";
+import { EmploymentTemplate } from "~/components/EmailTemplates/ContactUsTemplate/EmploymentTemplate";
 
 // import nodemailer from "nodemailer";
 
@@ -54,12 +55,16 @@ export async function POST(req: NextRequest, res: NextResponse) {
         // @ts-expect-error
         const data = await resend.emails.send({
             from: "Evan Home Care <evanhomecare@resend.dev>",
-            to: ["kbueno1077@gmail.com"],
+            to: [
+                "kbueno1077@gmail.com",
+                "ezlomar62@gmail.com",
+                "vadiae@gmail.com",
+            ],
             subject: `New Empoyment PDF SENT`,
-            react: ContactUsEmailTemplate({
-                name: "This is the pdf sent by:",
-                email: "kbueno1077@gmail.com    ",
-                message: "N/A",
+            react: EmploymentTemplate({
+                name: "This is the pdf sent by: A TEST",
+                email: "Test@gmail.com    ",
+                message: "TEST, this is configurable",
                 phone: "+1 (786) 510-7807",
             }),
             attachments: [
