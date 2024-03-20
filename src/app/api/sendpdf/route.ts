@@ -16,6 +16,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         // const password = "loL1077.";
         // const myEmail = "kbueno1077@gmail.com";
 
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         const buffer = Buffer.from(base.split(",")[1], "base64");
 
         // const transporter = nodemailer.createTransport({
@@ -50,6 +51,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         //     ],
         // });
 
+        // @ts-expect-error
         const data = await resend.emails.send({
             from: "Evan Home Care <evanhomecare@resend.dev>",
             to: ["kbueno1077@gmail.com"],
