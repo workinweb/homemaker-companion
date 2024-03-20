@@ -10,6 +10,25 @@ const config = {
         cfg.resolve.alias.canvas = false;
         return cfg;
     },
+
+    eslint: {
+        dirs: [
+            "utils",
+            "pages",
+            "apps",
+            "components",
+            "modules",
+            "trcp",
+            "server",
+            "src/utils",
+            "src/pages",
+            "src/apps",
+            "src/components",
+            "src/modules",
+            "src/trcp",
+            "src/server",
+        ],
+    },
 };
 
 export default config;
