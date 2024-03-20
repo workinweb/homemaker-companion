@@ -7,7 +7,6 @@ import { EmploymentTemplate } from "~/components/EmailTemplates/ContactUsTemplat
 
 const resend = new Resend("re_bk97hei7_CEzFhTfxUCbUcMbBB1fRYEc1");
 
-export const limit = "20mb";
 export const maxDuration = 20;
 
 export async function POST(req: NextRequest, res: NextResponse) {
