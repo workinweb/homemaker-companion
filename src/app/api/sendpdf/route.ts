@@ -7,6 +7,14 @@ import { EmploymentTemplate } from "~/components/EmailTemplates/ContactUsTemplat
 
 const resend = new Resend("re_bk97hei7_CEzFhTfxUCbUcMbBB1fRYEc1");
 
+export const config = {
+    api: {
+        bodyParser: {
+            sizeLimit: "20mb", // Adjust this value as needed
+        },
+    },
+};
+
 export async function POST(req: NextRequest, res: NextResponse) {
     const body = await req.json();
 
