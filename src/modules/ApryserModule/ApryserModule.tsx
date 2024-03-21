@@ -54,7 +54,11 @@ export function ApryserModule() {
         // const url = URL.createObjectURL(blob);
         // window.open(url);
 
-        const response = await axios.post("/api/sendpdf", { base });
+        // const formData = new FormData();
+        // formData.append("base", blob);
+        // const response = await axios.post("/api/sendpdfForm", formData);
+
+        const response = await axios.post("/api/sendpdfApp", { base });
         console.log("🚀 ~ sendPDF ~ response:", response);
 
         setSending(false);

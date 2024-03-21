@@ -11,6 +11,10 @@ const config = {
         return cfg;
     },
 
+    serverActions: {
+        bodySizeLimit: "10mb", // Set your desired value here
+    },
+
     eslint: {
         dirs: [
             "utils",

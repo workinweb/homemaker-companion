@@ -11,6 +11,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     const body = await req.json();
 
     const { base } = body;
+    console.log("🚀 ~ POST ~ base:", base?.length);
 
     try {
         // const username = "kbueno1077@gmail.com";
@@ -57,14 +58,14 @@ export async function POST(req: NextRequest, res: NextResponse) {
             from: "Evan Home Care <evanhomecare@resend.dev>",
             to: [
                 "kbueno1077@gmail.com",
-                "ezlomar62@gmail.com",
-                "vadiae@gmail.com",
+                // "ezlomar62@gmail.com",
+                // "vadiae@gmail.com",
             ],
             subject: `New Empoyment PDF SENT`,
             react: EmploymentTemplate({
                 name: "This is the pdf sent by: A TEST",
-                email: "Test@gmail.com    ",
-                message: "TEST, this is configurable",
+                email: "Test@gmail.com",
+                message: "base",
                 phone: "+1 (786) 510-7807",
             }),
             attachments: [
