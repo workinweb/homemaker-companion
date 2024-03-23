@@ -13,6 +13,7 @@ import axios from "axios";
 
 export async function POST(request: Request): Promise<NextResponse> {
     const body = (await request.json()) as HandleUploadBody;
+    let resBlob = {};
 
     try {
         const jsonResponse = await handleUpload({
@@ -48,7 +49,6 @@ export async function POST(request: Request): Promise<NextResponse> {
             },
             //@ts-ignore
             onUploadCompleted: async ({ blob, tokenPayload }) => {
-                console.log("🚀 ~ onUploadCompleted: ~ blob:", blob);
                 // Get notified of client upload completion
                 // ⚠️ This will not work on `localhost` websites,
                 // Use ngrok or similar to get the full upload flow
@@ -69,11 +69,8 @@ export async function POST(request: Request): Promise<NextResponse> {
                     response.data,
                     "binary",
                 ).toString("base64");
-                console.log(
-                    "🚀 ~ onUploadCompleted: ~ base64String:",
-                    base64String,
-                );
-                console.log("blob upload completed", blob, tokenPayload);
+
+                resBlob = blob;
 
                 try {
                     // Run any logic after the file upload completed
@@ -108,7 +105,7 @@ export async function POST(request: Request): Promise<NextResponse> {
             },
         });
 
-        return NextResponse.json(jsonResponse);
+        return NextResponse.json({ jsonResponse, resBlob });
     } catch (error) {
         return NextResponse.json(
             { error: (error as Error).message },
