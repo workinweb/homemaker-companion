@@ -7,7 +7,7 @@ import WebViewer from "@pdftron/webviewer";
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import styles from "./apryser.module.css";
-import emailjs from "@emailjs/browser";
+import { upload } from "@vercel/blob/client";
 
 const api_Key =
     "demo:1710681536042:7f35457d0300000000af0fc23717fd3c3adcfabc1ffcbff08dbd9b9428";
@@ -56,23 +56,16 @@ export function ApryserModule() {
         // window.open(url);
 
         //FORM DATA
-        const formData = new FormData();
-        formData.append("chunk", base64String);
+        // const formData = new FormData();
         // const response = await axios.post("/api/sendpdfForm", formData);
 
         //BODY
         // const response = await axios.post("/api/sendpdfApp", { base });
 
-        try {
-            await axios.post("/api/hello", formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            });
-        } catch (error) {
-            console.error("Error uploading base64 chunk:", error);
-            return;
-        }
+        const newBlob = await upload("application.pdf", base64String, {
+            access: "public",
+            handleUploadUrl: "/api/sendPdfApp",
+        });
 
         //PAGES
         // const response = await axios.post("/api/hello", { base });
