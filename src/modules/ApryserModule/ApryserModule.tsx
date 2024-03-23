@@ -65,7 +65,7 @@ export function ApryserModule() {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         const newBlob = await upload("application.pdf", blob, {
             access: "public",
-            handleUploadUrl: "/api/sendPdfApp",
+            handleUploadUrl: "/api/sendpdfApp",
         });
 
         //PAGES

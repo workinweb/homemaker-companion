@@ -9,6 +9,7 @@ const resend = new Resend("re_bk97hei7_CEzFhTfxUCbUcMbBB1fRYEc1");
 import { handleUpload, type HandleUploadBody } from "@vercel/blob/client";
 import path from "path";
 import fs from "fs";
+import axios from "axios";
 
 export async function POST(request: Request): Promise<NextResponse> {
     const body = (await request.json()) as HandleUploadBody;
@@ -55,9 +56,19 @@ export async function POST(request: Request): Promise<NextResponse> {
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
 
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-                const filePath = path.join(process.cwd(), blob.url);
-                const file = await fs.promises.readFile(filePath);
-                const base64String = file.toString("base64");
+                // const filePath = path.join(process.cwd(), blob.url);
+                // const file = await fs.promises.readFile(filePath);
+                // const base64String = file.toString("base64");
+
+                const url = "https://example.com/path/to/your/file";
+                const response = await axios.get(url, {
+                    responseType: "arraybuffer",
+                });
+                const base64String = Buffer.from(
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+                    response.data,
+                    "binary",
+                ).toString("base64");
                 console.log(
                     "🚀 ~ onUploadCompleted: ~ base64String:",
                     base64String,
