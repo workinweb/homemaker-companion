@@ -11,8 +11,6 @@ const config = {
         return cfg;
     },
 
-    api: { bodyParser: { sizeLimit: "25mb" } },
-
     eslint: {
         dirs: [
             "utils",

@@ -50,27 +50,27 @@ export function ApryserModule() {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         const arr = new Uint8Array(dataPdf);
         const blob = new Blob([arr], { type: "application/pdf" });
-        const base64String = await blobToBase64(blob);
 
-        // const url = URL.createObjectURL(blob);
-        // window.open(url);
-
-        //FORM DATA
-        // const formData = new FormData();
-        // const response = await axios.post("/api/sendpdfForm", formData);
-
-        //BODY
-        // const response = await axios.post("/api/sendpdfApp", { base });
-
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        const newBlob = await upload("application.pdf", blob, {
-            access: "public",
-            handleUploadUrl: "/api/sendpdfApp",
+        const {
+            data: { signature, timestamp, error },
+        } = await axios.post("/api/cloudinary", {
+            folder: `mypdf`,
+            upload_preset: "ul1f0lm9",
+            filename_override: "name",
+            public_id: "name",
         });
 
-        //PAGES
-        // const response = await axios.post("/api/hello", { base });
-        // console.log("🚀 ~ sendPDF ~ response:", response);
+        const formData = new FormData();
+        formData.append("file", blob);
+        formData.append("upload_preset", "ul1f0lm9");
+        formData.append("folder", `${"mypdf"}`);
+        formData.append("public_id", "pdf");
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        formData.append("timestamp", timestamp);
+        // formData.append('signature', signature);
+        formData.append("api_key", "763641954252769");
+
+        const response = await axios.post("/api/sendpdfApp");
 
         setSending(false);
     };

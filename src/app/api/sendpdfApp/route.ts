@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
@@ -6,106 +7,41 @@ import { EmploymentTemplate } from "~/components/EmailTemplates/ContactUsTemplat
 
 const resend = new Resend("re_bk97hei7_CEzFhTfxUCbUcMbBB1fRYEc1");
 
-import { handleUpload, type HandleUploadBody } from "@vercel/blob/client";
-import path from "path";
-import fs from "fs";
 import axios from "axios";
 
 export async function POST(request: Request): Promise<NextResponse> {
-    const body = (await request.json()) as HandleUploadBody;
-    let resBlob = {};
+    const response = await axios.get(
+        "https://res.cloudinary.com/dub477vzt/image/upload/v1711212345/mypdf/pdf.pdf",
+        { responseType: "arraybuffer" },
+    );
+    const base64String = Buffer.from(response.data, "binary").toString(
+        "base64",
+    );
 
     try {
-        const jsonResponse = await handleUpload({
-            body,
-            request,
-            onBeforeGenerateToken: async (
-                pathname: string,
-                /* clientPayload?: string, */
-            ) => {
-                // Generate a client token for the browser to upload the file
-
-                // ⚠️ Authenticate users before generating the token.
-                // Otherwise, you're allowing anonymous uploads.
-                // const { user } = await auth(request);
-                // const userCanUpload = canUpload(user, pathname);
-                // if (!userCanUpload) {
-                //     throw new Error("Not authorized");
-                // }
-
-                return {
-                    allowedContentTypes: [
-                        "string",
-                        "application/pdf",
-                        "image/jpeg",
-                        "image/png",
-                        "image/gif",
-                    ],
-                    // tokenPayload: JSON.stringify({
-                    //     // optional, sent to your server on upload completion
-                    //     userId: user.id,
-                    // }),
-                };
-            },
-            //@ts-ignore
-            onUploadCompleted: async ({ blob, tokenPayload }) => {
-                // Get notified of client upload completion
-                // ⚠️ This will not work on `localhost` websites,
-                // Use ngrok or similar to get the full upload flow
-
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-                // const filePath = path.join(process.cwd(), blob.url);
-                // const file = await fs.promises.readFile(filePath);
-                // const base64String = file.toString("base64");
-
-                const url = "https://example.com/path/to/your/file";
-                const response = await axios.get(url, {
-                    responseType: "arraybuffer",
-                });
-                const base64String = Buffer.from(
-                    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-                    response.data,
-                    "binary",
-                ).toString("base64");
-
-                resBlob = blob;
-
-                try {
-                    // Run any logic after the file upload completed
-                    // const { userId } = JSON.parse(tokenPayload);
-                    // await db.update({ avatar: blob.url, userId });
-
-                    // @ts-expect-error
-                    const data = await resend.emails.send({
-                        from: "Evan Home Care <evanhomecare@resend.dev>",
-                        to: [
-                            "kbueno1077@gmail.com",
-                            // "ezlomar62@gmail.com",
-                            // "vadiae@gmail.com",
-                        ],
-                        subject: `New Empoyment PDF SENT`,
-                        react: EmploymentTemplate({
-                            name: "This is the pdf sent by: A TEST",
-                            email: "Test@gmail.com",
-                            message: "base",
-                            phone: "+1 (786) 510-7807",
-                        }),
-                        attachments: [
-                            {
-                                filename: "empoymentPDF.pdf",
-                                content: base64String,
-                            },
-                        ],
-                    });
-                } catch (error) {
-                    throw new Error("Could not update user");
-                }
-            },
+        // @ts-expect-error
+        const data = await resend.emails.send({
+            from: "Evan Home Care <evanhomecare@resend.dev>",
+            to: [
+                "kbueno1077@gmail.com",
+                // "ezlomar62@gmail.com",
+                // "vadiae@gmail.com",
+            ],
+            subject: `New Empoyment PDF SENT`,
+            react: EmploymentTemplate({
+                name: "This is the pdf sent by: A TEST",
+                email: "Test@gmail.com",
+                message: "base",
+                phone: "+1 (786) 510-7807",
+            }),
+            attachments: [
+                {
+                    filename: "empoymentPDF.pdf",
+                    content: base64String,
+                },
+            ],
         });
-
-        return NextResponse.json({ jsonResponse, resBlob });
+        return NextResponse.json({ data });
     } catch (error) {
         return NextResponse.json(
             { error: (error as Error).message },
