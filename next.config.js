@@ -11,9 +11,7 @@ const config = {
         return cfg;
     },
 
-    serverActions: {
-        bodySizeLimit: "10mb", // Set your desired value here
-    },
+    api: { bodyParser: { sizeLimit: "25mb" } },
 
     eslint: {
         dirs: [

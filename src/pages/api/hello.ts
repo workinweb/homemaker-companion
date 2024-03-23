@@ -7,14 +7,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 const resend = new Resend("re_bk97hei7_CEzFhTfxUCbUcMbBB1fRYEc1");
 
-export const config = {
-    api: {
-        bodyParser: {
-            sizeLimit: "10mb",
-        },
-    },
-};
-
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse,
@@ -67,3 +59,11 @@ export default async function handler(
         res.status(405).end(`Method ${req.method} Not Allowed`);
     }
 }
+
+export const config = {
+    api: {
+        bodyParser: {
+            sizeLimit: "25mb",
+        },
+    },
+};
