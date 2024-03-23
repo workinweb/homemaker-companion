@@ -28,8 +28,6 @@ export function ApryserModule() {
         });
     };
 
-    const sendChunks = async (chunks) => {};
-
     const sendPDF = async () => {
         setSending(true);
         console.log(instanceRef.current);
