@@ -45,12 +45,12 @@ export function ApryserModule() {
         const year = date.getFullYear();
         const dateString = month + "-" + day + "-" + year;
 
-        const creationName = `${name}/${dateString}/_id:${uuid}`;
+        const creationName = `${name}-id:${uuid}`;
 
         const {
             data: { signature, timestamp, error },
         } = await axios.post("/api/cloudinary", {
-            folder: process.env.CLOUDINARY_PDF_FOLDER,
+            folder: `${process.env.CLOUDINARY_PDF_FOLDER}/${dateString}`,
             upload_preset: process.env.CLOUDINARY_UPLOAD_PRESET,
             filename_override: creationName,
             public_id: creationName,
@@ -62,7 +62,10 @@ export function ApryserModule() {
             "upload_preset",
             `${process.env.CLOUDINARY_UPLOAD_PRESET}`,
         );
-        formData.append("folder", `${process.env.CLOUDINARY_PDF_FOLDER}`);
+        formData.append(
+            "folder",
+            `${process.env.CLOUDINARY_PDF_FOLDER}/${dateString}`,
+        );
         formData.append("public_id", creationName);
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         formData.append("timestamp", timestamp);

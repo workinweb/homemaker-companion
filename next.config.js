@@ -20,7 +20,7 @@ const config = {
         CLOUDINARY_UPLOAD_PRESET: "ul1f0lm9",
         PDF_WEB_VIEWER:
             "demo:1710681536042:7f35457d0300000000af0fc23717fd3c3adcfabc1ffcbff08dbd9b9428",
-        RESEND_API_KEY: "re_TcxKP3LR_4pJjfYDeTyaiT5PWcrFmNdMR",
+        RESEND_API_KEY: "re_bk97hei7_CEzFhTfxUCbUcMbBB1fRYEc1",
         GOOGLE_CLOUD_API_KEY: "AIzaSyDwFMHUzK4CWPQh-WRwH4oSRa7Xa9MEPPk",
     },
 
