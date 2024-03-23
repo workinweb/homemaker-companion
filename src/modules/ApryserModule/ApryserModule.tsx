@@ -7,6 +7,7 @@ import WebViewer from "@pdftron/webviewer";
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import styles from "./apryser.module.css";
+import emailjs from "@emailjs/browser";
 
 const api_Key =
     "demo:1710681536042:7f35457d0300000000af0fc23717fd3c3adcfabc1ffcbff08dbd9b9428";
@@ -26,6 +27,8 @@ export function ApryserModule() {
             };
         });
     };
+
+    const sendChunks = async (chunks) => {};
 
     const sendPDF = async () => {
         setSending(true);
@@ -49,22 +52,33 @@ export function ApryserModule() {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         const arr = new Uint8Array(dataPdf);
         const blob = new Blob([arr], { type: "application/pdf" });
-        const base = await blobToBase64(blob);
+        const base64String = await blobToBase64(blob);
 
         // const url = URL.createObjectURL(blob);
         // window.open(url);
 
         //FORM DATA
-        // const formData = new FormData();
-        // formData.append("base", blob);
+        const formData = new FormData();
+        formData.append("chunk", base64String);
         // const response = await axios.post("/api/sendpdfForm", formData);
 
         //BODY
         // const response = await axios.post("/api/sendpdfApp", { base });
 
+        try {
+            await axios.post("/api/hello", formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
+        } catch (error) {
+            console.error("Error uploading base64 chunk:", error);
+            return;
+        }
+
         //PAGES
-        const response = await axios.post("/api/hello", { base });
-        console.log("🚀 ~ sendPDF ~ response:", response);
+        // const response = await axios.post("/api/hello", { base });
+        // console.log("🚀 ~ sendPDF ~ response:", response);
 
         setSending(false);
     };

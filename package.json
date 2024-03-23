@@ -11,6 +11,7 @@
         "export": "next export"
     },
     "dependencies": {
+        "@emailjs/browser": "^4.3.3",
         "@nextui-org/react": "^2.2.9",
         "@pdftron/webviewer": "^10.7.3",
         "@react-google-maps/api": "^2.19.2",
@@ -22,6 +23,7 @@
         "@trpc/server": "^10.43.6",
         "axios": "^1.6.8",
         "clsx": "^2.1.0",
+        "formidable": "^3.5.1",
         "framer-motion": "^10.16.14",
         "jspdf": "^2.5.1",
         "next": "^14.0.3",
