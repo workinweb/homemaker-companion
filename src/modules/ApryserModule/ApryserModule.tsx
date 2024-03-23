@@ -63,7 +63,7 @@ export function ApryserModule() {
         // const response = await axios.post("/api/sendpdfApp", { base });
 
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        const newBlob = await upload("application.pdf", base64String, {
+        const newBlob = await upload("application.pdf", blob, {
             access: "public",
             handleUploadUrl: "/api/sendPdfApp",
         });

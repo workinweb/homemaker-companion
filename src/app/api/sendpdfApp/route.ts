@@ -7,6 +7,8 @@ import { EmploymentTemplate } from "~/components/EmailTemplates/ContactUsTemplat
 const resend = new Resend("re_bk97hei7_CEzFhTfxUCbUcMbBB1fRYEc1");
 
 import { handleUpload, type HandleUploadBody } from "@vercel/blob/client";
+import path from "path";
+import fs from "fs";
 
 export async function POST(request: Request): Promise<NextResponse> {
     const body = (await request.json()) as HandleUploadBody;
@@ -51,7 +53,15 @@ export async function POST(request: Request): Promise<NextResponse> {
                 // Use ngrok or similar to get the full upload flow
 
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-                const buffer = Buffer.from(blob.split(",")[1], "base64");
+
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+                const filePath = path.join(process.cwd(), blob.url);
+                const file = await fs.promises.readFile(filePath);
+                const base64String = file.toString("base64");
+                console.log(
+                    "🚀 ~ onUploadCompleted: ~ base64String:",
+                    base64String,
+                );
                 console.log("blob upload completed", blob, tokenPayload);
 
                 try {
@@ -77,7 +87,7 @@ export async function POST(request: Request): Promise<NextResponse> {
                         attachments: [
                             {
                                 filename: "empoymentPDF.pdf",
-                                content: buffer,
+                                content: base64String,
                             },
                         ],
                     });
