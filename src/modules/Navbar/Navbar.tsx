@@ -134,7 +134,6 @@ export function CustomNavbar() {
                 <NavbarItem className="hidden sm:flex">
                     <Link
                         className={`hover:text-gray-400 ${
-                            //@ts-expect-error
                             pathName.includes("apryser-pdf")
                                 ? "text-primary"
                                 : ""
@@ -148,7 +147,6 @@ export function CustomNavbar() {
                 <NavbarItem className="hidden sm:flex">
                     <Link
                         className={`hover:text-gray-400  ${
-                            //@ts-expect-error
                             pathName.includes("Training") ? "text-primary" : ""
                         }`}
                         href="/training"
