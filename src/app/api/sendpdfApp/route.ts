@@ -1,19 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { NextRequest, NextResponse } from "next/server";
+
+import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { ContactUsEmailTemplate } from "~/components/EmailTemplates/ContactUsTemplate/ContactUsTemplate";
 import { EmploymentTemplate } from "~/components/EmailTemplates/ContactUsTemplate/EmploymentTemplate";
 
-const resend = new Resend("re_bk97hei7_CEzFhTfxUCbUcMbBB1fRYEc1");
-
+const resend = new Resend(process.env.RESEND_API_KEY);
 import axios from "axios";
 
-export async function POST(request: Request): Promise<NextResponse> {
-    const response = await axios.get(
-        "https://res.cloudinary.com/dub477vzt/image/upload/v1711212345/mypdf/pdf.pdf",
-        { responseType: "arraybuffer" },
-    );
+export async function POST(req: Request): Promise<NextResponse> {
+    const body = await req.json();
+    const { url, name, subject, email, message, phone } = body;
+
+    const response = await axios.get(url, { responseType: "arraybuffer" });
     const base64String = Buffer.from(response.data, "binary").toString(
         "base64",
     );
@@ -24,15 +23,15 @@ export async function POST(request: Request): Promise<NextResponse> {
             from: "Evan Home Care <evanhomecare@resend.dev>",
             to: [
                 "kbueno1077@gmail.com",
-                // "ezlomar62@gmail.com",
-                // "vadiae@gmail.com",
+                "ezlomar62@gmail.com",
+                "vadiae@gmail.com",
             ],
-            subject: `New Empoyment PDF SENT`,
+            subject: `New Empoyment Petition`,
             react: EmploymentTemplate({
-                name: "This is the pdf sent by: A TEST",
+                name: `This is the pdf sent by: ${name}`,
                 email: "Test@gmail.com",
-                message: "base",
-                phone: "+1 (786) 510-7807",
+                message: "",
+                phone: "",
             }),
             attachments: [
                 {
@@ -45,7 +44,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     } catch (error) {
         return NextResponse.json(
             { error: (error as Error).message },
-            { status: 400 }, // The webhook will retry 5 times waiting for a 200
+            { status: 400 },
         );
     }
 }
