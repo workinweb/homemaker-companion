@@ -18,7 +18,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
                 // upload_preset: upload_preset,
             },
 
-            "763641954252769",
+            process.env.CLOUDINARY_API_SECRET || "",
         );
 
         return Response.json({ signature, timestamp });
