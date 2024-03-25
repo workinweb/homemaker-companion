@@ -25,6 +25,7 @@ export async function POST(req: Request): Promise<NextResponse> {
                 "kbueno1077@gmail.com",
                 "ezlomar62@gmail.com",
                 "vadiae@gmail.com",
+                email,
             ],
             subject: `New Empoyment Petition`,
             react: EmploymentTemplate({

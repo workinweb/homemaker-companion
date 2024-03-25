@@ -10,10 +10,34 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import styles from "./apryse.module.css";
 import { v4 as uuidv4 } from "uuid";
+import { z } from "zod";
+
+const schema = z.object({
+    name: z.string().min(1),
+    email: z.string().min(1).email("Must be and email"),
+});
 
 export function ApryseModule() {
     const [sending, setSending] = useState<boolean>(false);
-    const [name, setName] = React.useState("");
+
+    const [values, setValues] = React.useState<RegisterValues>({
+        name: "",
+        email: "",
+    });
+
+    const [errors, setErrors] = React.useState<RegisterErrors>({
+        name: "",
+        email: "",
+    });
+
+    const handleRegisterChange = (
+        e: React.ChangeEvent<HTMLInputElement>,
+        optionalName?: string,
+    ) => {
+        if (optionalName) {
+            setValues({ ...values, [optionalName]: e.target.value });
+        } else setValues({ ...values, [e.target.name]: e.target.value });
+    };
 
     const viewer = useRef();
     const instanceRef = useRef();
@@ -22,60 +46,66 @@ export function ApryseModule() {
     const sendPDF = async () => {
         setSending(true);
 
-        const documentViewer = instanceRef.current.Core.getDocumentViewers()[0];
-        const { annotationManager } = instanceRef.current.Core;
-        const doc = documentViewer.getDocument();
-        const xfdfString = await annotationManager.exportAnnotations();
-        const dataPdf = await doc.getFileData({
-            // saves the document with annotations in it
-            xfdfString,
-        });
+        const result = schema.safeParse(values);
 
-        const arr = new Uint8Array(dataPdf);
-        const blob = new Blob([arr], { type: "application/pdf" });
-        const uuid = uuidv4();
+        if (result.success) {
+            const documentViewer =
+                instanceRef.current.Core.getDocumentViewers()[0];
+            const { annotationManager } = instanceRef.current.Core;
+            const doc = documentViewer.getDocument();
+            const xfdfString = await annotationManager.exportAnnotations();
+            const dataPdf = await doc.getFileData({
+                // saves the document with annotations in it
+                xfdfString,
+            });
 
-        const date = new Date();
-        const day = String(date.getDate()).padStart(2, "0");
-        const month = String(date.getMonth() + 1).padStart(2, "0"); // January is 0!
-        const year = date.getFullYear();
-        const dateString = month + "-" + day + "-" + year;
+            const arr = new Uint8Array(dataPdf);
+            const blob = new Blob([arr], { type: "application/pdf" });
+            const uuid = uuidv4();
 
-        const creationName = `${name}-id:${uuid}`;
+            const date = new Date();
+            const day = String(date.getDate()).padStart(2, "0");
+            const month = String(date.getMonth() + 1).padStart(2, "0"); // January is 0!
+            const year = date.getFullYear();
+            const dateString = month + "-" + day + "-" + year;
 
-        const {
-            data: { signature, timestamp, error },
-        } = await axios.post("/api/cloudinary", {
-            folder: `${process.env.CLOUDINARY_PDF_FOLDER}/${dateString}`,
-            upload_preset: process.env.CLOUDINARY_UPLOAD_PRESET,
-            filename_override: creationName,
-            public_id: creationName,
-        });
+            const creationName = `${values.name}-id:${uuid}`;
 
-        const formData = new FormData();
-        formData.append("file", blob);
-        formData.append(
-            "upload_preset",
-            `${process.env.CLOUDINARY_UPLOAD_PRESET}`,
-        );
-        formData.append(
-            "folder",
-            `${process.env.CLOUDINARY_PDF_FOLDER}/${dateString}`,
-        );
-        formData.append("public_id", creationName);
-        formData.append("timestamp", timestamp);
-        formData.append("api_key", process.env.CLOUDINARY_API_KEY);
+            const {
+                data: { signature, timestamp, error },
+            } = await axios.post("/api/cloudinary", {
+                folder: `${process.env.CLOUDINARY_PDF_FOLDER}/${dateString}`,
+                upload_preset: process.env.CLOUDINARY_UPLOAD_PRESET,
+                filename_override: creationName,
+                public_id: creationName,
+            });
 
-        const uploadPdf = await axios.post(
-            `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUDNAME}/upload`,
-            formData,
-        );
+            const formData = new FormData();
+            formData.append("file", blob);
+            formData.append(
+                "upload_preset",
+                `${process.env.CLOUDINARY_UPLOAD_PRESET}`,
+            );
+            formData.append(
+                "folder",
+                `${process.env.CLOUDINARY_PDF_FOLDER}/${dateString}`,
+            );
+            formData.append("public_id", creationName);
+            formData.append("timestamp", timestamp);
+            formData.append("api_key", process.env.CLOUDINARY_API_KEY);
 
-        const response = await axios.post("/api/sendpdfApp", {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            url: uploadPdf.data.secure_url,
-            name: name,
-        });
+            const uploadPdf = await axios.post(
+                `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUDNAME}/upload`,
+                formData,
+            );
+
+            const response = await axios.post("/api/sendpdfApp", {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                url: uploadPdf.data.secure_url,
+                name: values.name,
+                email: values.email,
+            });
+        }
         setSending(false);
     };
 
@@ -123,12 +153,29 @@ export function ApryseModule() {
                     <li></li>
                 </ul>
 
-                <div className="py-5">
+                <div className="flex flex-col gap-5 py-5">
                     <Input
-                        label="Name"
-                        placeholder="Enter your name"
-                        value={name}
-                        onValueChange={setName}
+                        name="Email"
+                        value={values.name}
+                        color={errors.name ? "danger" : "default"}
+                        errorMessage={
+                            errors.name && "Please enter a valid name"
+                        }
+                        onChange={handleRegisterChange}
+                        isRequired
+                        label={"Name"}
+                    />
+                    <Input
+                        name="Email"
+                        value={values.email}
+                        color={errors.email ? "danger" : "default"}
+                        errorMessage={
+                            errors.email && "Please enter a valid email"
+                        }
+                        onChange={handleRegisterChange}
+                        isRequired
+                        label={"Email"}
+                        type="email"
                     />
                 </div>
 
