@@ -15,6 +15,7 @@ const config = {
         // Feel free to reconfigure them to your own preference.
 
         "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/ban-ts-comment": "off",
         "eslint-disable-next-line @typescript-eslint/no-unsafe-assignment":

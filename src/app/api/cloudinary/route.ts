@@ -1,14 +1,13 @@
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
     const body = await req.json();
 
     const { folder, public_id } = body;
     const timestamp = Math.round(new Date().getTime() / 1000);
 
     try {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         const signature = cloudinary.utils.api_sign_request(
             {
                 // filename_override: filename_override,

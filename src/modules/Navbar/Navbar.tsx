@@ -53,7 +53,7 @@ export function CustomNavbar() {
         {
             icon: <SiReacthookform />,
             label: "Employment",
-            href: "/apryser-pdf",
+            href: "/employment",
         },
         { icon: <MdOutlineSchool />, label: "Training", href: "/training" },
     ];
@@ -138,7 +138,7 @@ export function CustomNavbar() {
                                 ? "text-primary"
                                 : ""
                         }`}
-                        href="/apryser-pdf"
+                        href="/employment"
                     >
                         Employment
                     </Link>

@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 // @ts-nocheck
 
 "use client";
@@ -7,10 +8,10 @@ import { Button, Input } from "@nextui-org/react";
 import WebViewer from "@pdftron/webviewer";
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import styles from "./apryser.module.css";
+import styles from "./apryse.module.css";
 import { v4 as uuidv4 } from "uuid";
 
-export function ApryserModule() {
+export function ApryseModule() {
     const [sending, setSending] = useState<boolean>(false);
     const [name, setName] = React.useState("");
 
@@ -21,20 +22,15 @@ export function ApryserModule() {
     const sendPDF = async () => {
         setSending(true);
 
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         const documentViewer = instanceRef.current.Core.getDocumentViewers()[0];
         const { annotationManager } = instanceRef.current.Core;
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         const doc = documentViewer.getDocument();
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         const xfdfString = await annotationManager.exportAnnotations();
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         const dataPdf = await doc.getFileData({
             // saves the document with annotations in it
             xfdfString,
         });
 
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         const arr = new Uint8Array(dataPdf);
         const blob = new Blob([arr], { type: "application/pdf" });
         const uuid = uuidv4();
@@ -67,9 +63,7 @@ export function ApryserModule() {
             `${process.env.CLOUDINARY_PDF_FOLDER}/${dateString}`,
         );
         formData.append("public_id", creationName);
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         formData.append("timestamp", timestamp);
-        // formData.append('signature', signature);
         formData.append("api_key", process.env.CLOUDINARY_API_KEY);
 
         const uploadPdf = await axios.post(
@@ -86,6 +80,8 @@ export function ApryserModule() {
     };
 
     useEffect(() => {
+        console.log("WEB");
+
         WebViewer(
             {
                 path: "/webviewer/lib",
@@ -93,15 +89,15 @@ export function ApryserModule() {
                 initialDoc: filePath,
                 enableOfficeEditing: false,
                 disabledElements: [
-                    "toolbarGroup-Select",
-                    "toolbarGroup-Insert",
-                    "toolbarGroup-Edit",
-                    "toolbarGroup-View",
-                    "toolbarGroup-Shapes",
-                    "toolbarGroup-Forms",
-                    "toolbarGroup-Annotate",
-                    "toolbarGroup-FillAndSign",
-                    "toolbarGroup-Comments",
+                    // "toolbarGroup-Select",
+                    // "toolbarGroup-Insert",
+                    // "toolbarGroup-Edit",
+                    // "toolbarGroup-View",
+                    // "toolbarGroup-Shapes",
+                    // "toolbarGroup-Forms",
+                    // "toolbarGroup-Annotate",
+                    // "toolbarGroup-FillAndSign",
+                    // "toolbarGroup-Comments",
                 ],
             },
             viewer.current,
@@ -120,6 +116,13 @@ export function ApryserModule() {
     return (
         <div className="PdfViewer">
             <div className="px-10">
+                <h1>Indications:</h1>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
                 <div className="py-5">
                     <Input
                         label="Name"

@@ -9,10 +9,9 @@ import { enqueueSnackbar } from "notistack";
 
 export function EmploymentForm() {
     const signatureRef = React.useRef<SignaturePad>(null);
-    const [date, setDate] = React.useState<Date | undefined>(new Date());
+    // const [date, setDate] = React.useState<Date | undefined>(new Date());
 
     const clearSignature = () => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         if (signatureRef?.current) signatureRef?.current.clear();
     };
 

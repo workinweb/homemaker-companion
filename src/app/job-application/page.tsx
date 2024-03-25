@@ -1,10 +1,10 @@
 import React from "react";
-import { ApryserModule } from "~/modules/ApryserModule/ApryserModule";
+import { ApryseModule } from "~/modules/ApryseModule/ApryseModule";
 
 export default async function EmploymentPdf() {
     return (
         <main>
-            <ApryserModule />
+            <ApryseModule />
         </main>
     );
 }
