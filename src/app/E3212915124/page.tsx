@@ -1,10 +1,10 @@
 import React from "react";
-import { ApryseModule } from "~/modules/ApryseModule/ApryseModule";
+import { ApryseWithLock } from "~/modules/ApryseModule/ApryseWithLock";
 
 export default async function EmploymentPdf() {
     return (
         <main>
-            <ApryseModule />
+            <ApryseWithLock />
         </main>
     );
 }

@@ -11,6 +11,8 @@ import axios from "axios";
 import styles from "./apryse.module.css";
 import { v4 as uuidv4 } from "uuid";
 import { z } from "zod";
+import Spinner from "~/components/Spinner/Spinner";
+import { enqueueSnackbar } from "notistack";
 
 const schema = z.object({
     name: z.string().min(1),
@@ -20,17 +22,17 @@ const schema = z.object({
 export function ApryseModule() {
     const [sending, setSending] = useState<boolean>(false);
 
-    const [values, setValues] = React.useState<RegisterValues>({
+    const [values, setValues] = React.useState({
         name: "",
         email: "",
     });
 
-    const [errors, setErrors] = React.useState<RegisterErrors>({
+    const [errors, setErrors] = React.useState({
         name: "",
         email: "",
     });
 
-    const handleRegisterChange = (
+    const handleValueChange = (
         e: React.ChangeEvent<HTMLInputElement>,
         optionalName?: string,
     ) => {
@@ -105,13 +107,27 @@ export function ApryseModule() {
                 name: values.name,
                 email: values.email,
             });
+            console.log("🚀 ~ sendPDF ~ response:", response);
+
+            if (response.data.EvanEmailResponse.data) {
+                enqueueSnackbar("Pdf was sent correctly to EvanHomeCare", {
+                    variant: "success",
+                });
+            }
+            if (response.data.EvanEmailResponse.error) {
+                console.error(response.data.EvanEmailResponse.error);
+                enqueueSnackbar(
+                    "An error ocurred sending the data to EvanHomeCare, try again later",
+                    { variant: "error" },
+                );
+            }
+        } else {
+            setErrors(result.error.formErrors.fieldErrors);
         }
         setSending(false);
     };
 
     useEffect(() => {
-        console.log("WEB");
-
         WebViewer(
             {
                 path: "/webviewer/lib",
@@ -145,7 +161,7 @@ export function ApryseModule() {
 
     return (
         <div className="PdfViewer">
-            <div className="px-10">
+            <div className="px-4 pb-5 sm:px-5 md:px-10 ">
                 <h1>Indications:</h1>
                 <ul>
                     <li></li>
@@ -155,40 +171,46 @@ export function ApryseModule() {
 
                 <div className="flex flex-col gap-5 py-5">
                     <Input
-                        name="Email"
+                        name="name"
                         value={values.name}
                         color={errors.name ? "danger" : "default"}
                         errorMessage={
                             errors.name && "Please enter a valid name"
                         }
-                        onChange={handleRegisterChange}
+                        onChange={handleValueChange}
                         isRequired
                         label={"Name"}
                     />
                     <Input
-                        name="Email"
+                        name="email"
                         value={values.email}
                         color={errors.email ? "danger" : "default"}
                         errorMessage={
                             errors.email && "Please enter a valid email"
                         }
-                        onChange={handleRegisterChange}
+                        onChange={handleValueChange}
                         isRequired
                         label={"Email"}
                         type="email"
                     />
-                </div>
 
-                <div className="absolute bottom-5 right-5 py-5">
                     <Button
-                        variant="shadow"
+                        variant="faded"
                         color="primary"
                         onClick={sendPDF}
                         disabled={sending}
                     >
-                        {sending ? "Sending..." : "Send Pdf in Email"}
+                        {sending ? (
+                            <>
+                                <Spinner />
+                                <p className="ml-2">{"Sending..."}</p>
+                            </>
+                        ) : (
+                            "Send pdf via email"
+                        )}
                     </Button>
                 </div>
+
                 <div
                     // className="webviewer"
                     className={styles.pdfViewerWrapper}

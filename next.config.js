@@ -16,6 +16,7 @@ const config = {
         CLOUDINARY_CLOUDNAME: "dub477vzt",
         CLOUDINARY_API_KEY: "763641954252769",
         CLOUDINARY_API_SECRET: "Qs2_7_dklt-9I8yskgkoSqELxhA",
+        JOB_APPLICATION_PASSWORD: "3vanH0meC4re.2024",
         CLOUDINARY_PDF_FOLDER: "mypdf",
         CLOUDINARY_UPLOAD_PRESET: "ul1f0lm9",
         PDF_WEB_VIEWER:
