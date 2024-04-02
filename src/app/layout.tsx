@@ -5,6 +5,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 import { CustomNavbar } from "~/modules/Navbar/Navbar";
 import { Providers } from "./providers";
 import localFont from "next/font/local";
+import { type Metadata } from "next";
 import "./globals.css";
 import "./fonts.css";
 
@@ -18,10 +19,21 @@ const myFont = localFont({
     variable: "--font-brush",
 });
 
-export const metadata = {
-    title: "Evan Home Care",
+export const metadata: Metadata = {
+    icons: { icon: "../favicon.ico" },
+    keywords: [
+        "Evan Home Care",
+        "Care Giver",
+        "Home Care",
+        "Home Services",
+        "Medicaid Services",
+    ],
+    title: {
+        default: "Evan Home Care",
+        template: "%s - Evan Home Care",
+    },
+    twitter: { card: "summary_large_image" },
     description: "Evan Home Care",
-    icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export default function RootLayout({
