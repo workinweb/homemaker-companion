@@ -21,6 +21,7 @@ export function SideButtons() {
                         "https://www.linkedin.com/company/evan-home-care/",
                     );
                 }}
+                aria-label="linkedin button"
                 isIconOnly={true}
                 variant="light"
             >
@@ -33,6 +34,7 @@ export function SideButtons() {
                         "https://www.facebook.com/EvanHomecare?checkpoint_src=any",
                     );
                 }}
+                aria-label="facebook button"
                 isIconOnly={true}
                 variant="light"
             >
@@ -43,6 +45,7 @@ export function SideButtons() {
                 onPress={() => {
                     clickLink("https://www.instagram.com/evan_homecare/");
                 }}
+                aria-label="instagram button"
                 isIconOnly={true}
                 variant="light"
             >

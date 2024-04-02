@@ -154,6 +154,7 @@ export function SearchInput() {
                     size="md"
                     variant="flat"
                     color="primary"
+                    aria-label="Search button"
                     isIconOnly
                     className="rounded-none rounded-br-md rounded-tr-md"
                 >

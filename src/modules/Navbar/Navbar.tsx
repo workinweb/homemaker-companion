@@ -94,9 +94,13 @@ export function CustomNavbar() {
 
                 <Dropdown>
                     <DropdownTrigger className="hidden sm:flex">
-                        <button className={`transition hover:text-gray-400`}>
-                            Services
-                        </button>
+                        <li>
+                            <button
+                                className={`transition hover:text-gray-400`}
+                            >
+                                Services
+                            </button>
+                        </li>
                     </DropdownTrigger>
                     <DropdownMenu aria-label="Static Actions">
                         <DropdownItem key="services">

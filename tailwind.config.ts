@@ -13,7 +13,7 @@ export default {
             colors: {
                 transparent: "transparent",
                 current: "currentColor",
-                primary: "#2B7FA8",
+                primary: "#2A809C",
                 secondary: "#547DA7",
             },
             fontFamily: {
