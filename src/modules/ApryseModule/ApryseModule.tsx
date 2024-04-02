@@ -180,6 +180,8 @@ export function ApryseModule() {
                         onChange={handleValueChange}
                         isRequired
                         label={"Name"}
+                        aria-label="Name"
+                        classNames={{ label: "text-color-black" }}
                     />
                     <Input
                         name="email"
@@ -192,6 +194,8 @@ export function ApryseModule() {
                         isRequired
                         label={"Email"}
                         type="email"
+                        aria-label="Email"
+                        classNames={{ label: "text-color-black" }}
                     />
 
                     <Button
@@ -199,6 +203,7 @@ export function ApryseModule() {
                         color="primary"
                         onClick={sendPDF}
                         disabled={sending}
+                        aria-label="Send Pdf via Email to Evan Home Care"
                     >
                         {sending ? (
                             <>

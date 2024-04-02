@@ -39,7 +39,7 @@ export function EmploymentForm() {
                 </div>
 
                 <div className="w-[200px] cursor-pointer">
-                    <Input type="date" />
+                    <Input aria-label="Submit Employment Date" type="date" />
                 </div>
             </div>
 

@@ -22,11 +22,11 @@ export function HomeSection() {
                     />
                 </div>
 
-                <span className={styles.slogan}>
+                <h1 className={styles.slogan}>
                     {
                         "“Making a difference in people’s lives, where quality of life counts”."
                     }
-                </span>
+                </h1>
 
                 <SearchInput />
             </div>

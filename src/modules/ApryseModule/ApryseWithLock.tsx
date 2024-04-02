@@ -46,31 +46,41 @@ export function ApryseWithLock() {
         }
     };
 
-    if (isLocked) {
+    if (!isLocked) {
         return (
             <div className="md:p10 h-100 flex h-screen flex-col items-center justify-center gap-5 bg-primary p-2 sm:p-5">
-                <Input
-                    className="mt-[-80px] max-w-[800px]"
-                    type="password"
-                    label="Enter the provided password"
-                    name="password"
-                    value={values.password}
-                    color={errors.password ? "danger" : "default"}
-                    errorMessage={
-                        errors.password && "Please enter a valid password"
-                    }
-                    onChange={handleValueChange}
-                    isRequired
-                />
+                <div className="mt-[-80px] flex w-full flex-col items-center justify-center gap-5">
+                    <h1 className="text-xl font-bold text-white">
+                        Contact Evan Home Care for the password to fill the
+                        employment form.
+                    </h1>
 
-                <Button
-                    onPress={evaluatePassord}
-                    fullWidth
-                    className="max-w-[800px]"
-                    variant="faded"
-                >
-                    Login
-                </Button>
+                    <Input
+                        className="max-w-[800px]"
+                        type="password"
+                        label="Enter the provided password"
+                        name="password"
+                        value={values.password}
+                        color={errors.password ? "danger" : "default"}
+                        errorMessage={
+                            errors.password && "Please enter a valid password"
+                        }
+                        aria-label="Please enter a valid password"
+                        onChange={handleValueChange}
+                        isRequired
+                        classNames={{ label: "text-color-black" }}
+                    />
+
+                    <Button
+                        onPress={evaluatePassord}
+                        fullWidth
+                        className="max-w-[800px]"
+                        variant="faded"
+                        aria-label="Access Button"
+                    >
+                        Login
+                    </Button>
+                </div>
             </div>
         );
     }

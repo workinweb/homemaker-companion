@@ -9,10 +9,6 @@ export function ServicesSection() {
                 <h2 className="mb-5 text-center text-4xl font-bold text-primary">
                     {dictionary.Services.texts.serviceTitle}
                 </h2>
-
-                <h3 className="text-center text-xl text-primary">
-                    {dictionary.Services.texts.providedServices}
-                </h3>
             </div>
 
             <div className="flex flex-col items-start justify-evenly gap-8 sm:flex-row sm:flex-wrap lg:flex-nowrap">
