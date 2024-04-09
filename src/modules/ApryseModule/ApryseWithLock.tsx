@@ -46,7 +46,7 @@ export function ApryseWithLock() {
         }
     };
 
-    if (!isLocked) {
+    if (isLocked) {
         return (
             <div className="md:p10 h-100 flex h-screen flex-col items-center justify-center gap-5 bg-primary p-2 sm:p-5">
                 <div className="mt-[-80px] flex w-full flex-col items-center justify-center gap-5">
