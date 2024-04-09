@@ -167,8 +167,8 @@ export function ApryseModule() {
                     <li className="rounded-md bg-slate-500 p-2 text-white">
                         {"-> "}
                         Please fill out the form, do not leave empty any of the
-                        required inputs or you might have to contact us in order
-                        to be elegible
+                        required inputs or you might have to contact us to
+                        update the information in order to be elegible
                     </li>
                 </ul>
 
