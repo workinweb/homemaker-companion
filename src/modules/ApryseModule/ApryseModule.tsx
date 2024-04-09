@@ -162,11 +162,14 @@ export function ApryseModule() {
     return (
         <div className="PdfViewer">
             <div className="px-4 pb-5 sm:px-5 md:px-10 ">
-                <h1>Indications:</h1>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                <h2 className="text-xl font-bold text-primary">Indications:</h2>
+                <ul className="flex flex-col gap-2 p-2">
+                    <li className="rounded-md bg-slate-500 p-2 text-white">
+                        {"-> "}
+                        Please fill out the form, do not leave empty any of the
+                        required inputs or you might have to contact us in order
+                        to be elegible
+                    </li>
                 </ul>
 
                 <div className="flex flex-col gap-5 py-5">
