@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import { ApryseModule } from "./ApryseModule";
 import { Button, Input } from "@nextui-org/react";
-import { z } from "zod";
 import { enqueueSnackbar } from "notistack";
+import { z } from "zod";
 
 const schema = z.object({
     password: z.string().min(1),

@@ -2,20 +2,18 @@ import * as React from "react";
 interface EmploymentTemplateProps {
     name: string;
     email: string;
-    DOB: string;
-    zip: string;
+    phone: string;
+    message: string;
 }
 
-export const EmploymentTemplate: React.FC<
+export const JobApplicationTemplate: React.FC<
     Readonly<EmploymentTemplateProps>
-> = ({ name, email, zip, DOB }) => (
+> = ({ name, email, phone, message }) => (
     <div>
         <p style={{ fontSize: "24px" }}>
             This Job application was sent by {name}
         </p>
         <p style={{ fontSize: "24px" }}>Contact him at: {email}</p>
-        <p style={{ fontSize: "24px" }}>Zip: {zip}</p>
-        <p style={{ fontSize: "24px" }}>Date of birth: {DOB}</p>
 
         <p style={{ margin: "2px 0 2px" }}>
             ------------------------------------------------------------------------------

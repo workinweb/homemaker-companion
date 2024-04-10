@@ -101,13 +101,12 @@ export function ApryseModule() {
                 formData,
             );
 
-            const response = await axios.post("/api/sendpdfApp", {
+            const response = await axios.post("/api/jobApplication", {
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
                 url: uploadPdf.data.secure_url,
                 name: values.name,
                 email: values.email,
             });
-            console.log("🚀 ~ sendPDF ~ response:", response);
 
             if (response.data.EvanEmailResponse.data) {
                 enqueueSnackbar("Pdf was sent correctly to EvanHomeCare", {
