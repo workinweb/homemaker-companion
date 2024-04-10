@@ -23,9 +23,8 @@ export async function POST(req: Request): Promise<NextResponse> {
             from: "Evan Home Care <evanhomecare@resend.dev>",
             to: [
                 "kbueno1077@gmail.com",
-                // "ezlomar62@gmail.com",
-                // "vadiae@gmail.com",
-                // email,
+                "ezlomar62@gmail.com",
+                "vadiae@gmail.com",
             ],
             subject: `New Empoyment Request`,
             react: JobApplicationTemplate({

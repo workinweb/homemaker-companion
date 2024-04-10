@@ -34,8 +34,8 @@ export const mailRouter = createTRPCRouter({
                 from: "Evan Home Care <evanhomecare@resend.dev>",
                 to: [
                     "kbueno1077@gmail.com",
-                    // "ezlomar62@gmail.com",
-                    // "vadiae@gmail.com",
+                    "ezlomar62@gmail.com",
+                    "vadiae@gmail.com",
                 ],
                 subject: `Contact Us Inquiry from ${name}`,
                 react: ContactUsEmailTemplate({ name, email, message, phone }),
