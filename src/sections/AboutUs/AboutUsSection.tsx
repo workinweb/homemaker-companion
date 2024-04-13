@@ -3,6 +3,7 @@ import { Card, CardBody } from "@nextui-org/react";
 import dictionary from "~/dictionary/dictionaryLink";
 import { SmallCard } from "~/components/SmallCard/SmallCard";
 import Image from "next/image";
+import styles from "./aboutUs.module.css";
 
 export function AboutUsSection() {
     return (
@@ -20,7 +21,7 @@ export function AboutUsSection() {
                         height={500}
                         quality={100}
                         alt="Two happy persons, one in a wheelchair"
-                        className="mb-[20px] object-cover lg:mb-[0px] lg:h-[520px] lg:w-full"
+                        className={styles.imageMasked}
                         src="/aboutus.webp"
                     />
 

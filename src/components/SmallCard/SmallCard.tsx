@@ -27,7 +27,10 @@ export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
                     quality={100}
                     alt={alt}
                     src={img}
-                    style={{ width: innerWidth < 768 ? "70%" : "40%" }}
+                    style={{
+                        width: innerWidth < 768 ? "70%" : "40%",
+                        maskImage: "linear-gradient(black 90%, transparent)",
+                    }}
                 />
             </div>
 

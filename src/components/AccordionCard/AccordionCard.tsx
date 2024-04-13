@@ -34,7 +34,10 @@ export function AccordionCard({
                     quality={100}
                     alt={alt}
                     src={img}
-                    style={{ width: "75%" }}
+                    style={{
+                        width: "75%",
+                        maskImage: "linear-gradient(black 90%, transparent)",
+                    }}
                 />
             </div>
 

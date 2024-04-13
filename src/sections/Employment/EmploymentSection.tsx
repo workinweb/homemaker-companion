@@ -3,6 +3,7 @@ import { Card, CardBody } from "@nextui-org/react";
 import dictionary from "~/dictionary/dictionaryLink";
 import Image from "next/image";
 import { List } from "~/components/List/List";
+import styles from "./Employment.module.css";
 
 export function EmploymentSection() {
     return (
@@ -41,7 +42,7 @@ export function EmploymentSection() {
                             height={500}
                             quality={100}
                             alt="Doctor Image"
-                            className="mb-[-20px] object-cover lg:mb-[0px] lg:mr-[-35px] lg:h-[380px] lg:w-full"
+                            className={styles.imageMasked}
                             src="/13-Employment.PNG"
                         />
                     </CardBody>

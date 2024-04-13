@@ -1,6 +1,7 @@
 import React from "react";
 import dictionary from "~/dictionary/dictionaryLink";
 import Image from "next/image";
+import styles from "./ChooseUs.module.css";
 
 export function ChooseUsSection() {
     return (
@@ -21,7 +22,7 @@ export function ChooseUsSection() {
                         height={500}
                         quality={100}
                         alt="Two happy persons, one in a wheelchair"
-                        className="object-cover lg:mb-[0px] lg:h-[520px] lg:w-full"
+                        className={styles.imageMasked}
                         src="/aboutus2.webp"
                     />
                 </div>
@@ -42,7 +43,7 @@ export function ChooseUsSection() {
                         height={500}
                         quality={100}
                         alt=""
-                        className="object-cover sm:max-w-[700px] lg:mb-[0px] lg:h-[520px] lg:w-full"
+                        className={styles.image2Masked}
                         src="/9-Medicaid Waiver Services.png"
                     />
 
