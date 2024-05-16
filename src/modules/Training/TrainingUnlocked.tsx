@@ -1,9 +1,6 @@
 "use client";
 
-import { Button } from "@nextui-org/react";
 import Image from "next/image";
-import TrainingTabs from "./TrainingTabs/Tabs";
-import { ContentCard } from "~/components/Cards/ContentCard/ContentCard";
 import Link from "next/link";
 
 interface TrainingUnlockedProps {
