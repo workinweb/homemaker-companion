@@ -1,6 +1,6 @@
 import React from "react";
 import dictionary from "~/dictionary/dictionaryLink";
-import { AccordionCard } from "~/components/AccordionCard/AccordionCard";
+import { AccordionCard } from "~/components/Cards/AccordionCard/AccordionCard";
 
 export function ServicesSection() {
     return (

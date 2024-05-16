@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardBody } from "@nextui-org/react";
 import dictionary from "~/dictionary/dictionaryLink";
-import { SmallCard } from "~/components/SmallCard/SmallCard";
+import { SmallCard } from "~/components/Cards/SmallCard/SmallCard";
 import Image from "next/image";
 import styles from "./aboutUs.module.css";
 

@@ -4,7 +4,7 @@ import { SearchInput } from "~/modules/Search/SearchInput";
 import dictionary from "~/dictionary/dictionaryLink";
 import Image from "next/image";
 import styles from "./home.module.css";
-import { SmallCard } from "~/components/SmallCard/SmallCard";
+import { SmallCard } from "~/components/Cards/SmallCard/SmallCard";
 
 export function HomeSection() {
     return (

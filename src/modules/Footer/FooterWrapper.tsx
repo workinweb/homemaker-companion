@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MapComponent } from "../../components/GoogleMap/MapComponent";
+import { MapComponent } from "../../components/Map/MapComponent";
 import { ContactUsForm } from "../ContactUs/ContactUsForm";
 
 export function FooterActionsWrapper() {

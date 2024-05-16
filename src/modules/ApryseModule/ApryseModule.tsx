@@ -160,9 +160,13 @@ export function ApryseModule() {
 
     return (
         <div className="PdfViewer">
-            <div className="px-4 pb-5 sm:px-5 md:px-10 ">
+            <div>
+                <h1 className="my-2 text-2xl font-bold text-primary">
+                    Application Form
+                </h1>
+
                 <h2 className="text-xl font-bold text-primary">Indications:</h2>
-                <ul className="flex flex-col gap-2 p-2">
+                <ul className="flex flex-col gap-2 py-2">
                     <li className="rounded-md bg-slate-500 p-2 text-white">
                         {"-> "}
                         Please fill out the form, do not leave empty any of the
