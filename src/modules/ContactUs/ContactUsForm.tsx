@@ -1,12 +1,10 @@
 "use client";
 
-import React, { SyntheticEvent } from "react";
-import { Button, Card, CardBody, Input } from "@nextui-org/react";
 import { Textarea } from "@nextui-org/input";
+import { Button, Card, CardBody, Input } from "@nextui-org/react";
 import { enqueueSnackbar } from "notistack";
+import React, { type SyntheticEvent } from "react";
 import Spinner from "~/components/Spinner/Spinner";
-
-import { api } from "~/trpc/react";
 
 export function ContactUsForm() {
     const [name, setName] = React.useState("");
@@ -15,30 +13,45 @@ export function ContactUsForm() {
     const [message, setMessage] = React.useState("");
     const [loading, setLoading] = React.useState(false);
 
-    const sendEmail = api.mail.sendEmail.useMutation({
-        onError: (error) => {
-            console.log(error);
+    const submit = async (e: SyntheticEvent) => {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    phone,
+                    message,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                cleanInputs();
+                enqueueSnackbar("Email sent", { variant: "success" });
+            } else {
+                console.error(data.error);
+                enqueueSnackbar(
+                    "An error occurred sending the data to EvanHomeCare, try again later",
+                    { variant: "error" },
+                );
+            }
+        } catch (error) {
+            console.error(error);
             enqueueSnackbar(
-                `An error occurred sending the email, try again later, or change location`,
+                "An error occurred sending the data to EvanHomeCare, try again later",
                 { variant: "error" },
             );
-        },
-
-        onSuccess: (data, variables, context) => {
-            console.log("Data", data);
-            console.log("variables", variables);
-            console.log("context", context);
-            cleanInputs();
-            enqueueSnackbar("Email sent", { variant: "success" });
-        },
-    });
-
-    const submit = async (e: SyntheticEvent) => {
-        setLoading(true);
-        e.preventDefault();
-
-        sendEmail.mutate({ name, email, phone, message });
-        setLoading(false);
+        } finally {
+            setLoading(false);
+        }
     };
 
     const cleanInputs = () => {
@@ -108,7 +121,7 @@ export function ContactUsForm() {
                         color="primary"
                         variant="shadow"
                     >
-                        {!sendEmail.isLoading ? (
+                        {!loading ? (
                             "Send"
                         ) : (
                             <div>

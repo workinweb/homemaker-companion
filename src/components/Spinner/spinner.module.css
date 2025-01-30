@@ -3,8 +3,8 @@
     height: 1.6rem;
     border-radius: 50%;
     box-sizing: border-box;
-    border-top: 4px solid #586de6;
-    border-left: 4px solid #586de6;
+    border-top: 4px solid #ccd0e8;
+    border-left: 4px solid #ccd0e8;
     border-right: 4px solid #ff00;
     animation: loader 0.7s infinite linear;
 }
