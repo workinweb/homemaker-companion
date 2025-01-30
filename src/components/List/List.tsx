@@ -18,7 +18,7 @@ export function List({ title, list }: ListProps) {
             <div className="flex flex-col gap-2 border-2 border-solid p-8">
                 {list.map((listName) => {
                     return (
-                        <div className="flex items-center gap-2">
+                        <div key={listName} className="flex items-center gap-2">
                             <FiCheckSquare className="h-8 w-8 text-primary" />
                             <p className="text-xl text-primary">{listName}</p>
                         </div>

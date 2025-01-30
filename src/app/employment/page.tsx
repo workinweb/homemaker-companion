@@ -1,9 +1,24 @@
-import React from "react";
-import { ApryseModule } from "~/modules/ApryseModule/ApryseModule";
-import { EmploymentForm } from "~/modules/EmploymentForm/EmploymentForm";
-import { EmploymentSection } from "~/sections/Employment/EmploymentSection";
+"use client";
 
-export default async function Employment() {
+import React from "react";
+import dynamic from "next/dynamic";
+
+// Dynamic imports with ssr disabled for components that use window
+const ApryseModule = dynamic(
+    () =>
+        import("~/modules/ApryseModule/ApryseModule").then((mod) => ({
+            default: mod.ApryseModule,
+        })),
+    { ssr: false },
+);
+
+const EmploymentSection = dynamic(() =>
+    import("~/sections/Employment/EmploymentSection").then((mod) => ({
+        default: mod.EmploymentSection,
+    })),
+);
+
+export default function Employment() {
     return (
         <main>
             <div className="flex w-full flex-col items-center">

@@ -1,8 +1,17 @@
 "use client";
 
 import React from "react";
-import { MapComponent } from "../../components/Map/MapComponent";
+import dynamic from "next/dynamic";
 import { ContactUsForm } from "../ContactUs/ContactUsForm";
+
+// Dynamic import for Map component only
+const MapComponent = dynamic(
+    () =>
+        import("../../components/Map/MapComponent").then((mod) => ({
+            default: mod.MapComponent,
+        })),
+    { ssr: false },
+);
 
 export function FooterActionsWrapper() {
     return (

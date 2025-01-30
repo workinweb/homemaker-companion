@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Card, CardBody } from "@nextui-org/react";
 import dictionary from "~/dictionary/dictionaryLink";

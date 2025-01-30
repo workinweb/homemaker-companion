@@ -4,7 +4,6 @@ import { Footer } from "~/modules/Footer/Footer";
 import { ServicesSection } from "~/sections/Services/ServicesSection";
 import { SideButtons } from "~/modules/SideButtons/SideButtons";
 import { FloatingButton } from "~/modules/FloatingButton/FloatingButton";
-import { TeamSection } from "~/sections/Team/TeamSection";
 import { ChooseUsSection } from "~/sections/ChooseUs/ChooseUsSection";
 
 export default async function Home() {
