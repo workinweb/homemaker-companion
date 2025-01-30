@@ -28,6 +28,7 @@ export async function POST(req: Request) {
 
         const { name, email, phone, message } = body;
 
+        // @ts-expect-error
         const data = await resend.emails.send({
             from: "Evan Home Care <evanhomecare@resend.dev>",
             to: ["kbueno1077@gmail.com"],
