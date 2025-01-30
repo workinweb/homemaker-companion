@@ -37,7 +37,7 @@ export function ContactUsForm() {
                 cleanInputs();
                 enqueueSnackbar("Email sent", { variant: "success" });
             } else {
-                console.error(data.error);
+                console.error(data);
                 enqueueSnackbar(
                     "An error occurred sending the data to EvanHomeCare, try again later",
                     { variant: "error" },
