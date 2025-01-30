@@ -40,11 +40,11 @@ export function CustomNavbar() {
             label: "Medicaid Waiver Services:",
             href: "#Services",
         },
-        {
-            icon: <MdOutlineMedicalServices />,
-            label: "Homemaker & Companion",
-            href: "/homemaker",
-        },
+        // {
+        //     icon: <MdOutlineMedicalServices />,
+        //     label: "Homemaker & Companion",
+        //     href: "/homemaker",
+        // },
         {
             icon: <MdConnectWithoutContact />,
             label: "Contact Us",
@@ -113,7 +113,7 @@ export function CustomNavbar() {
                                 </p>
                             </Link>
                         </DropdownItem>
-                        <DropdownItem key="copy">
+                        {/* <DropdownItem key="copy">
                             <Link
                                 className={`transition hover:text-gray-400 `}
                                 href="/homemaker"
@@ -122,7 +122,7 @@ export function CustomNavbar() {
                                     HOMEMAKER & COMPANION
                                 </p>
                             </Link>
-                        </DropdownItem>
+                        </DropdownItem> */}
                     </DropdownMenu>
                 </Dropdown>
 
@@ -148,7 +148,7 @@ export function CustomNavbar() {
                     </Link>
                 </NavbarItem>
 
-                <NavbarItem className="hidden sm:flex">
+                {/* <NavbarItem className="hidden sm:flex">
                     <Link
                         className={`hover:text-gray-400  ${
                             pathName.includes("Training") ? "text-primary" : ""
@@ -157,7 +157,7 @@ export function CustomNavbar() {
                     >
                         Training
                     </Link>
-                </NavbarItem>
+                </NavbarItem> */}
             </NavbarContent>
 
             <NavbarMenu className="flex w-full flex-col gap-8 pt-5">
