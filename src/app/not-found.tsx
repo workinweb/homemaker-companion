@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default async function NotFoundPage() {
     return (
         <div className="mt-[-50px] flex h-screen items-center justify-center bg-gray-200">
@@ -6,7 +8,12 @@ export default async function NotFoundPage() {
                 <p className="mt-3 text-xl">Oops! Page not found.</p>
 
                 <div className="p-10">
-                    <img src="404.svg" alt="404 image" />
+                    <Image
+                        src="/404.svg"
+                        width={400}
+                        height={400}
+                        alt="404 image"
+                    />
                 </div>
 
                 <div className="mt-8">

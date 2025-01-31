@@ -47,9 +47,10 @@ export function TrainingUnlocked({ lockAccess }: TrainingUnlockedProps) {
                                 href="https://train.org"
                                 target="_blank"
                             >
-                                <img
+                                <Image
                                     src="/training/train.png"
-                                    style={{ width: "100px", height: "30px" }}
+                                    width={100}
+                                    height={30}
                                     alt="train.org"
                                 />
 
@@ -61,9 +62,10 @@ export function TrainingUnlocked({ lockAccess }: TrainingUnlockedProps) {
                                 href="https://ceufast.com"
                                 target="_blank"
                             >
-                                <img
+                                <Image
                                     src="/training/ceufast.png"
-                                    style={{ width: "100px", height: "90px" }}
+                                    width={100}
+                                    height={90}
                                     alt="ceufast.com"
                                 />
                                 <span className="text-2xl"> CeuFast</span>
@@ -73,9 +75,10 @@ export function TrainingUnlocked({ lockAccess }: TrainingUnlockedProps) {
                                 href="https://rn.org"
                                 target="_blank"
                             >
-                                <img
+                                <Image
                                     src="/training/rn.png"
-                                    style={{ width: "100px", height: "30px" }}
+                                    width={100}
+                                    height={30}
                                     alt="rn.org"
                                 />
 
@@ -110,9 +113,10 @@ export function TrainingUnlocked({ lockAccess }: TrainingUnlockedProps) {
                                 href="https://rn.org"
                                 target="_blank"
                             >
-                                <img
+                                <Image
                                     src="/training/rn.png"
-                                    style={{ width: "100px", height: "30px" }}
+                                    width={100}
+                                    height={30}
                                     alt="rn.org"
                                 />
 
@@ -151,9 +155,10 @@ export function TrainingUnlocked({ lockAccess }: TrainingUnlockedProps) {
                                 href="https://cphins.com/"
                                 target="_blank"
                             >
-                                <img
+                                <Image
                                     src="/training/cph.png"
-                                    style={{ width: "100px", height: "35px" }}
+                                    width={100}
+                                    height={35}
                                     alt="rn.org"
                                 />
 
@@ -165,13 +170,11 @@ export function TrainingUnlocked({ lockAccess }: TrainingUnlockedProps) {
                                 href="https://nso.com/"
                                 target="_blank"
                             >
-                                <img
+                                <Image
                                     className="rounded-md bg-[#657fa0] p-0.5"
                                     src="/training/nso.svg"
-                                    style={{
-                                        width: "100px",
-                                        height: "35px",
-                                    }}
+                                    width={100}
+                                    height={35}
                                     alt="rn.org"
                                 />
 
