@@ -35,7 +35,14 @@ export function Footer() {
                             <div className="flex items-center gap-2">
                                 <ImLocation className="h-6 w-6 text-primary" />
                                 <span className="text-primary">
-                                    1101 Miranda Ln.Kissimmee, Fl. 34741
+                                    <a
+                                        href="https://maps.google.com/?q=1101+Miranda+Ln+Suite+127+Kissimmee+FL+34741"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        1101 Miranda Ln. Suite 127 Kissimmee, FL
+                                        34741
+                                    </a>
                                 </span>
                             </div>
 

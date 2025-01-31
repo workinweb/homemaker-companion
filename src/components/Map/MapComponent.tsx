@@ -43,7 +43,13 @@ export function MapComponent() {
                         Find Us on the Map
                     </p>
                     <p className="mb-2 text-center text-primary">
-                        1101 Miranda Ln. Suite 127 Kissimmee, FL 34741{" "}
+                        <a
+                            href="https://maps.google.com/?q=1101+Miranda+Ln+Suite+127+Kissimmee+FL+34741"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            1101 Miranda Ln. Suite 127 Kissimmee, FL 34741
+                        </a>
                     </p>
                     <div className="h-full w-full animate-pulse bg-gray-200" />
                 </CardBody>
