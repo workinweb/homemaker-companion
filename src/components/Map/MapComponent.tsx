@@ -69,12 +69,15 @@ export function MapComponent() {
                     1101 Miranda Ln. Suite 127 Kissimmee, FL 34741{" "}
                 </p>
 
-                <div key={key}>
+                <div key={key} className="relative h-[450px]">
+                    {" "}
+                    {/* Set fixed height and relative positioning */}
                     {mounted && (
                         <MapContainer
                             center={[28.34732370882098, -81.41418625023127]}
                             zoom={17}
                             scrollWheelZoom={true}
+                            style={{ height: "100%", width: "100%" }} // Set map container dimensions
                         >
                             <TileLayer
                                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
