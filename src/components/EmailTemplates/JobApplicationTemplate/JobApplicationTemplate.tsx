@@ -9,70 +9,163 @@ interface EmploymentTemplateProps {
 export const JobApplicationTemplate: React.FC<
     Readonly<EmploymentTemplateProps>
 > = ({ name, email, phone, message }) => (
-    <div>
-        <p style={{ fontSize: "24px" }}>
-            This Job application was sent by {name}
-        </p>
-        <p style={{ fontSize: "24px" }}>Contact him at: {email}</p>
-
-        <p style={{ margin: "2px 0 2px" }}>
-            ------------------------------------------------------------------------------
-        </p>
+    <div
+        style={{
+            fontFamily: "Arial, sans-serif",
+            maxWidth: "600px",
+            margin: "0 auto",
+            padding: "20px",
+        }}
+    >
         <div
             style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
+                backgroundColor: "#f8f9fa",
+                padding: "25px",
+                borderRadius: "8px",
+                marginBottom: "20px",
             }}
         >
-            <p
-                style={{
-                    fontSize: "50px",
-                    color: "#2b7fa8",
-                    fontStyle: "italic",
-                    fontWeight: "bold",
-                    fontFamily: "Edwardian Script ITC",
-                }}
-            >
-                Vadia Estevez
-            </p>
-
-            <p
+            <h2
                 style={{
                     color: "#2b7fa8",
-                    fontSize: "24px",
+                    marginBottom: "20px",
                     textAlign: "center",
                 }}
             >
-                owner
+                New Job Application
+            </h2>
+            <div
+                style={{
+                    backgroundColor: "white",
+                    padding: "20px",
+                    borderRadius: "6px",
+                }}
+            >
+                <p
+                    style={{
+                        fontSize: "16px",
+                        color: "#666",
+                        marginBottom: "15px",
+                    }}
+                >
+                    <strong style={{ color: "#2b7fa8" }}>Name:</strong> {name}
+                </p>
+                <p
+                    style={{
+                        fontSize: "16px",
+                        color: "#666",
+                        marginBottom: "15px",
+                    }}
+                >
+                    <strong style={{ color: "#2b7fa8" }}>Email:</strong> {email}
+                </p>
+                <p
+                    style={{
+                        fontSize: "16px",
+                        color: "#666",
+                        marginBottom: "15px",
+                    }}
+                >
+                    <strong style={{ color: "#2b7fa8" }}>Phone:</strong> {phone}
+                </p>
+                <div style={{ marginTop: "20px" }}>
+                    <h3 style={{ color: "#2b7fa8", marginBottom: "10px" }}>
+                        Message:
+                    </h3>
+                    <p
+                        style={{
+                            fontSize: "16px",
+                            color: "#666",
+                            lineHeight: "1.6",
+                        }}
+                    >
+                        {message}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <hr style={{ border: "1px solid #eee", margin: "30px 0" }} />
+
+        <div style={{ textAlign: "center", marginBottom: "30px" }}>
+            <h2
+                style={{
+                    color: "#2b7fa8",
+                    fontSize: "32px",
+                    fontFamily: "Georgia, serif",
+                    margin: "0",
+                }}
+            >
+                Vadia Estevez
+            </h2>
+            <p
+                style={{
+                    color: "#2b7fa8",
+                    fontSize: "18px",
+                    textTransform: "uppercase",
+                    letterSpacing: "2px",
+                    margin: "5px 0",
+                }}
+            >
+                Owner
             </p>
         </div>
 
-        <div style={{ display: "flex", gap: "10px" }}>
+        <div
+            style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#f8f9fa",
+                padding: "20px",
+                borderRadius: "8px",
+            }}
+        >
             <div>
                 <img
                     src="https://res.cloudinary.com/dub477vzt/image/upload/v1711679629/mypdf/v3ianf11kfrvh14tig41.png"
                     style={{
                         width: "120px",
                         height: "100px",
-                        marginTop: "5px",
-                        background: "transparent",
+                        objectFit: "contain",
                     }}
                     alt="Evan Home Care Logo"
                 />
             </div>
 
-            <div style={{ marginLeft: "20px" }}>
-                <p>Office: (321) 300-9077</p>
-                <p>Phone: (321) 477-9925</p>
-                <p>Fax: (321) 291-5124</p>
-
-                <p>
-                    <a href="evanhomecare@gmail.com">evanhomecare@gmail.com</a>{" "}
-                    - <a href="www.evanhomecare.com">www.evanhomecare.com</a>
+            <div
+                style={{
+                    marginLeft: "30px",
+                    borderLeft: "2px solid #2b7fa8",
+                    paddingLeft: "30px",
+                }}
+            >
+                <p style={{ margin: "5px 0", color: "#555" }}>
+                    <strong>Office:</strong> (321) 300-9077
                 </p>
-                <p>1101 Miranda Ln Suite 127 Kissimmee, FL 34741</p>
+                <p style={{ margin: "5px 0", color: "#555" }}>
+                    <strong>Phone:</strong> (321) 477-9925
+                </p>
+                <p style={{ margin: "5px 0", color: "#555" }}>
+                    <strong>Fax:</strong> (321) 291-5124
+                </p>
+                <p style={{ margin: "5px 0" }}>
+                    <a
+                        href="mailto:evanhomecare@gmail.com"
+                        style={{ color: "#2b7fa8", textDecoration: "none" }}
+                    >
+                        evanhomecare@gmail.com
+                    </a>{" "}
+                    -{" "}
+                    <a
+                        href="https://www.evanhomecare.com"
+                        style={{ color: "#2b7fa8", textDecoration: "none" }}
+                    >
+                        www.evanhomecare.com
+                    </a>
+                </p>
+                <p style={{ margin: "5px 0", color: "#555" }}>
+                    1101 Miranda Ln Suite 127 Kissimmee, FL 34741
+                </p>
             </div>
         </div>
     </div>
