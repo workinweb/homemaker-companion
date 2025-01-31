@@ -35,13 +35,53 @@ const config = {
             "trcp",
             "server",
             "src/utils",
-            "src/pages",
             "src/apps",
             "src/components",
             "src/modules",
             "src/trcp",
             "src/server",
         ],
+    },
+
+    reactStrictMode: false,
+
+    // Enable production compression
+    compress: true,
+
+    // Enable webpack optimization
+    webpack: (config, { dev, isServer }) => {
+        // Production optimizations only
+        if (!dev) {
+            config.optimization = {
+                minimize: true,
+                splitChunks: {
+                    chunks: "all",
+                    minSize: 20000,
+                    maxSize: 244000,
+                    minChunks: 1,
+                    maxAsyncRequests: 30,
+                    maxInitialRequests: 30,
+                    cacheGroups: {
+                        default: false,
+                        vendors: false,
+                        framework: {
+                            chunks: "all",
+                            name: "framework",
+                            test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|scheduler|next)[\\/]/,
+                            priority: 40,
+                            enforce: true,
+                        },
+                        lib: {
+                            test: /[\\/]node_modules[\\/]/,
+                            priority: 30,
+                            minChunks: 2,
+                            reuseExistingChunk: true,
+                        },
+                    },
+                },
+            };
+        }
+        return config;
     },
 };
 

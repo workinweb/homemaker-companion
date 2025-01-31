@@ -2,6 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
+import { EmploymentSection } from "~/sections/Employment/EmploymentSection";
 
 // Dynamic imports with ssr disabled for components that use window
 const ApryseModule = dynamic(
@@ -10,12 +11,6 @@ const ApryseModule = dynamic(
             default: mod.ApryseModule,
         })),
     { ssr: false },
-);
-
-const EmploymentSection = dynamic(() =>
-    import("~/sections/Employment/EmploymentSection").then((mod) => ({
-        default: mod.EmploymentSection,
-    })),
 );
 
 export default function Employment() {

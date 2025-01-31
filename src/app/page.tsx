@@ -16,7 +16,6 @@ export default async function Home() {
                     <div className="w-full max-w-[1440px] px-5 pb-20 sm:px-10">
                         <HomeSection />
                         <AboutUsSection />
-                        {/* <TeamSection /> */}
                         <ChooseUsSection />
                         <ServicesSection />
                     </div>

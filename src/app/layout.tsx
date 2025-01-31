@@ -1,11 +1,10 @@
-import { Inter } from "next/font/google";
-
-import { CustomNavbar } from "~/modules/Navbar/Navbar";
-import { Providers } from "./providers";
-import localFont from "next/font/local";
 import { type Metadata } from "next";
-import "./globals.css";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
+import { CustomNavbar } from "~/modules/Navbar/Navbar";
 import "./fonts.css";
+import "./globals.css";
+import { Providers } from "./providers";
 
 const inter = Inter({
     subsets: ["latin"],

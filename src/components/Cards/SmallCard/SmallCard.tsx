@@ -12,8 +12,6 @@ type SmallCardProps = {
 };
 
 export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
-    const innerWidth = typeof window !== "undefined" ? window.innerWidth : 0;
-
     return (
         <div
             className={`rounded-lg border-3 border-solid p-10 ${
@@ -27,10 +25,7 @@ export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
                     quality={100}
                     alt={alt}
                     src={img}
-                    style={{
-                        width: innerWidth < 768 ? "70%" : "40%",
-                        maskImage: "linear-gradient(black 90%, transparent)",
-                    }}
+                    className={`w-[70%] [mask-image:linear-gradient(black_90%,transparent)] sm:w-[40%]`}
                 />
             </div>
 

@@ -1,21 +1,19 @@
-'use client'
+"use client";
 
 import React from "react";
-import {NextUIProvider} from '@nextui-org/react'
-import {SnackbarProvider} from 'notistack'
+import { NextUIProvider } from "@nextui-org/react";
+import { SnackbarProvider } from "notistack";
 
-export function Providers({children}: { children: React.ReactNode }) {
+export function Providers({ children }: { children: React.ReactNode }) {
     return (
-        <SnackbarProvider autoHideDuration={3000} anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'right',
-        }}>
-            <NextUIProvider>
-
-                {children}
-            </NextUIProvider>
+        <SnackbarProvider
+            autoHideDuration={3000}
+            anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+            }}
+        >
+            <NextUIProvider>{children}</NextUIProvider>
         </SnackbarProvider>
-
-    )
+    );
 }
-
