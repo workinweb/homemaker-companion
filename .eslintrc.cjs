@@ -13,7 +13,8 @@ const config = {
     rules: {
         // These opinionated rules are enabled in stylistic-type-checked above.
         // Feel free to reconfigure them to your own preference.
-
+        "@typescript-eslint/strict-null-checks": "off",
+        "@typescript-eslint/prefer-nullish-coalescing": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-call": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",

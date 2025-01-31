@@ -28,18 +28,15 @@ const config = {
     eslint: {
         dirs: [
             "utils",
-            "pages",
             "apps",
             "components",
             "modules",
-            "trcp",
-            "server",
+            "sections",
             "src/utils",
+            "src/sections",
             "src/apps",
             "src/components",
             "src/modules",
-            "src/trcp",
-            "src/server",
         ],
     },
 
