@@ -3,11 +3,17 @@
  * for Docker builds.
  */
 
-/** @type {import("next").NextConfig} */
-const config = {
+import type { NextConfig } from 'next'
+
+
+const nextConfig: NextConfig  = {
     webpack: (cfg) => {
         cfg.resolve.alias.canvas = false;
         return cfg;
+    },
+
+    experimental: {
+        reactCompiler: true,
     },
 
     eslint: {
@@ -28,4 +34,4 @@ const config = {
     reactStrictMode: false,
 };
 
-export default config;
+export default nextConfig;
