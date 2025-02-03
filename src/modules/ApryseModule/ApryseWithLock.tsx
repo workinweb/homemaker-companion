@@ -42,9 +42,9 @@ export function ApryseWithLock() {
                 const response = await axios.post("/api/validatePassword", {
                     password: values.password,
                 });
-                console.log("🚀 ~ evaluatePassord ~ response:", response);
 
-                if (response.data.isValid) {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                if (response.data?.isValid) {
                     setIsLocked(false);
                 } else {
                     enqueueSnackbar("Password incorrect", {
