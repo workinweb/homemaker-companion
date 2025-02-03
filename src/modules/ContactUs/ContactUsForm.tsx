@@ -62,7 +62,7 @@ export function ContactUsForm() {
     };
 
     return (
-        <Card className="h-[680px] w-full max-w-[520px]  px-2 py-8">
+        <Card className="h-[720px] w-full max-w-[520px] px-2 py-8">
             <CardBody>
                 <div id="ContactUs" className="mb-5">
                     <h2 className="text-xl font-bold text-primary">
@@ -120,6 +120,7 @@ export function ContactUsForm() {
                         size="md"
                         color="primary"
                         variant="shadow"
+                        className="mt-5 sm:mt-0"
                     >
                         {!loading ? (
                             "Send"

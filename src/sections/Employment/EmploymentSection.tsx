@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export function EmploymentSection() {
     return (
-        <div id="Employment" className="mx-auto max-w-[1200px] py-10">
+        <div id="Employment" className="mx-auto max-w-[1200px] sm:py-10">
             {/* Header Section */}
             <div className="mb-10">
                 <div className="relative mt-8 flex flex-col items-center justify-between gap-8 rounded-xl bg-gradient-to-br from-transparent via-primary/5 to-transparent p-8 sm:mt-4 sm:flex-row lg:mt-0">

@@ -40,11 +40,7 @@ export function CustomNavbar() {
             label: "Medicaid Waiver Services:",
             href: "#Services",
         },
-        // {
-        //     icon: <MdOutlineMedicalServices />,
-        //     label: "Homemaker & Companion",
-        //     href: "/homemaker",
-        // },
+
         {
             icon: <MdConnectWithoutContact />,
             label: "Contact Us",
@@ -55,7 +51,6 @@ export function CustomNavbar() {
             label: "Employment",
             href: "/employment",
         },
-        { icon: <MdOutlineSchool />, label: "Training", href: "/training" },
     ];
 
     return (
@@ -147,17 +142,6 @@ export function CustomNavbar() {
                         Employment
                     </Link>
                 </NavbarItem>
-
-                {/* <NavbarItem className="hidden sm:flex">
-                    <Link
-                        className={`hover:text-gray-400  ${
-                            pathName.includes("Training") ? "text-primary" : ""
-                        }`}
-                        href="/training"
-                    >
-                        Training
-                    </Link>
-                </NavbarItem> */}
             </NavbarContent>
 
             <NavbarMenu className="flex w-full flex-col gap-8 pt-5">

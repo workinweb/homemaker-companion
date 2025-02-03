@@ -167,7 +167,7 @@ export function ApryseModule() {
             });
     }, []);
     return (
-        <div className="mx-auto max-w-[1200px] py-10">
+        <div className="mx-auto max-w-[1200px] sm:py-10">
             <div className="mb-10">
                 <div className="relative mt-8 flex flex-col items-center justify-between gap-8 rounded-xl bg-gradient-to-br from-transparent via-primary/5 to-transparent p-8 sm:mt-4 sm:flex-row lg:mt-0">
                     <div className="relative">

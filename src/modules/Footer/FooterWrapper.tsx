@@ -14,7 +14,7 @@ const MapComponent = dynamic(
 
 export function FooterActionsWrapper() {
     return (
-        <div className="flex w-full flex-col items-center justify-center gap-10 px-8 py-5 lg:flex-row">
+        <div className="flex w-full flex-col items-center justify-center gap-10 px-4 py-5 lg:flex-row">
             <ContactUsForm />
             <MapComponent key="map" />
         </div>
