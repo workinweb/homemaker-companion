@@ -1,13 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
-import { ApryseModule } from "./ApryseModule";
+import dynamic from "next/dynamic";
 import { Button, Input, Card } from "@nextui-org/react";
 import { enqueueSnackbar } from "notistack";
 import { z } from "zod";
 import { FaLock, FaLockOpen } from "react-icons/fa";
 import axios from "axios";
 import Spinner from "~/components/Spinner/Spinner";
+
+const ApryseModule = dynamic(
+    () => import("./ApryseModule").then((mod) => mod.ApryseModule),
+    {
+        ssr: false,
+    },
+);
 
 const schema = z.object({
     password: z.string().min(1),
