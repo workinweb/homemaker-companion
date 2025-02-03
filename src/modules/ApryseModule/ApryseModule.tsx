@@ -165,77 +165,109 @@ export function ApryseModule() {
                 console.log(error);
             });
     }, []);
-
     return (
-        <div className="PdfViewer">
-            <div>
-                <h1 className="my-2 text-2xl font-bold text-primary">
-                    Application Form
-                </h1>
+        <div className="mx-auto max-w-[1200px] pt-10">
+            <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-md">
+                <div className="mb-8">
+                    <h1 className="mb-4 text-3xl font-bold text-primary">
+                        Employment Application Form
+                    </h1>
 
-                <h2 className="text-xl font-bold text-primary">Indications:</h2>
-                <ul className="flex flex-col gap-2 py-2">
-                    <li className="rounded-md bg-slate-500 p-2 text-white">
-                        {"-> "}
-                        Please fill out the form, do not leave empty any of the
-                        required inputs or you might have to contact us to
-                        update the information in order to be elegible
-                    </li>
-                </ul>
+                    <div className="rounded-md bg-blue-50 p-4">
+                        <h2 className="mb-2 text-xl font-semibold text-primary">
+                            Important Instructions:
+                        </h2>
+                        <ul className="space-y-2 text-gray-700">
+                            <li className="flex items-center">
+                                <span className="mr-2">•</span>
+                                Please complete all required fields in the
+                                application form
+                            </li>
+                            <li className="flex items-center">
+                                <span className="mr-2">•</span>
+                                Missing information may delay your application
+                                process
+                            </li>
+                            <li className="flex items-center">
+                                <span className="mr-2">•</span>
+                                Contact us if you need to update any information
+                                after submission
+                            </li>
 
-                <div className="flex flex-col gap-5 py-5">
-                    <Input
-                        name="name"
-                        value={values.name}
-                        color={errors.name ? "danger" : "default"}
-                        errorMessage={
-                            errors.name && "Please enter a valid name"
-                        }
-                        onChange={handleValueChange}
-                        isRequired
-                        label={"Name"}
-                        aria-label="Name"
-                        classNames={{ label: "text-color-black" }}
-                    />
-                    <Input
-                        name="email"
-                        value={values.email}
-                        color={errors.email ? "danger" : "default"}
-                        errorMessage={
-                            errors.email && "Please enter a valid email"
-                        }
-                        onChange={handleValueChange}
-                        isRequired
-                        label={"Email"}
-                        type="email"
-                        aria-label="Email"
-                        classNames={{ label: "text-color-black" }}
-                    />
+                            <li className="flex items-center">
+                                <span className="mr-2">•</span>
+                                Application can be submitted via the send button
+                                at the end or downloaded and emailed to
+                                "evanhomecare@mail.com"
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-                    <Button
-                        variant="faded"
-                        color="primary"
-                        onClick={sendPDF}
-                        disabled={sending}
-                        aria-label="Send Pdf via Email to Evan Home Care"
-                    >
-                        {sending ? (
-                            <>
-                                <Spinner />
-                                <p className="ml-2">{"Sending..."}</p>
-                            </>
-                        ) : (
-                            "Send pdf via email"
-                        )}
-                    </Button>
+                <div className="mb-8 space-y-6">
+                    <div>
+                        <Input
+                            name="name"
+                            value={values.name}
+                            color={errors.name ? "danger" : "default"}
+                            errorMessage={
+                                errors.name && "Please enter a valid name"
+                            }
+                            onChange={handleValueChange}
+                            isRequired
+                            label="Full Name"
+                            aria-label="Full Name"
+                            classNames={{
+                                label: "text-gray-700 font-medium",
+                                input: "border-gray-300",
+                            }}
+                        />
+                    </div>
+
+                    <div>
+                        <Input
+                            name="email"
+                            value={values.email}
+                            color={errors.email ? "danger" : "default"}
+                            errorMessage={
+                                errors.email && "Please enter a valid email"
+                            }
+                            onChange={handleValueChange}
+                            isRequired
+                            label="Email Address"
+                            type="email"
+                            aria-label="Email Address"
+                            classNames={{
+                                label: "text-gray-700 font-medium",
+                                input: "border-gray-300",
+                            }}
+                        />
+                    </div>
                 </div>
 
                 <div
-                    // className="webviewer"
-                    className={styles.pdfViewerWrapper}
+                    className={`${styles.pdfViewerWrapper} rounded-lg border border-gray-200`}
                     ref={viewer}
                 ></div>
             </div>
+
+            <Button
+                className="mt-5 w-full"
+                variant="solid"
+                color="primary"
+                onClick={sendPDF}
+                disabled={sending}
+                aria-label="Submit Application"
+            >
+                {sending ? (
+                    <div className="flex items-center justify-center">
+                        <Spinner />
+                        <span className="ml-2">Submitting Application...</span>
+                    </div>
+                ) : (
+                    "Submit Application"
+                )}
+            </Button>
         </div>
     );
 }

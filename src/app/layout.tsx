@@ -21,9 +21,10 @@ const myFont = localFont({
 export const metadata: Metadata = {
     title: {
         default: "Evan Home Care - Home Care Services",
-        template: "%s | Evan Home Care"
+        template: "%s | Evan Home Care",
     },
-    description: "Evan Home Care provides high-quality personalized home care services focused on improving quality of life for people with disabilities. Professional caregivers serving Florida.",
+    description:
+        "Evan Home Care provides high-quality personalized home care services focused on improving quality of life for people with disabilities. Professional caregivers serving Florida.",
     keywords: [
         "Evan Home Care",
         "Home Care Services",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
         "Home Care Agency",
         "Professional Caregivers",
         "Medicaid Services",
-        "Home Health Services"
+        "Home Health Services",
     ],
     authors: [{ name: "Evan Home Care" }],
     openGraph: {
@@ -45,20 +46,22 @@ export const metadata: Metadata = {
         url: process.env.BASE_URL,
         siteName: "Evan Home Care",
         title: "Evan Home Care - Quality Home Care Services",
-        description: "Professional home care services focused on improving quality of life. Serving Florida with experienced caregivers.",
+        description:
+            "Professional home care services focused on improving quality of life. Serving Florida with experienced caregivers.",
         images: [
             {
                 url: `${process.env.BASE_URL}/logo.webp`,
                 width: 150,
                 height: 150,
                 alt: "Evan Home Care Logo",
-            }
+            },
         ],
     },
     twitter: {
         card: "summary_large_image",
         title: "Evan Home Care - Quality Home Care Services",
-        description: "Professional home care services focused on improving quality of life. Serving Florida with experienced caregivers.",
+        description:
+            "Professional home care services focused on improving quality of life. Serving Florida with experienced caregivers.",
         images: [`${process.env.BASE_URL}/logo.webp`],
     },
     robots: {
@@ -67,12 +70,11 @@ export const metadata: Metadata = {
         googleBot: {
             index: true,
             follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
         },
     },
-    
 };
 
 export default function RootLayout({
@@ -92,8 +94,6 @@ export default function RootLayout({
                 </Providers>
                 <SpeedInsights />
                 <Analytics />
-
-               
             </body>
         </html>
     );

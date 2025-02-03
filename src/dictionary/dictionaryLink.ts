@@ -139,7 +139,7 @@ const dictionary: DictionaryType = {
         name: `Employment`,
         texts: {
             sectionName: `Employment`,
-            agencyFor: `Evan Home Care is an agency for persons with Evan Home Care that works under the Agency for Persons with Disabilities (APD) and the Agency for Health Care Administration (AHCA) Medicaid. Therefore, all Independent Contractors providers must have all the documentation and certifications required by both APD and AHCA Medicaid.`,
+            agencyFor: `Evan Home Care works under the Agency for Persons with Disabilities (APD) and the Agency for Health Care Administration (AHCA) Medicaid. Therefore, all Independent Contractors providers must have all the documentation and certifications required by both APD and AHCA Medicaid.`,
             requirementsTitle: `Requirements`,
             submitBefore: `The following must be completed/submitted prior to signing a contract to begin providing services:`,
             requirements: [
