@@ -2,9 +2,12 @@
 
 import React, { useState } from "react";
 import { ApryseModule } from "./ApryseModule";
-import { Button, Input } from "@nextui-org/react";
+import { Button, Input, Card } from "@nextui-org/react";
 import { enqueueSnackbar } from "notistack";
 import { z } from "zod";
+import { FaLock, FaLockOpen } from "react-icons/fa";
+import axios from "axios";
+import Spinner from "~/components/Spinner/Spinner";
 
 const schema = z.object({
     password: z.string().min(1),
@@ -19,6 +22,7 @@ export function ApryseWithLock() {
         password: "",
     });
     const [isLocked, setIsLocked] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleValueChange = (
         e: React.ChangeEvent<HTMLInputElement>,
@@ -29,16 +33,34 @@ export function ApryseWithLock() {
         } else setValues({ ...values, [e.target.name]: e.target.value });
     };
 
-    const evaluatePassord = () => {
+    const evaluatePassord = async () => {
         const result = schema.safeParse(values);
 
         if (result.success) {
-            if (values.password === process.env.JOB_APPLICATION_PASSWORD) {
-                setIsLocked(false);
-            } else {
-                enqueueSnackbar("Password incorrect", {
-                    variant: "error",
+            setIsLoading(true);
+            try {
+                const response = await axios.post("/api/validatePassword", {
+                    password: values.password,
                 });
+                console.log("🚀 ~ evaluatePassord ~ response:", response);
+
+                if (response.data.isValid) {
+                    setIsLocked(false);
+                } else {
+                    enqueueSnackbar("Password incorrect", {
+                        variant: "error",
+                    });
+                }
+            } catch (error) {
+                console.error("Error validating password:", error);
+                enqueueSnackbar(
+                    "Error validating password. Please try again.",
+                    {
+                        variant: "error",
+                    },
+                );
+            } finally {
+                setIsLoading(false);
             }
         } else {
             //@ts-expect-error
@@ -48,39 +70,64 @@ export function ApryseWithLock() {
 
     if (isLocked) {
         return (
-            <div className="md:p10 h-100 flex h-screen flex-col items-center justify-center gap-5 bg-primary p-2 sm:p-5">
-                <div className="mt-[-80px] flex w-full flex-col items-center justify-center gap-5">
-                    <h1 className="text-xl font-bold text-white">
-                        Contact Evan Home Care for the password to fill the
-                        employment form.
-                    </h1>
+            <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-primary/5 via-primary/10 to-primary/5 p-4">
+                <Card className="w-full max-w-md space-y-8 rounded-xl bg-white p-8 shadow-2xl">
+                    <div className="flex flex-col items-center space-y-2 text-center">
+                        <div className="rounded-full bg-primary/5 p-3">
+                            <FaLock className="h-8 w-8 text-primary" />
+                        </div>
+                        <h1 className="text-2xl font-bold text-gray-900">
+                            Protected Form
+                        </h1>
+                        <p className="text-sm text-gray-500">
+                            Contact Evan Home Care for the password to access
+                            the employment form
+                        </p>
+                    </div>
 
-                    <Input
-                        className="max-w-[800px]"
-                        type="password"
-                        label="Enter the provided password"
-                        name="password"
-                        value={values.password}
-                        color={errors.password ? "danger" : "default"}
-                        errorMessage={
-                            errors.password && "Please enter a valid password"
-                        }
-                        aria-label="Please enter a valid password"
-                        onChange={handleValueChange}
-                        isRequired
-                        classNames={{ label: "text-color-black" }}
-                    />
+                    <div className="space-y-6">
+                        <div className="space-y-2">
+                            <Input
+                                type="password"
+                                label="Password"
+                                name="password"
+                                value={values.password}
+                                color={errors.password ? "danger" : "default"}
+                                errorMessage={
+                                    errors.password &&
+                                    "Please enter a valid password"
+                                }
+                                aria-label="Please enter a valid password"
+                                onChange={handleValueChange}
+                                onKeyDown={(e) =>
+                                    e.key === "Enter" && void evaluatePassord()
+                                }
+                                isRequired
+                                classNames={{
+                                    label: "text-gray-600",
+                                    input: "bg-transparent",
+                                }}
+                                endContent={
+                                    <FaLockOpen className="h-4 w-4 text-gray-400" />
+                                }
+                            />
+                        </div>
 
-                    <Button
-                        onPress={evaluatePassord}
-                        fullWidth
-                        className="max-w-[800px]"
-                        variant="faded"
-                        aria-label="Access Button"
-                    >
-                        Login
-                    </Button>
-                </div>
+                        <Button
+                            onPress={() => void evaluatePassord()}
+                            className="w-full bg-primary text-white shadow-lg transition-transform hover:scale-[1.02]"
+                            size="lg"
+                            aria-label="Access Button"
+                            isDisabled={isLoading}
+                        >
+                            {isLoading ? <Spinner /> : "Unlock Access"}
+                        </Button>
+
+                        <p className="text-center text-xs text-gray-500">
+                            Need help? Contact our team
+                        </p>
+                    </div>
+                </Card>
             </div>
         );
     }

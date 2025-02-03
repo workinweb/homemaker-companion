@@ -25,15 +25,16 @@ export function AccordionCard({
 
     return (
         <div
-            className={`w-full rounded-lg border-3 border-solid p-10 sm:w-[350px] md:w-[400px] lg:w-[500px]`}
+            className={`w-full rounded-2xl bg-primary/5 p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 sm:w-[350px] md:w-[400px] lg:w-[500px]`}
         >
-            <div className="mb-2 flex w-full justify-center">
+            <div className="mb-4 flex w-full justify-center">
                 <Image
                     width={500}
                     height={500}
                     quality={100}
                     alt={alt}
                     src={img}
+                    className="transition-transform duration-300 hover:scale-105"
                     style={{
                         width: "75%",
                         maskImage: "linear-gradient(black 90%, transparent)",
@@ -41,55 +42,67 @@ export function AccordionCard({
                 />
             </div>
 
-            <div className="mt-4 py-2">
-                <h2 className={`text-center text-2xl font-bold text-primary `}>
+            <div className="mb-4">
+                <h2 className={`text-center text-2xl font-bold text-primary`}>
                     {title}
                 </h2>
             </div>
 
-            <div className="py-2">
-                <p className={`text-left text-xl text-primary`}>{text}</p>
+            <div className="mb-6">
+                <p className={`text-left text-xl text-primary/80`}>{text}</p>
             </div>
 
             {hiddenText && hiddenText?.length > 0 && (
                 <Accordion
-                    className="p-0"
+                    className="rounded-xl bg-white/50 p-2"
                     selectedKeys={selectedKeys}
                     onSelectionChange={setSelectedKeys}
                 >
                     <AccordionItem
                         key="1"
                         aria-label="Read More"
-                        classNames={{ subtitle: "text-primary" }}
+                        classNames={{
+                            subtitle:
+                                "text-primary/70 hover:text-primary transition-colors duration-200",
+                            title: "text-primary",
+                        }}
                         subtitle={
                             //@ts-ignore
                             selectedKeys.size > 0 ? "Read less" : "Read more"
                         }
                         title=""
                     >
-                        <p className={`text-left text-xl text-primary`}>
-                            {hiddenText.length > 0 && hiddenText[0]}
-                        </p>
+                        <div className="space-y-4">
+                            <p className={`text-left text-xl text-primary/80`}>
+                                {hiddenText.length > 0 && hiddenText[0]}
+                            </p>
 
-                        <h3
-                            className={`mb-2 mt-4 text-left text-xl font-bold text-primary`}
-                        >
-                            {hiddenText.length > 1 && hiddenText[1]}
-                        </h3>
+                            <h3
+                                className={`text-left text-xl font-bold text-primary`}
+                            >
+                                {hiddenText.length > 1 && hiddenText[1]}
+                            </h3>
 
-                        <p className={`text-left text-xl text-primary `}>
-                            {hiddenText.length > 2 && hiddenText[2]}
-                        </p>
+                            <p className={`text-left text-xl text-primary/80`}>
+                                {hiddenText.length > 2 && hiddenText[2]}
+                            </p>
 
-                        <div className="py-4">
-                            <ul className="xt-justify text-xl text-primary ">
-                                {hiddenText.length > 3 &&
-                                    hiddenText[3] &&
-                                    Array.isArray(hiddenText[3]) &&
-                                    hiddenText[3].map((skill) => (
-                                        <li key={skill}>{skill}</li>
-                                    ))}
-                            </ul>
+                            <div className="py-2">
+                                <ul className="space-y-2 text-xl text-primary/80">
+                                    {hiddenText.length > 3 &&
+                                        hiddenText[3] &&
+                                        Array.isArray(hiddenText[3]) &&
+                                        hiddenText[3].map((skill) => (
+                                            <li
+                                                key={skill}
+                                                className="flex items-center gap-2"
+                                            >
+                                                <span className="h-2 w-2 rounded-full bg-primary/40"></span>
+                                                {skill}
+                                            </li>
+                                        ))}
+                                </ul>
+                            </div>
                         </div>
                     </AccordionItem>
                 </Accordion>

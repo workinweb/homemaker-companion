@@ -5,62 +5,80 @@ import styles from "./ChooseUs.module.css";
 
 export function ChooseUsSection() {
     return (
-        <div id="ChooseUs">
-            <div className="mt-10 text-primary">
-                <div className="flex flex-col items-center justify-between overflow-visible p-0 py-2 lg:flex-row lg:gap-10">
-                    <div>
-                        <p className="text-left text-xl font-bold">
+        <div id="ChooseUs" className="py-20">
+            <div className="container mx-auto px-4">
+                {/* Why Choose Us Section */}
+                <div className="mb-24 flex flex-col items-center justify-between gap-16 lg:flex-row">
+                    <div className="max-w-xl space-y-6">
+                        <h2 className="text-4xl font-bold text-primary">
                             {dictionary.ChooseUs.texts.whyChooseUsTitle}
-                        </p>
-                        <p className="text-left text-lg">
+                        </h2>
+                        <p className="text-xl leading-relaxed text-primary/80">
                             {dictionary.ChooseUs.texts.whyChooseUsText}
                         </p>
                     </div>
 
-                    <Image
-                        width={500}
-                        height={500}
-                        quality={100}
-                        alt="Two happy persons, one in a wheelchair"
-                        className={styles.imageMasked}
-                        src="/aboutus2.webp"
-                    />
+                    <div className="w-full max-w-lg lg:w-1/2">
+                        <Image
+                            width={500}
+                            height={500}
+                            quality={100}
+                            alt="Two happy persons, one in a wheelchair"
+                            className={`${styles.imageMasked} rounded-3xl shadow-2xl transition-all duration-500 hover:scale-[1.03] hover:shadow-primary/20`}
+                            src="/aboutus2.webp"
+                        />
+                    </div>
                 </div>
 
-                <div className="py-4">
-                    <h2 className="mb-2 text-xl font-bold text-primary">
+                {/* Medical Services Section */}
+                <div className="mb-20 rounded-2xl bg-primary/5 p-10">
+                    <h2 className="mb-6 text-3xl font-bold text-primary">
                         {dictionary.ChooseUs.texts.medicalServicesTitle}
                     </h2>
 
-                    <p className="text-left text-lg text-primary">
+                    <p className="text-left text-lg leading-relaxed text-primary/90">
                         {dictionary.ChooseUs.texts.medicalServicesText}
                     </p>
                 </div>
 
-                <div className="mt-10 flex flex-col items-center justify-between overflow-visible p-0 py-2 lg:flex-row lg:gap-10">
-                    <Image
-                        width={500}
-                        height={500}
-                        quality={100}
-                        alt=""
-                        className={styles.image2Masked}
-                        src="/9-Medicaid Waiver Services.png"
-                    />
+                {/* Approved Agency Section */}
+                <div className="flex flex-col-reverse items-center justify-between gap-16 lg:flex-row">
+                    <div className="w-full lg:w-1/2">
+                        <Image
+                            width={500}
+                            height={500}
+                            quality={100}
+                            alt="Medical services illustration"
+                            className={`${styles.image2Masked} rounded-3xl shadow-2xl transition-all duration-500 hover:scale-[1.03] hover:shadow-primary/20`}
+                            src="/9-Medicaid Waiver Services.png"
+                        />
+                    </div>
 
-                    <div className="py-4">
-                        <h2 className="mb-2 text-xl font-bold text-primary">
-                            {dictionary.ChooseUs.texts.approvedAgency}
-                        </h2>
-                        <h2 className="mb-2 text-xl font-bold text-primary">
-                            {dictionary.ChooseUs.texts.intellectualDisabilities}
-                        </h2>
-                        <ul className="text-lg text-primary">
+                    <div className="w-full space-y-8 lg:w-1/2">
+                        <div>
+                            <h2 className="mb-4 text-3xl font-bold text-primary">
+                                {dictionary.ChooseUs.texts.approvedAgency}
+                            </h2>
+                            <h3 className="text-2xl font-semibold text-primary/90">
+                                {
+                                    dictionary.ChooseUs.texts
+                                        .intellectualDisabilities
+                                }
+                            </h3>
+                        </div>
+
+                        <ul className="space-y-3 text-lg text-primary/80">
                             {Array.isArray(
                                 dictionary.ChooseUs?.texts?.disabilities,
                             ) &&
                                 dictionary.ChooseUs?.texts?.disabilities?.map(
                                     (disability) => (
-                                        <li key={disability}>{disability}</li>
+                                        <li
+                                            key={disability}
+                                            className="flex items-center before:mr-3 before:h-2 before:w-2 before:rounded-full before:bg-primary before:content-['']"
+                                        >
+                                            {disability}
+                                        </li>
                                     ),
                                 )}
                         </ul>

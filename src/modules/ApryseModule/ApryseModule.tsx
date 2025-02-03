@@ -13,6 +13,7 @@ import { v4 as uuidv4 } from "uuid";
 import { z } from "zod";
 import Spinner from "~/components/Spinner/Spinner";
 import { enqueueSnackbar } from "notistack";
+import Image from "next/image";
 
 const schema = z.object({
     name: z.string().min(1),
@@ -166,13 +167,48 @@ export function ApryseModule() {
             });
     }, []);
     return (
-        <div className="mx-auto max-w-[1200px] pt-10">
+        <div className="mx-auto max-w-[1200px] py-10">
+            <div className="mb-10">
+                <div className="relative mt-8 flex flex-col items-center justify-between gap-8 rounded-xl bg-gradient-to-br from-transparent via-primary/5 to-transparent p-8 sm:mt-4 sm:flex-row lg:mt-0">
+                    <div className="relative">
+                        <Image
+                            width={150}
+                            height={150}
+                            src="/logo.webp"
+                            alt="Evan Home Care Logo"
+                            className="relative z-10 h-24 w-24 transform transition-transform duration-300 hover:scale-105 sm:h-32 sm:w-32"
+                        />
+                    </div>
+
+                    <div className="text-center sm:text-left">
+                        <h1 className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-4xl font-bold uppercase text-transparent sm:text-5xl">
+                            Employment Application
+                        </h1>
+                        <div className="mt-2 h-1 w-20 rounded bg-gradient-to-r from-primary/30 to-primary/20 sm:w-32"></div>
+                    </div>
+
+                    <div className="hidden sm:block">
+                        <div className="relative h-16 w-16 rounded-full border border-primary/10 bg-gradient-to-br from-primary/5 to-transparent">
+                            <svg
+                                className="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 text-primary/40"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M5 13l4 4L19 7"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-md">
                 <div className="mb-8">
-                    <h1 className="mb-4 text-3xl font-bold text-primary">
-                        Employment Application Form
-                    </h1>
-
                     <div className="rounded-md bg-blue-50 p-4">
                         <h2 className="mb-2 text-xl font-semibold text-primary">
                             Important Instructions:
@@ -199,6 +235,13 @@ export function ApryseModule() {
                                 Application can be submitted via the send button
                                 at the end or downloaded and emailed to
                                 "evanhomecare@mail.com"
+                            </li>
+
+                            <li className="flex items-center">
+                                <span className="mr-2">•</span>
+                                Do not refresh the page or leave the site as it
+                                will reset the form. If you need to pause,
+                                please download and email it instead
                             </li>
                         </ul>
                     </div>
@@ -257,6 +300,7 @@ export function ApryseModule() {
                 color="primary"
                 onClick={sendPDF}
                 disabled={sending}
+                size="lg"
                 aria-label="Submit Application"
             >
                 {sending ? (

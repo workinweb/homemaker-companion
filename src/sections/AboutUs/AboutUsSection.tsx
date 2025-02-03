@@ -1,8 +1,6 @@
-import React from "react";
 import { Card, CardBody } from "@nextui-org/react";
-import dictionary from "~/dictionary/dictionaryLink";
-import { SmallCard } from "~/components/Cards/SmallCard/SmallCard";
 import Image from "next/image";
+import dictionary from "~/dictionary/dictionaryLink";
 import styles from "./aboutUs.module.css";
 
 export function AboutUsSection() {
@@ -26,7 +24,7 @@ export function AboutUsSection() {
                     />
 
                     <div>
-                        <p className="text-left text-xl text-white">
+                        <p className="text-left text-2xl text-white">
                             <span>
                                 {dictionary.AboutUs.texts.aboutUsBanner}
                             </span>

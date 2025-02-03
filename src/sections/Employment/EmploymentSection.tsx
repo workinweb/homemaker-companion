@@ -2,36 +2,52 @@
 
 import React from "react";
 import Image from "next/image";
-import { Card, CardBody, Divider } from "@nextui-org/react";
+import { Card, CardBody, Divider, Button } from "@nextui-org/react";
 import { List } from "~/components/List/List";
 import dictionary from "~/dictionary/dictionaryLink";
 import styles from "./Employment.module.css";
+import Link from "next/link";
 
 export function EmploymentSection() {
     return (
-        <div id="Employment" className="mx-auto max-w-[1200px]">
+        <div id="Employment" className="mx-auto max-w-[1200px] py-10">
             {/* Header Section */}
             <div className="mb-10">
-                <div className="mt-[20px] flex flex-col items-center justify-between gap-5 sm:mt-[0] sm:flex-row lg:mt-[-20px]">
-                    <div
-                        className="max-w-[120px] sm:max-w-max"
-                        style={{ zIndex: 10 }}
-                    >
+                <div className="relative mt-8 flex flex-col items-center justify-between gap-8 rounded-xl bg-gradient-to-br from-transparent via-primary/5 to-transparent p-8 sm:mt-4 sm:flex-row lg:mt-0">
+                    <div className="relative">
                         <Image
                             width={150}
                             height={150}
                             src="/logo.webp"
                             alt="Evan Home Care Logo"
+                            className="relative z-10 h-24 w-24 transform transition-transform duration-300 hover:scale-105 sm:h-32 sm:w-32"
                         />
                     </div>
 
-                    <div>
-                        <h1 className="text-center text-4xl font-bold uppercase text-primary">
+                    <div className="text-center sm:text-left">
+                        <h1 className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-4xl font-bold uppercase text-transparent sm:text-5xl">
                             {dictionary.Employment.texts.sectionName}
                         </h1>
+                        <div className="mt-2 h-1 w-20 rounded bg-gradient-to-r from-primary/30 to-primary/20 sm:w-32"></div>
                     </div>
 
-                    <div></div>
+                    <div className="hidden sm:block">
+                        <div className="relative h-16 w-16 rounded-full border border-primary/10 bg-gradient-to-br from-primary/5 to-transparent">
+                            <svg
+                                className="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 text-primary/40"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M5 13l4 4L19 7"
+                                />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Hero Card */}
@@ -83,10 +99,6 @@ export function EmploymentSection() {
 
             {/* Application Preview Section */}
             <Card className="mt-8 p-6 shadow-md">
-                <h2 className="mb-6 text-center text-3xl font-bold text-primary">
-                    {dictionary.Employment.texts.applyTitle}
-                </h2>
-
                 <div className="space-y-6">
                     <div className="border-b pb-4">
                         <h3 className="mb-2 text-2xl font-bold text-primary">
@@ -138,6 +150,17 @@ export function EmploymentSection() {
                     </div>
                 </div>
             </Card>
+
+            <Button
+                as={Link}
+                href="/job-application"
+                color="primary"
+                size="lg"
+                fullWidth
+                className="mt-8 w-full "
+            >
+                Access Employment Application Form
+            </Button>
         </div>
     );
 }

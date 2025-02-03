@@ -33,7 +33,7 @@ export function HomeSection() {
 
             <Card className="mt-12 rounded-lg bg-primary px-10 py-4 text-white">
                 <CardBody className="flex flex-col items-center justify-between gap-5 overflow-visible p-0 lg:flex-row lg:gap-10">
-                    <p className="text-left text-lg sm:text-xl">
+                    <p className="text-left text-lg sm:text-2xl">
                         {dictionary.Home.texts.agencyFor}
                     </p>
 

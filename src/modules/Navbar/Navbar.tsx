@@ -138,7 +138,7 @@ export function CustomNavbar() {
                 <NavbarItem className="hidden sm:flex">
                     <Link
                         className={`hover:text-gray-400 ${
-                            pathName.includes("apryser-pdf")
+                            pathName.includes("employment")
                                 ? "text-primary"
                                 : ""
                         }`}
