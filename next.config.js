@@ -4,15 +4,6 @@
  */
 
 const nextConfig = {
-    webpack: (cfg) => {
-        cfg.resolve.alias.canvas = false;
-        return cfg;
-    },
-
-    experimental: {
-        reactCompiler: true,
-    },
-
     eslint: {
         dirs: [
             "utils",
