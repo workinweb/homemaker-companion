@@ -76,8 +76,8 @@ export function ApryseModule() {
             const {
                 data: { signature, timestamp, error },
             } = await axios.post("/api/cloudinary", {
-                folder: `${process.env.CLOUDINARY_PDF_FOLDER}/${dateString}`,
-                upload_preset: process.env.CLOUDINARY_UPLOAD_PRESET,
+                folder: `${process.env.NEXT_PUBLIC_CLOUDINARY_PDF_FOLDER}/${dateString}`,
+                upload_preset: process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
                 filename_override: creationName,
                 public_id: creationName,
             });
@@ -86,19 +86,27 @@ export function ApryseModule() {
             formData.append("file", blob);
             formData.append(
                 "upload_preset",
-                `${process.env.CLOUDINARY_UPLOAD_PRESET}`,
+                `${process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}`,
             );
             formData.append(
                 "folder",
-                `${process.env.CLOUDINARY_PDF_FOLDER}/${dateString}`,
+                `${process.env.NEXT_PUBLIC_CLOUDINARY_PDF_FOLDER}/${dateString}`,
             );
             formData.append("public_id", creationName);
             formData.append("timestamp", timestamp);
-            formData.append("api_key", process.env.CLOUDINARY_API_KEY);
+            formData.append(
+                "api_key",
+                process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
+            );
 
             const uploadPdf = await axios.post(
-                `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUDNAME}/upload`,
+                `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUDNAME}/upload`,
                 formData,
+                {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    },
+                },
             );
 
             const response = await axios.post("/api/jobApplication", {
@@ -130,7 +138,7 @@ export function ApryseModule() {
         WebViewer(
             {
                 path: "/webviewer/lib",
-                licenseKey: process.env.PDF_WEB_VIEWER, // sign up to get a key at https://dev.apryse.com
+                licenseKey: process.env.NEXT_PUBLIC_PDF_WEB_VIEWER,
                 initialDoc: filePath,
                 enableOfficeEditing: false,
                 disabledElements: [

@@ -48,6 +48,16 @@ export const JobApplicationTemplate: React.FC<
                         marginBottom: "15px",
                     }}
                 >
+                    A new job application has been submitted. Please find the
+                    attached PDF document containing the application details.
+                </p>
+                <p
+                    style={{
+                        fontSize: "16px",
+                        color: "#666",
+                        marginBottom: "15px",
+                    }}
+                >
                     <strong style={{ color: "#2b7fa8" }}>Name:</strong> {name}
                 </p>
                 <p
@@ -59,29 +69,6 @@ export const JobApplicationTemplate: React.FC<
                 >
                     <strong style={{ color: "#2b7fa8" }}>Email:</strong> {email}
                 </p>
-                <p
-                    style={{
-                        fontSize: "16px",
-                        color: "#666",
-                        marginBottom: "15px",
-                    }}
-                >
-                    <strong style={{ color: "#2b7fa8" }}>Phone:</strong> {phone}
-                </p>
-                <div style={{ marginTop: "20px" }}>
-                    <h3 style={{ color: "#2b7fa8", marginBottom: "10px" }}>
-                        Message:
-                    </h3>
-                    <p
-                        style={{
-                            fontSize: "16px",
-                            color: "#666",
-                            lineHeight: "1.6",
-                        }}
-                    >
-                        {message}
-                    </p>
-                </div>
             </div>
         </div>
 
