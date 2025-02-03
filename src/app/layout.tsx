@@ -19,20 +19,60 @@ const myFont = localFont({
 });
 
 export const metadata: Metadata = {
-    icons: { icon: "../favicon.ico" },
+    title: {
+        default: "Evan Home Care - Home Care Services",
+        template: "%s | Evan Home Care"
+    },
+    description: "Evan Home Care provides high-quality personalized home care services focused on improving quality of life for people with disabilities. Professional caregivers serving Florida.",
     keywords: [
         "Evan Home Care",
-        "Care Giver",
-        "Home Care",
-        "Home Services",
+        "Home Care Services",
+        "Caregiver Services",
+        "Disability Care",
+        "Home Health Care",
+        "Florida Home Care",
+        "Personal Care Services",
+        "Senior Care",
+        "Home Care Agency",
+        "Professional Caregivers",
         "Medicaid Services",
+        "Home Health Services"
     ],
-    title: {
-        default: "Evan Home Care",
-        template: "%s - Evan Home Care",
+    authors: [{ name: "Evan Home Care" }],
+    openGraph: {
+        type: "website",
+        locale: "en_US",
+        url: process.env.BASE_URL,
+        siteName: "Evan Home Care",
+        title: "Evan Home Care - Quality Home Care Services",
+        description: "Professional home care services focused on improving quality of life. Serving Florida with experienced caregivers.",
+        images: [
+            {
+                url: `${process.env.BASE_URL}/logo.webp`,
+                width: 150,
+                height: 150,
+                alt: "Evan Home Care Logo",
+            }
+        ],
     },
-    twitter: { card: "summary_large_image" },
-    description: "Evan Home Care",
+    twitter: {
+        card: "summary_large_image",
+        title: "Evan Home Care - Quality Home Care Services",
+        description: "Professional home care services focused on improving quality of life. Serving Florida with experienced caregivers.",
+        images: [`${process.env.BASE_URL}/logo.webp`],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+    
 };
 
 export default function RootLayout({
@@ -52,6 +92,8 @@ export default function RootLayout({
                 </Providers>
                 <SpeedInsights />
                 <Analytics />
+
+               
             </body>
         </html>
     );

@@ -3,10 +3,7 @@
  * for Docker builds.
  */
 
-import type { NextConfig } from 'next'
-
-
-const nextConfig: NextConfig  = {
+const nextConfig = {
     webpack: (cfg) => {
         cfg.resolve.alias.canvas = false;
         return cfg;
