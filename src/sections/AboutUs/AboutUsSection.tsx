@@ -24,7 +24,7 @@ export function AboutUsSection() {
                     />
 
                     <div>
-                        <p className="text-left text-2xl text-white">
+                        <p className="text-left text-lg text-white sm:text-2xl">
                             <span>
                                 {dictionary.AboutUs.texts.aboutUsBanner}
                             </span>

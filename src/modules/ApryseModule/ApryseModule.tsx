@@ -181,7 +181,7 @@ export function ApryseModule() {
                     </div>
 
                     <div className="text-center sm:text-left">
-                        <h1 className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-4xl font-bold uppercase text-transparent sm:text-5xl">
+                        <h1 className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-2xl font-bold uppercase text-transparent sm:text-2xl sm:text-5xl">
                             Employment Application
                         </h1>
                         <div className="mt-2 h-1 w-20 rounded bg-gradient-to-r from-primary/30 to-primary/20 sm:w-32"></div>

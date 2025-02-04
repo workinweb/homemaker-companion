@@ -6,7 +6,7 @@ import styles from "./ChooseUs.module.css";
 export function ChooseUsSection() {
     return (
         <div id="ChooseUs" className="py-20">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 {/* Why Choose Us Section */}
                 <div className="mb-24 flex flex-col items-center justify-between gap-16 lg:flex-row">
                     <div className="max-w-xl space-y-6">
@@ -67,7 +67,7 @@ export function ChooseUsSection() {
                             </h3>
                         </div>
 
-                        <ul className="space-y-3 text-lg text-primary/80">
+                        <ul className="space-y-3 px-2 text-lg text-primary/80">
                             {Array.isArray(
                                 dictionary.ChooseUs?.texts?.disabilities,
                             ) &&

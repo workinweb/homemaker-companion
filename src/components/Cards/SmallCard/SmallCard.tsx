@@ -31,7 +31,7 @@ export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
 
             <div className="transform transition-all duration-300 group-hover:translate-y-[-4px]">
                 <h2
-                    className={`mb-5 mt-8 text-center text-2xl font-bold tracking-wide ${
+                    className={`mb-5 mt-8 text-center text-lg font-bold tracking-wide sm:text-2xl ${
                         type === "filled" ? "text-white" : "text-primary"
                     }`}
                 >
@@ -41,7 +41,7 @@ export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
 
             <div className="transform transition-all duration-300 group-hover:translate-y-[-2px]">
                 <p
-                    className={`text-left text-lg leading-relaxed ${
+                    className={`text-left text-lg leading-relaxed sm:text-2xl ${
                         type === "filled" ? "text-white/90" : "text-primary/90"
                     }`}
                 >
