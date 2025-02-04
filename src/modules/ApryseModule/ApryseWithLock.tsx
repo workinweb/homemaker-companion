@@ -41,37 +41,44 @@ export function ApryseWithLock() {
     };
 
     const evaluatePassord = async () => {
-        const result = schema.safeParse(values);
+        try {
+            const result = schema.safeParse(values);
 
-        if (result.success) {
-            setIsLoading(true);
-            try {
-                const response = await axios.post("/api/validatePassword", {
-                    password: values.password,
-                });
-
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-                if (response.data?.isValid) {
-                    setIsLocked(false);
-                } else {
-                    enqueueSnackbar("Password incorrect", {
-                        variant: "error",
+            if (result.success) {
+                setIsLoading(true);
+                try {
+                    const response = await axios.post("/api/validatePassword", {
+                        password: values.password,
                     });
+
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                    if (response.data?.isValid) {
+                        setIsLocked(false);
+                    } else {
+                        enqueueSnackbar("Password incorrect", {
+                            variant: "error",
+                        });
+                    }
+                } catch (error) {
+                    console.error("Error validating password:", error);
+                    enqueueSnackbar(
+                        "Error validating password. Please try again.",
+                        {
+                            variant: "error",
+                        },
+                    );
+                } finally {
+                    setIsLoading(false);
                 }
-            } catch (error) {
-                console.error("Error validating password:", error);
-                enqueueSnackbar(
-                    "Error validating password. Please try again.",
-                    {
-                        variant: "error",
-                    },
-                );
-            } finally {
-                setIsLoading(false);
+            } else {
+                //@ts-expect-error
+                setErrors(result.error.formErrors.fieldErrors);
             }
-        } else {
-            //@ts-expect-error
-            setErrors(result.error.formErrors.fieldErrors);
+        } catch (error) {
+            console.error("Error validating input:", error);
+            enqueueSnackbar("An unexpected error occurred. Please try again.", {
+                variant: "error",
+            });
         }
     };
 

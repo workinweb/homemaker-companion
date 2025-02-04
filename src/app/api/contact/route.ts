@@ -31,8 +31,8 @@ export async function POST(req: Request) {
         // @ts-expect-error
         const data = await resend.emails.send({
             from: "Evan Home Care <evanhomecare@resend.dev>",
-            to: ["kbueno1077@gmail.com"],
-            subject: `Contact Us Inquiry from ${name}`,
+            to: ["evanhomecare@gmail.com"],
+            subject: `Contact request from ${name}`,
             react: ContactUsEmailTemplate({ name, email, message, phone }),
         });
 

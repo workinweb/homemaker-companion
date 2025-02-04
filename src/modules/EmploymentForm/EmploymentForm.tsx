@@ -44,41 +44,60 @@ export function EmploymentForm() {
 
     const evaluateSubmit = async () => {
         setSending(true);
-        const result = schema.safeParse(values);
-        setErrors({
-            name: "",
-            zip: "",
-            email: "",
-            DOB: "",
-        });
-
-        if (result.success) {
-            const response = await axios.post("/api/employmentRequest", {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-                zip: values.zip,
-                name: values.name,
-                email: values.email,
-                DOB: values.DOB,
+        try {
+            const result = schema.safeParse(values);
+            setErrors({
+                name: "",
+                zip: "",
+                email: "",
+                DOB: "",
             });
 
-            if (response.data.EvanEmailResponse.data) {
-                enqueueSnackbar("The request was successfully send", {
-                    variant: "success",
-                });
-            }
+            if (result.success) {
+                try {
+                    const response = await axios.post(
+                        "/api/employmentRequest",
+                        {
+                            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                            zip: values.zip,
+                            name: values.name,
+                            email: values.email,
+                            DOB: values.DOB,
+                        },
+                    );
 
-            if (response.data.EvanEmailResponse.error) {
-                console.error(response.data.EvanEmailResponse.error);
-                enqueueSnackbar(
-                    "An error ocurred sending the data to EvanHomeCare, try again later",
-                    { variant: "error" },
-                );
+                    if (response.data.EvanEmailResponse.data) {
+                        enqueueSnackbar("The request was successfully send", {
+                            variant: "success",
+                        });
+                    }
+
+                    if (response.data.EvanEmailResponse.error) {
+                        console.error(response.data.EvanEmailResponse.error);
+                        enqueueSnackbar(
+                            "An error ocurred sending the data to EvanHomeCare, try again later",
+                            { variant: "error" },
+                        );
+                    }
+                } catch (error) {
+                    console.error(error);
+                    enqueueSnackbar(
+                        "An error occurred while submitting the form. Please try again later.",
+                        { variant: "error" },
+                    );
+                }
+            } else {
+                //@ts-expect-error
+                setErrors(result.error.formErrors.fieldErrors);
             }
-        } else {
-            //@ts-expect-error
-            setErrors(result.error.formErrors.fieldErrors);
+        } catch (error) {
+            console.error(error);
+            enqueueSnackbar("An unexpected error occurred. Please try again.", {
+                variant: "error",
+            });
+        } finally {
+            setSending(false);
         }
-        setSending(false);
     };
 
     return (

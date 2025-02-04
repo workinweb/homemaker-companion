@@ -48,91 +48,111 @@ export function ApryseModule() {
 
     const sendPDF = async () => {
         setSending(true);
+        try {
+            const result = schema.safeParse(values);
 
-        const result = schema.safeParse(values);
+            if (result.success) {
+                try {
+                    const documentViewer =
+                        instanceRef.current.Core.getDocumentViewers()[0];
+                    const { annotationManager } = instanceRef.current.Core;
+                    const doc = documentViewer.getDocument();
+                    const xfdfString =
+                        await annotationManager.exportAnnotations();
+                    const dataPdf = await doc.getFileData({
+                        // saves the document with annotations in it
+                        xfdfString,
+                    });
 
-        if (result.success) {
-            const documentViewer =
-                instanceRef.current.Core.getDocumentViewers()[0];
-            const { annotationManager } = instanceRef.current.Core;
-            const doc = documentViewer.getDocument();
-            const xfdfString = await annotationManager.exportAnnotations();
-            const dataPdf = await doc.getFileData({
-                // saves the document with annotations in it
-                xfdfString,
-            });
+                    const arr = new Uint8Array(dataPdf);
+                    const blob = new Blob([arr], { type: "application/pdf" });
+                    const uuid = uuidv4();
 
-            const arr = new Uint8Array(dataPdf);
-            const blob = new Blob([arr], { type: "application/pdf" });
-            const uuid = uuidv4();
+                    const date = new Date();
+                    const day = String(date.getDate()).padStart(2, "0");
+                    const month = String(date.getMonth() + 1).padStart(2, "0"); // January is 0!
+                    const year = date.getFullYear();
+                    const dateString = month + "-" + day + "-" + year;
 
-            const date = new Date();
-            const day = String(date.getDate()).padStart(2, "0");
-            const month = String(date.getMonth() + 1).padStart(2, "0"); // January is 0!
-            const year = date.getFullYear();
-            const dateString = month + "-" + day + "-" + year;
+                    const creationName = `${values.name}-id:${uuid}`;
 
-            const creationName = `${values.name}-id:${uuid}`;
+                    const {
+                        data: { signature, timestamp, error },
+                    } = await axios.post("/api/cloudinary", {
+                        folder: `${process.env.NEXT_PUBLIC_CLOUDINARY_PDF_FOLDER}/${dateString}`,
+                        upload_preset:
+                            process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
+                        filename_override: creationName,
+                        public_id: creationName,
+                    });
 
-            const {
-                data: { signature, timestamp, error },
-            } = await axios.post("/api/cloudinary", {
-                folder: `${process.env.NEXT_PUBLIC_CLOUDINARY_PDF_FOLDER}/${dateString}`,
-                upload_preset: process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
-                filename_override: creationName,
-                public_id: creationName,
-            });
+                    const formData = new FormData();
+                    formData.append("file", blob);
+                    formData.append(
+                        "upload_preset",
+                        `${process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}`,
+                    );
+                    formData.append(
+                        "folder",
+                        `${process.env.NEXT_PUBLIC_CLOUDINARY_PDF_FOLDER}/${dateString}`,
+                    );
+                    formData.append("public_id", creationName);
+                    formData.append("timestamp", timestamp);
+                    formData.append(
+                        "api_key",
+                        process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
+                    );
 
-            const formData = new FormData();
-            formData.append("file", blob);
-            formData.append(
-                "upload_preset",
-                `${process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}`,
-            );
-            formData.append(
-                "folder",
-                `${process.env.NEXT_PUBLIC_CLOUDINARY_PDF_FOLDER}/${dateString}`,
-            );
-            formData.append("public_id", creationName);
-            formData.append("timestamp", timestamp);
-            formData.append(
-                "api_key",
-                process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
-            );
+                    const uploadPdf = await axios.post(
+                        `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUDNAME}/upload`,
+                        formData,
+                        {
+                            headers: {
+                                "Content-Type": "multipart/form-data",
+                            },
+                        },
+                    );
 
-            const uploadPdf = await axios.post(
-                `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUDNAME}/upload`,
-                formData,
-                {
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                    },
-                },
-            );
+                    const response = await axios.post("/api/jobApplication", {
+                        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                        url: uploadPdf.data.secure_url,
+                        name: values.name,
+                        email: values.email,
+                    });
 
-            const response = await axios.post("/api/jobApplication", {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-                url: uploadPdf.data.secure_url,
-                name: values.name,
-                email: values.email,
-            });
-
-            if (response.data.EvanEmailResponse.data) {
-                enqueueSnackbar("Pdf was sent correctly to EvanHomeCare", {
-                    variant: "success",
-                });
+                    if (response.data.EvanEmailResponse.data) {
+                        enqueueSnackbar(
+                            "Pdf was sent correctly to EvanHomeCare",
+                            {
+                                variant: "success",
+                            },
+                        );
+                    }
+                    if (response.data.EvanEmailResponse.error) {
+                        console.error(response.data.EvanEmailResponse.error);
+                        enqueueSnackbar(
+                            "An error ocurred sending the data to EvanHomeCare, try again later",
+                            { variant: "error" },
+                        );
+                    }
+                } catch (error) {
+                    console.error("Error processing PDF:", error);
+                    enqueueSnackbar(
+                        "An error occurred while processing the PDF. Please try again.",
+                        { variant: "error" },
+                    );
+                }
+            } else {
+                setErrors(result.error.formErrors.fieldErrors);
             }
-            if (response.data.EvanEmailResponse.error) {
-                console.error(response.data.EvanEmailResponse.error);
-                enqueueSnackbar(
-                    "An error ocurred sending the data to EvanHomeCare, try again later",
-                    { variant: "error" },
-                );
-            }
-        } else {
-            setErrors(result.error.formErrors.fieldErrors);
+        } catch (error) {
+            console.error("Unexpected error:", error);
+            enqueueSnackbar("An unexpected error occurred. Please try again.", {
+                variant: "error",
+            });
+        } finally {
+            setSending(false);
         }
-        setSending(false);
     };
 
     useEffect(() => {
@@ -167,7 +187,7 @@ export function ApryseModule() {
             });
     }, []);
     return (
-        <div className="mx-auto max-w-[1200px] sm:py-10">
+        <div className="mx-auto max-w-[1200px] px-2 sm:py-10">
             <div className="mb-10">
                 <div className="relative mt-8 flex flex-col items-center justify-between gap-8 rounded-xl bg-gradient-to-br from-transparent via-primary/5 to-transparent p-8 sm:mt-4 sm:flex-row lg:mt-0">
                     <div className="relative">
@@ -207,7 +227,7 @@ export function ApryseModule() {
                 </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-md">
+            <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-md">
                 <div className="mb-8">
                     <div className="rounded-md bg-blue-50 p-4">
                         <h2 className="mb-2 text-xl font-semibold text-primary">
@@ -295,7 +315,7 @@ export function ApryseModule() {
             </div>
 
             <Button
-                className="mt-5 w-full"
+                className="mb-4 mt-5 w-full"
                 variant="solid"
                 color="primary"
                 onClick={sendPDF}

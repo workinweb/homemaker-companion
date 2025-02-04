@@ -21,8 +21,8 @@ export async function POST(req: Request): Promise<NextResponse> {
         // @ts-expect-error
         const EvanEmailResponse = await resend.emails.send({
             from: "Evan Home Care <evanhomecare@resend.dev>",
-            to: ["kbueno1077@gmail.com"],
-            subject: `New Employment Request`,
+            to: ["evanhomecare@gmail.com"],
+            subject: `New job application from ${name}`,
             react: JobApplicationTemplate({
                 name: name,
                 email: email,
