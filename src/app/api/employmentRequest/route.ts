@@ -16,7 +16,7 @@ export async function POST(req: Request): Promise<NextResponse> {
         const EvanEmailResponse = await resend.emails.send({
             from: "Evan Home Care <evanhomecare@resend.dev>",
             to: ["kbueno1077@gmail.com"],
-            subject: `New Empoyment Interest`,
+            subject: `New Employment Interest`,
             react: EmploymentTemplate({
                 name: name,
                 email: email,

@@ -22,7 +22,7 @@ export async function POST(req: Request): Promise<NextResponse> {
         const EvanEmailResponse = await resend.emails.send({
             from: "Evan Home Care <evanhomecare@resend.dev>",
             to: ["kbueno1077@gmail.com"],
-            subject: `New Empoyment Request`,
+            subject: `New Employment Request`,
             react: JobApplicationTemplate({
                 name: name,
                 email: email,
@@ -31,7 +31,7 @@ export async function POST(req: Request): Promise<NextResponse> {
             }),
             attachments: [
                 {
-                    filename: "empoymentPDF.pdf",
+                    filename: `${name}_employment_request.pdf`,
                     content: base64String,
                 },
             ],
