@@ -129,17 +129,14 @@ export function EmploymentSection() {
             {/* Excel Viewer Section */}
             <Card className="mt-8 p-6 shadow-md">
                 <h3 className="mb-4 text-xl font-bold text-primary">
-                    {
-                        dictionary.Employment.texts
-                            .employmentApplication as string
-                    }
+                    Open positions
                 </h3>
 
                 {!isFileLoading && file ? (
                     <ExcelViewer file={file} />
                 ) : (
                     <div className="flex justify-center p-4">
-                        {!file && "No excel file to display"}
+                        {!file && "No open positions at this time"}
                     </div>
                 )}
             </Card>
