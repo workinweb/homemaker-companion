@@ -41,6 +41,7 @@ export function TrainingWithLock() {
                         },
                     );
 
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
                     if (response.data?.isValid) {
                         setIsLocked(false);
                     } else {
@@ -62,6 +63,7 @@ export function TrainingWithLock() {
                     setIsLoading(false);
                 }
             } else {
+                //@ts-ignore
                 setErrors(result.error.formErrors.fieldErrors);
             }
         } catch (error) {
