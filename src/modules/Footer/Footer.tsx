@@ -75,7 +75,8 @@ export function Footer() {
                 </div>
 
                 <p className="text-center font-bold text-white">
-                    © 2022 Evan Home Care, LLC. All Rights Reserved.
+                    © {new Date().getFullYear()} Evan Home Care, LLC. All
+                    Rights Reserved.
                 </p>
             </div>
         </div>
