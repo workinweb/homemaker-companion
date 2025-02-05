@@ -1,28 +1,25 @@
 import React from "react";
 
 type TitleProps = {
-    title?: string;
-    paragraph?: string;
-    classNames?: ClassNamesType;
+    title: string;
+    subtitle?: string;
+    className?: string;
 };
 
-type ClassNamesType = {
-    titleClassName: string;
-    paragraphClassName: string;
-};
-
-export function Title({
-    title = "",
-    paragraph = "",
-    classNames = {
-        titleClassName: "text-2xl mb-2 font-bold text-primary",
-        paragraphClassName: "text-xl text-left text-primary",
-    },
-}: TitleProps) {
+export function Title({ title, subtitle, className = "" }: TitleProps) {
     return (
-        <>
-            <h2 className={classNames.titleClassName}>{title}</h2>
-            <p className={classNames.paragraphClassName}>{paragraph}</p>
-        </>
+        <div className={`mb-10 ${className}`}>
+            <div className="relative flex flex-col items-center justify-between gap-8 rounded-xl bg-gradient-to-br from-transparent via-primary/5 to-transparent p-8">
+                <h2 className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-2xl font-bold uppercase text-transparent sm:text-4xl">
+                    {title}
+                </h2>
+                <div className="mt-2 h-1 w-20 rounded bg-gradient-to-r from-primary/30 to-primary/20 sm:w-32"></div>
+                {subtitle && (
+                    <p className="mt-2 text-center text-xl text-gray-600">
+                        {subtitle}
+                    </p>
+                )}
+            </div>
+        </div>
     );
 }

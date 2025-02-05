@@ -1,15 +1,15 @@
 import React from "react";
 import dictionary from "~/dictionary/dictionaryLink";
 import { AccordionCard } from "~/components/Cards/AccordionCard/AccordionCard";
+import { Title } from "~/components/Titles/Title";
 
 export function ServicesSection() {
     return (
         <div id="Services" className="mt-10 sm:mt-20">
-            <div>
-                <h2 className="mb-5 text-center text-4xl font-bold text-primary">
-                    {dictionary.Services.texts.serviceTitle}
-                </h2>
-            </div>
+            <Title
+                title={dictionary.Services.texts.serviceTitle as string}
+                subtitle="Professional Healthcare Services Tailored to Your Needs"
+            />
 
             <div className="flex flex-col items-start justify-evenly gap-8 sm:flex-row sm:flex-wrap lg:flex-nowrap">
                 <AccordionCard

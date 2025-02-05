@@ -122,7 +122,7 @@ export function TrainingWithLock() {
                             size="lg"
                             isDisabled={isLoading}
                         >
-                            {isLoading ? <Spinner /> : "Access Tutorials"}
+                            {isLoading ? <Spinner /> : "Access Training"}
                         </Button>
 
                         <p className="text-center text-xs text-gray-500">

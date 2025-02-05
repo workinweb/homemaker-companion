@@ -2,17 +2,19 @@ import React from "react";
 import dictionary from "~/dictionary/dictionaryLink";
 import Image from "next/image";
 import styles from "./ChooseUs.module.css";
+import { Title } from "~/components/Titles/Title";
 
 export function ChooseUsSection() {
     return (
         <div id="ChooseUs" className="py-20">
             <div className="container mx-auto">
+                <Title
+                    title={dictionary.ChooseUs.texts.whyChooseUsTitle as string}
+                />
+
                 {/* Why Choose Us Section */}
                 <div className="mb-24 flex flex-col items-center justify-between gap-16 lg:flex-row">
                     <div className="max-w-xl space-y-6">
-                        <h2 className="text-4xl font-bold text-primary">
-                            {dictionary.ChooseUs.texts.whyChooseUsTitle}
-                        </h2>
                         <p className="text-xl leading-relaxed text-primary/80">
                             {dictionary.ChooseUs.texts.whyChooseUsText}
                         </p>

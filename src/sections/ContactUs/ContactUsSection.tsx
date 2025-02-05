@@ -1,18 +1,14 @@
 import React from "react";
 import dictionary from "~/dictionary/dictionaryLink";
+import { Title } from "~/components/Titles/Title";
 
 export function ContactUsSection() {
     return (
         <div id="ContactUs">
-            <div className="mb-16">
-                <h2 className="mb-5 text-center text-4xl font-bold text-primary">
-                    {dictionary.ContactUs.texts.sectionName}
-                </h2>
-
-                <h3 className="text-center text-xl text-primary">
-                    {dictionary.ContactUs.texts.contactUsText}
-                </h3>
-            </div>
+            <Title
+                title={dictionary.ContactUs.texts.sectionName as string}
+                subtitle={dictionary.ContactUs.texts.contactUsText as string}
+            />
         </div>
     );
 }
