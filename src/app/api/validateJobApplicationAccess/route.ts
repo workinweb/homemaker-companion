@@ -4,7 +4,6 @@ export async function POST(req: Request): Promise<NextResponse> {
     try {
         const { password } = await req.json();
 
-        // Server-side password validation
         const isValid = password === process.env.JOB_APPLICATION_PASSWORD;
 
         return NextResponse.json({ isValid });

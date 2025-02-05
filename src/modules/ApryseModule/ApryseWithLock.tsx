@@ -47,9 +47,12 @@ export function ApryseWithLock() {
             if (result.success) {
                 setIsLoading(true);
                 try {
-                    const response = await axios.post("/api/validatePassword", {
-                        password: values.password,
-                    });
+                    const response = await axios.post(
+                        "/api/validateJobApplicationAccess",
+                        {
+                            password: values.password,
+                        },
+                    );
 
                     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
                     if (response.data?.isValid) {
