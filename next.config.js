@@ -20,6 +20,10 @@ const nextConfig = {
     },
 
     reactStrictMode: false,
+
+    images: {
+        domains: ["img.youtube.com", "i.ytimg.com"],
+    },
 };
 
 export default nextConfig;

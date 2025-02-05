@@ -126,7 +126,6 @@ export function SearchInput() {
                 })
                 .filter((dic) => dic);
 
-            console.log(searchResult);
             setFoundSearch(searchResult);
         }
     };

@@ -1,14 +1,43 @@
 "use client";
 
-import React from "react";
+import { Button, Card, CardBody, Divider } from "@nextui-org/react";
+import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
-import { Card, CardBody, Divider, Button } from "@nextui-org/react";
+import Link from "next/link";
+import React from "react";
+import { ExcelViewer } from "~/components/ExcelViewer/ExcelViewer";
 import { List } from "~/components/List/List";
+import Spinner from "~/components/Spinner/Spinner";
 import dictionary from "~/dictionary/dictionaryLink";
 import styles from "./Employment.module.css";
-import Link from "next/link";
 
 export function EmploymentSection() {
+    const [file, setFile] = React.useState<string>("");
+    const [isFileLoading, setIsFileLoading] = React.useState<boolean>(false);
+
+    const response = useQuery({
+        queryKey: ["cloudinaryUrl"],
+        queryFn: async () => {
+            try {
+                setIsFileLoading(true);
+                const response = await fetch("/api/getExcel");
+
+                if (!response.ok) {
+                    throw new Error("Failed to fetch file URL");
+                }
+
+                const data = (await response.json()) as string;
+                setFile(data);
+                return data;
+            } catch (error) {
+                console.error("Error fetching Excel file:", error);
+                throw error;
+            } finally {
+                setIsFileLoading(false);
+            }
+        },
+    });
+
     return (
         <div id="Employment" className="mx-auto max-w-[1200px] sm:py-10">
             {/* Header Section */}
@@ -97,6 +126,24 @@ export function EmploymentSection() {
                 </div>
             </Card>
 
+            {/* Excel Viewer Section */}
+            <Card className="mt-8 p-6 shadow-md">
+                <h3 className="mb-4 text-xl font-bold text-primary">
+                    {
+                        dictionary.Employment.texts
+                            .employmentApplication as string
+                    }
+                </h3>
+
+                {!isFileLoading && file ? (
+                    <ExcelViewer file={file} />
+                ) : (
+                    <div className="flex justify-center p-4">
+                        <Spinner />
+                    </div>
+                )}
+            </Card>
+
             {/* Application Preview Section */}
             <Card className="mt-8 p-6 shadow-md">
                 <div className="space-y-6">
@@ -157,7 +204,7 @@ export function EmploymentSection() {
                 color="primary"
                 size="lg"
                 fullWidth
-                className="mt-8 w-full "
+                className="mt-8 w-full"
             >
                 Access Employment Application Form
             </Button>

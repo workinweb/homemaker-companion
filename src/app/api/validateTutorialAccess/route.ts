@@ -1,16 +1,18 @@
 import { NextResponse } from "next/server";
 
-export async function POST(req: Request): Promise<NextResponse> {
+export async function POST(request: Request) {
     try {
-        const { password } = await req.json();
+        const { password } = await request.json();
 
-        const isValid = password === process.env.TUTORIALS_PASSWORD;
+        // Replace this with your actual password validation logic
+        const isValid = password === process.env.TUTORIAL_PASSWORD;
 
         return NextResponse.json({ isValid });
     } catch (error) {
+        console.error("Error validating tutorial access:", error);
         return NextResponse.json(
-            { error: (error as Error).message },
-            { status: 400 },
+            { error: "Internal server error" },
+            { status: 500 },
         );
     }
 }

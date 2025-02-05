@@ -23,6 +23,7 @@ import { MdOutlineMedicalServices } from "react-icons/md";
 import { MdConnectWithoutContact } from "react-icons/md";
 import { SiReacthookform } from "react-icons/si";
 import { MdOutlineSchool } from "react-icons/md";
+import { FaPlayCircle } from "react-icons/fa";
 
 export function CustomNavbar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -50,6 +51,11 @@ export function CustomNavbar() {
             icon: <SiReacthookform />,
             label: "Employment",
             href: "/employment",
+        },
+        {
+            icon: <FaPlayCircle />,
+            label: "Training",
+            href: "/training",
         },
     ];
 
@@ -140,6 +146,18 @@ export function CustomNavbar() {
                         href="/employment"
                     >
                         Employment
+                    </Link>
+                </NavbarItem>
+                <NavbarItem className="hidden sm:flex">
+                    <Link
+                        className={`hover:text-gray-400 ${
+                            pathName.includes("employment")
+                                ? "text-primary"
+                                : ""
+                        }`}
+                        href="/training"
+                    >
+                        Training
                     </Link>
                 </NavbarItem>
             </NavbarContent>
