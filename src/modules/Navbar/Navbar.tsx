@@ -151,9 +151,7 @@ export function CustomNavbar() {
                 <NavbarItem className="hidden sm:flex">
                     <Link
                         className={`hover:text-gray-400 ${
-                            pathName.includes("employment")
-                                ? "text-primary"
-                                : ""
+                            pathName.includes("training") ? "text-primary" : ""
                         }`}
                         href="/training"
                     >

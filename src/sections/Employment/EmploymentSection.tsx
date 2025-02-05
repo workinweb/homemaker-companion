@@ -139,7 +139,7 @@ export function EmploymentSection() {
                     <ExcelViewer file={file} />
                 ) : (
                     <div className="flex justify-center p-4">
-                        <Spinner />
+                        {!file && "No excel file to display"}
                     </div>
                 )}
             </Card>

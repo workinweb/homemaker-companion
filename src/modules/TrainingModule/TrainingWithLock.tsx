@@ -35,7 +35,7 @@ export function TrainingWithLock() {
                 setIsLoading(true);
                 try {
                     const response = await axios.post(
-                        "/api/validateTutorialAccess",
+                        "/api/validateTrainingAccess",
                         {
                             password: values.password,
                         },
@@ -45,8 +45,6 @@ export function TrainingWithLock() {
                     if (response.data?.isValid) {
                         setIsLocked(false);
                     } else {
-                        setIsLocked(false);
-
                         enqueueSnackbar("Password incorrect", {
                             variant: "error",
                         });
