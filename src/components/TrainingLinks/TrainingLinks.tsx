@@ -8,42 +8,62 @@ interface TrainingLink {
     href: string;
     image: string;
 }
-
 const trainingLinks: TrainingLink[] = [
     {
         id: "1",
-        name: "Getting Started Guide",
-        description: "Essential onboarding information for new team members",
-        href: "#",
+        name: "CeuFast",
+        description:
+            "Online continuing education platform offering courses for healthcare professionals",
+        href: "https://ceufast.com/",
         image: "/training/CeuFast.png",
     },
     {
         id: "2",
-        name: "Employee Handbook",
-        description: "Comprehensive guide to policies and procedures",
-        href: "#",
+        name: "Cph insurance",
+        description:
+            "Professional liability insurance provider for healthcare workers",
+        href: "https://cphins.com/",
         image: "/training/cph.png",
     },
     {
         id: "3",
-        name: "Safety Procedures",
-        description: "Critical safety protocols and best practices",
-        href: "#",
+        name: "Nso insurance",
+        description:
+            "Nursing service organization providing malpractice insurance coverage",
+        href: "https://www.nso.com/",
         image: "/training/nso.svg",
     },
     {
         id: "4",
-        name: "Client Care Guidelines",
-        description: "Standards for providing exceptional client care",
-        href: "#",
+        name: "rn.Org",
+        description:
+            "Continuing education and professional development resources for registered nurses",
+        href: "https://www.rn.org/",
         image: "/training/rn.png",
     },
     {
         id: "5",
-        name: "Training Resources",
-        description: "Additional learning materials and resources",
-        href: "#",
+        name: "Train",
+        description:
+            "Learning network for professionals in public health and healthcare",
+        href: "https://www.train.org/main/welcome",
         image: "/training/train.png",
+    },
+    {
+        id: "6",
+        name: "APD",
+        description:
+            "Agency for Persons with Disabilities - Florida state resources and support",
+        href: "https://apd.myflorida.com/",
+        image: "/training/apd.png",
+    },
+    {
+        id: "7",
+        name: "AHCA",
+        description:
+            "Agency for Health Care Administration - Florida healthcare regulation and licensing",
+        href: "https://ahca.myflorida.com/",
+        image: "/training/ahca.png",
     },
 ];
 
