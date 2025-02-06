@@ -10,7 +10,6 @@ interface Training {
     description?: string;
     url: string;
     image_url: string;
-
     category: string;
     duration?: string;
 }
@@ -271,8 +270,9 @@ export function TrainingModule() {
         (t) =>
             (selectedCategory === "All" || t.category === selectedCategory) &&
             (t.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                //@ts-ignore
-                t.description.toLowerCase().includes(searchTerm.toLowerCase())),
+                t.description
+                    ?.toLowerCase()
+                    .includes(searchTerm.toLowerCase())),
     );
 
     return (
