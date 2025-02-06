@@ -10,7 +10,7 @@ cloudinary.config({
 export async function GET() {
     try {
         const result = await cloudinary.search
-            .expression("folder:evanhomecare/excel/*")
+            .expression("folder:evan_job_applications/excel/*")
             .execute();
 
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
