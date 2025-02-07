@@ -1,10 +1,19 @@
+"use client";
 import { Card, CardBody } from "@nextui-org/react";
 import Image from "next/image";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import dictionary from "~/dictionary/dictionaryLink";
 import styles from "./aboutUs.module.css";
 import { Title } from "~/components/Titles/Title";
 
 export function AboutUsSection() {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleReadMore = () => {
+        setIsExpanded(!isExpanded);
+    };
+
     return (
         <div id="AboutUs" className="mt-10 sm:mt-20">
             <Title title={dictionary.AboutUs.texts.sectionName as string} />
@@ -21,20 +30,36 @@ export function AboutUsSection() {
                     />
 
                     <div>
-                        <p className="text-left text-lg text-white sm:text-2xl">
-                            <span>
-                                {dictionary.AboutUs.texts.aboutUsBanner}
-                            </span>
-                            <a
-                                className="font-bold underline"
-                                href="tel:+13213009077"
-                            >
-                                here
-                            </a>
-                            <span>
+                        <p className="text-justify text-lg text-white sm:text-2xl">
+                            <AnimatePresence mode="wait">
+                                <motion.span
+                                    key={isExpanded ? "expanded" : "collapsed"}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="mb-4 block"
+                                >
+                                    {isExpanded
+                                        ? dictionary.AboutUs.texts.aboutUsBanner
+                                        : // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+                                          `${dictionary.AboutUs.texts.aboutUsBanner?.slice(
+                                              0,
+                                              193,
+                                          )} ...`}
+                                </motion.span>
+                            </AnimatePresence>
+
+                            <span className="block font-semibold italic">
                                 {dictionary.AboutUs.texts.aboutUsBanner2}
                             </span>
                         </p>
+                        <button
+                            onClick={toggleReadMore}
+                            className="mt-4 text-white underline hover:text-gray-200"
+                        >
+                            {isExpanded ? "Read Less" : "Read More"}
+                        </button>
                     </div>
                 </CardBody>
             </Card>

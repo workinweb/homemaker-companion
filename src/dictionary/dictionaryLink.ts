@@ -41,11 +41,11 @@ const dictionary: DictionaryType = {
             goalsTitle: `Goals`,
             goalsText: `Our goal is to provide high quality care to all our clients with a continued focus on the detailed individual needs of each person we serve, such as participating in social and community activities to become more independent. practicing appropriate physical activities to maintain good health, thus helping people to be safer and healthier and in turn thus increasing their independence and improving their quality of life. `,
 
-            ourPleopleTitle: `Our People:`,
+            ourPleopleTitle: `Our People`,
             ourPleopleText: `Evan Home Care Agency providers and employees must be 18 years of age or older, have a 75-hour Home Health Aide Certificate or a High School Diploma or GED, and have at least one year of verifiable practical experience working directly with persons receiving services in a medical, psychiatric, nursing, or childcare setting or working with beneficiaries who have a developmental disability.
             In lieu of required work experience, providers and employees may have 30 semester hours, 45 quarter hours, or 720 college or vocational school class hours per the Budget Waiver Services Manual, AHCA, May 2023.`,
 
-            ourPromiseTitle: `Our Promise:`,
+            ourPromiseTitle: `Our Promise`,
             ourPromiseText: `At Evan Home Care Agency, we develop a client-provider relationship plan with a synergistic approach, considering the conditions and personalities of each client, ensuring that they receive a personalized service of the highest quality. \n
             If you want a provider who will go the extra mile for you and your family members, choose Evan Home Care. That is our commitment to you and your family, we hope to exceed that expectation. Success is achieved through values when clients and their families obtain the benefits through our systematic services, allowing themselves to be helped and guided, increasing their independence, and raising their quality of life.`,
         },
@@ -56,8 +56,8 @@ const dictionary: DictionaryType = {
         name: `About Us`,
         texts: {
             sectionName: `About Us`,
-            aboutUsBanner: `Evan Home Care guarantees the quality of care and full-time services through ongoing training of employees, specialized care plans designed to meet the individual needs in detail of each client, on-site visits to observe the care and services offered, communication and systematic contact with the client, family members and employees to ensure that customer attention is provided to detail ensuring quality and the client manages to remain independent for as long as possible, thus raising their quality of life. We are passionate about caring for and helping people in need. To contact us click `,
-            aboutUsBanner2: ` to request a call. We look forward to being part of your family!`,
+            aboutUsBanner: `Evan Home Care guarantees the quality of care and full-time services through ongoing training of employees, specialized care plans designed to meet the individual needs in detail of each client, on-site visits to observe the care and services offered, communication and systematic contact with the client, family members and employees to ensure that customer attention is provided to detail ensuring quality and the client manages to remain independent for as long as possible, thus raising their quality of life. `,
+            aboutUsBanner2: `We look forward to being part of your family!`,
         },
     },
 
@@ -144,16 +144,13 @@ const dictionary: DictionaryType = {
             submitBefore: `The following must be completed/submitted prior to signing a contract to begin providing services:`,
             requirements: [
                 `Local Law Background Police Check.`,
-                `Background Screening Level II`,
-                `High School Diploma`,
-                `HHA & CNA Certifications or 75 hours HHA`,
+                `Background Screening Level II (Fingerprints)`,
+                `High School Diploma or HHA & CNA Certifications or 75 hours HHA`,
                 `Professional Liability Insurance Certificate`,
                 `Proof of Legal Status`,
                 `Resume`,
                 `Driver License`,
                 `Social Security`,
-                `Social Security Card`,
-                `Professional Experience Verification`,
             ],
 
             certificatesTitle: `Required Trainings Certificates:`,

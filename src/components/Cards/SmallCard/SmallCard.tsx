@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 type SmallCardProps = {
     img: string;
@@ -12,55 +12,50 @@ type SmallCardProps = {
 };
 
 export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
         <div
-            className={`group relative overflow-hidden rounded-xl border border-gray-100 bg-gradient-to-br p-8 shadow-sm transition-all duration-500 hover:border-primary/10 hover:shadow-lg hover:shadow-primary/5 ${
-                type === "filled"
-                    ? "from-primary/90 via-primary to-primary"
-                    : "from-white via-white to-white"
-            }`}
+            className={`group relative h-[400px] w-full overflow-hidden rounded-xl border border-gray-100 bg-primary/40 shadow-sm transition-all duration-500 hover:border-primary/10 hover:shadow-lg hover:shadow-primary/5`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
         >
-            {/* Decorative background elements */}
-            <div className="absolute inset-0 opacity-10">
-                <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10" />
-                <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-primary/10" />
+            {/* Background Image */}
+            <div className="absolute inset-0">
+                <Image
+                    fill
+                    src={img}
+                    alt={alt}
+                    className="object-cover transition-all duration-500"
+                    quality={100}
+                />
             </div>
 
-            <div className="relative">
-                {/* Image container */}
-                <div className="mb-6 flex w-full justify-center overflow-hidden">
-                    <Image
-                        width={500}
-                        height={500}
-                        quality={100}
-                        alt={alt}
-                        src={img}
-                        className={`w-[60%] transform object-contain transition-transform duration-700 [mask-image:radial-gradient(circle_at_center,black_60%,transparent_110%)] group-hover:scale-105 sm:w-[35%]`}
-                    />
-                </div>
+            {/* Dark Overlay */}
+            <div
+                className={`absolute inset-0 bg-black transition-opacity duration-500 ${
+                    isHovered ? "opacity-70" : "opacity-10"
+                }`}
+            />
 
-                {/* Title */}
-                <div className="mb-4 transform transition-all duration-500 ease-in-out group-hover:translate-y-[-2px]">
-                    <h2
-                        className={`text-center text-xl font-semibold tracking-wide sm:text-2xl ${
-                            type === "filled"
-                                ? "text-white"
-                                : "bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent"
-                        }`}
-                    >
-                        {title}
-                    </h2>
-                </div>
+            {/* Content */}
+            <div className="relative flex h-full flex-col justify-between p-6">
+                {/* Title - Always visible */}
+                <h2
+                    className={`text-center text-2xl font-bold tracking-wide text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] sm:text-4xl`}
+                >
+                    {title}
+                </h2>
 
-                {/* Text content */}
-                <div className="transform transition-all duration-500 ease-in-out group-hover:translate-y-[-1px]">
-                    <p
-                        className={`text-left text-base leading-relaxed sm:text-lg ${
-                            type === "filled"
-                                ? "text-white/90"
-                                : "text-gray-600"
-                        }`}
-                    >
+                {/* Text content - Only visible on hover */}
+                <div
+                    className={`transform transition-all duration-500 ${
+                        isHovered
+                            ? "translate-y-0 opacity-100"
+                            : "translate-y-4 opacity-0"
+                    }`}
+                >
+                    <p className="text-left text-base leading-relaxed text-white sm:text-lg">
                         {text}
                     </p>
                 </div>

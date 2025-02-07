@@ -16,6 +16,26 @@ interface Training {
 
 const trainings: Training[] = [
     {
+        id: "0",
+        title: "Basic First Aid Training en Español",
+        url: "https://res.cloudinary.com/dvy2a4v0d/video/upload/v1738874544/evan_job_applications/training_videos/iuei8jkllialdwcvkwze.mp4",
+        image_url:
+            "https://res.cloudinary.com/dvy2a4v0d/video/upload/v1738874544/evan_job_applications/training_videos/iuei8jkllialdwcvkwze.jpg",
+        category: "CPR",
+        duration: "13.41",
+    },
+
+    {
+        id: "0.5",
+        title: "CPR training in English",
+        url: "https://res.cloudinary.com/dvy2a4v0d/video/upload/v1738874974/evan_job_applications/training_videos/o0sxijtktw1tflx3cr5u.mp4",
+        image_url:
+            "https://res.cloudinary.com/dvy2a4v0d/video/upload/v1738874974/evan_job_applications/training_videos/o0sxijtktw1tflx3cr5u.jpg",
+        category: "CPR",
+        duration: "30.45",
+    },
+
+    {
         id: "1",
         title: "Ambulate with a Gait Belt",
         url: "https://res.cloudinary.com/dvy2a4v0d/video/upload/v1738861667/evan_job_applications/training_videos/iiciorginkzkonf6f416.mp4",
@@ -292,7 +312,7 @@ export function TrainingModule() {
 
                         <div className="text-center sm:text-left">
                             <h1 className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-2xl font-bold uppercase text-transparent sm:text-2xl sm:text-5xl">
-                                Training Section
+                                Training
                             </h1>
                             <div className="mt-2 h-1 w-20 rounded bg-gradient-to-r from-primary/30 to-primary/20 sm:w-32"></div>
                             <p className="mt-4 text-xl text-gray-600">

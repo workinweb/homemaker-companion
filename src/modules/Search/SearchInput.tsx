@@ -142,6 +142,7 @@ export function SearchInput() {
                     value={searchQuery}
                     onValueChange={handleChangeQuery}
                     onKeyDown={onKeyDown}
+                    className="hidden sm:block"
                     classNames={{
                         inputWrapper:
                             "h-[40px] rounded-none rounded-tl-md rounded-bl-md border border-blue-200",
@@ -155,7 +156,7 @@ export function SearchInput() {
                     color="primary"
                     aria-label="Search button"
                     isIconOnly
-                    className="rounded-none rounded-br-md rounded-tr-md"
+                    className="rounded-md sm:rounded-none sm:rounded-br-md sm:rounded-tr-md"
                 >
                     <SearchIcon />
                 </Button>

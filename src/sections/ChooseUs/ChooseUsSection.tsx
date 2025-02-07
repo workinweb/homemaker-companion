@@ -14,7 +14,7 @@ export function ChooseUsSection() {
             {/* Why Choose Us Section */}
             <div className="mb-24 flex flex-col items-center justify-between gap-16 lg:flex-row">
                 <div className="max-w-xl space-y-6">
-                    <p className="text-xl leading-relaxed text-primary/80">
+                    <p className="text-xl leading-relaxed text-primary/80 sm:text-2xl">
                         {dictionary.ChooseUs.texts.whyChooseUsText}
                     </p>
                 </div>
