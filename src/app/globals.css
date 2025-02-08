@@ -4,8 +4,8 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: "Calibri", "Gill Sans", "Gill Sans MT", "Trebuchet MS",
-        sans-serif;
+    font-family: "Calibri Light", "Calibri", "Gill Sans", "Gill Sans MT",
+        "Trebuchet MS", sans-serif;
 
     @font-face {
         font-family: "Brush Script MT";
@@ -56,6 +56,8 @@ html {
 body {
     color: #333;
     line-height: 1.6;
+    font-family: "Calibri Light", "Calibri", "Gill Sans", "Gill Sans MT",
+        "Trebuchet MS", sans-serif;
 }
 
 h1 {

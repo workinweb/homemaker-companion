@@ -32,12 +32,12 @@ export function HomeSection() {
                     </svg>
                 </div>
                 <div className="relative mx-auto max-w-[1440px] px-4 md:px-8">
-                    <div className="flex flex-col items-center gap-12 md:flex-row md:justify-between">
-                        <div className="max-w-2xl">
+                    <div className="flex flex-col items-center gap-4 md:flex-row md:justify-between">
+                        <div className="max-w-3wl">
                             <h1
-                                className={`${styles.slogan} mb-12 text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1.3] text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]`}
+                                className={`${styles.slogan} mb-12 text-[clamp(1.8rem,4.5vw,4rem)] font-bold leading-[1.3] text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]`}
                             >
-                                "Making a difference in people's lives, where
+                                " Making a difference in people's lives, where
                                 quality of life counts"
                             </h1>
 

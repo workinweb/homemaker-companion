@@ -1,18 +1,11 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient } from "@tanstack/react-query";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { type Metadata } from "next";
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
-import { CustomNavbar } from "~/modules/Navbar/Navbar";
 import "./fonts.css";
 import "./globals.css";
 import { Providers } from "./providers";
-
-const inter = Inter({
-    subsets: ["latin"],
-    variable: "--font-sans",
-});
 
 const myFont = localFont({
     src: "./bsItalic.ttf",
@@ -87,7 +80,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={`font-sans ${inter.variable} ${myFont.variable}`}>
+            <body className={`${myFont.variable}`}>
                 <Providers>
                     {/* <div className="mb-2">
                         <CustomNavbar />

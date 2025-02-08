@@ -5,10 +5,7 @@ import dictionary from "~/dictionary/dictionaryLink";
 export function ServicesSection() {
     return (
         <div id="Services" className="mt-10">
-            <Title
-                title={dictionary.Services.texts.serviceTitle as string}
-                subtitle="Professional Healthcare Services Tailored to Your Needs"
-            />
+            <Title title={dictionary.Services.texts.serviceTitle as string} />
 
             <div className="flex flex-col justify-center gap-8 md:flex-row">
                 <ServiceCard
