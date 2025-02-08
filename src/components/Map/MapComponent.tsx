@@ -29,7 +29,7 @@ export function MapComponent() {
 
     if (!mounted) {
         return (
-            <Card className="h-[680px] w-full max-w-[520px]">
+            <Card className="h-[750px] w-full max-w-[520px] px-2 py-8">
                 <CardBody>
                     <div className="flex justify-center p-4">
                         <Image
@@ -58,7 +58,7 @@ export function MapComponent() {
     }
 
     return (
-        <Card className="h-[680px] w-full max-w-[520px]">
+        <Card className="h-[750px] w-full max-w-[520px]">
             <CardBody>
                 <div className="flex justify-center p-4">
                     <Image
@@ -83,7 +83,7 @@ export function MapComponent() {
                             center={[28.34732370882098, -81.41418625023127]}
                             zoom={17}
                             scrollWheelZoom={true}
-                            style={{ height: "100%", width: "100%" }} // Set map container dimensions
+                            style={{ height: "120%", width: "100%" }} // Set map container dimensions
                         >
                             <TileLayer
                                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -1,220 +1,92 @@
-import React from "react";
-import { Card, CardBody } from "@nextui-org/react";
-import { SearchInput } from "~/modules/Search/SearchInput";
-import dictionary from "~/dictionary/dictionaryLink";
 import Image from "next/image";
+import dictionary from "~/dictionary/dictionaryLink";
 import styles from "./home.module.css";
-import { SmallCard } from "~/components/Cards/SmallCard/SmallCard";
 
 export function HomeSection() {
     return (
         <div id="Home">
-            {/* Hero Section */}
-            <div className="relative mb-10">
-                {/* Top Navigation Bar  */}
-                <div className="absolute left-0 right-0 top-0 z-20 w-full px-4 py-3">
-                    <div className="mx-auto flex max-w-7xl items-center justify-between">
-                        <div className="flex items-center gap-4">
-                            <Image
-                                width={150}
-                                height={150}
-                                src="/logo.webp"
-                                alt="Evan Home Care Logo"
-                                className="h-20 w-20 object-contain sm:h-24 sm:w-24"
+            <div className="relative -mx-[calc((100vw-100%)/2)] overflow-hidden py-32">
+                <div className="absolute inset-0 ">
+                    <svg
+                        className="h-full w-full"
+                        preserveAspectRatio="none"
+                        viewBox="0 0 1440 800"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M0 0C240 120 480 180 720 180C960 180 1200 120 1440 0V800H0V0Z"
+                            fill="rgb(42, 128, 156)"
+                            className="animate-[wave_15s_ease-in-out_infinite]"
+                        >
+                            <animate
+                                attributeName="d"
+                                dur="15s"
+                                repeatCount="indefinite"
+                                values="
+                                    M0 0C240 120 480 180 720 180C960 180 1200 120 1440 0V680C1200 800 960 860 720 860C480 860 240 800 0 680V0Z;
+                                    M0 120C240 0 480 60 720 60C960 60 1200 0 1440 120V740C1200 620 960 680 720 680C480 680 240 620 0 740V120Z;
+                                    M0 0C240 120 480 180 720 180C960 180 1200 120 1440 0V680C1200 800 960 860 720 860C480 860 240 800 0 680V0Z
+                                "
                             />
-                            <div className="hidden sm:block">
-                                <h3 className="text-xl font-bold text-primary">
-                                    Evan Home Care
-                                </h3>
-                                <p className="text-sm text-gray-600">
-                                    Professional Healthcare Services
-                                </p>
-                            </div>
-                        </div>
-                        <Card className="flex items-center bg-white/80 p-2">
-                            <SearchInput />
-                        </Card>
-                    </div>
+                        </path>
+                    </svg>
                 </div>
-
-                {/* Main Content */}
-                <Card className="overflow-hidden bg-gradient-to-br from-primary/10 via-primary/50 to-primary/80 p-4 px-8 pb-8">
-                    <div className="relative z-10 flex flex-col gap-8 pt-24 md:flex-row md:pt-48">
-                        {/* Left Column - Content */}
-                        <div className="flex flex-1 flex-col justify-center space-y-8 pt-8 md:pt-20">
+                <div className="relative mx-auto max-w-[1440px] px-4 md:px-8">
+                    <div className="flex flex-col items-center gap-12 md:flex-row md:justify-between">
+                        <div className="max-w-2xl">
                             <h1
-                                className={`${styles.slogan} max-w-xl text-[clamp(2.25rem,5vw,4.5rem)] font-bold leading-tight text-gray-900`}
+                                className={`${styles.slogan} mb-12 text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1.3] text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]`}
                             >
                                 "Making a difference in people's lives, where
                                 quality of life counts"
                             </h1>
 
-                            <div className="flex flex-col gap-4 sm:flex-row">
-                                <a
-                                    href="#Services"
-                                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-lg font-semibold text-white transition-all hover:bg-primary/90"
+                            <a
+                                href="#Services"
+                                className="inline-flex items-center justify-center gap-2 rounded-lg border border-primary/10 bg-white px-6 py-3 text-lg font-semibold text-primary transition-all hover:bg-primary-100"
+                            >
+                                Our Services
+                                <svg
+                                    className="h-5 w-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
                                 >
-                                    Explore Our Services
-                                    <svg
-                                        className="h-5 w-5"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                        />
-                                    </svg>
-                                </a>
-                            </div>
-
-                            {/* Trust Indicators */}
-                            <div className="mt-8 flex flex-wrap items-center gap-6 text-base text-gray-600">
-                                <span className="flex items-center gap-2 text-white">
-                                    <svg
-                                        className="h-6 w-6 text-white"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                        />
-                                    </svg>
-                                    Licensed & Insured
-                                </span>
-                                <span className="flex items-center gap-2 text-white">
-                                    <svg
-                                        className="h-6 w-6 text-white"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                        />
-                                    </svg>
-                                    Contact Support
-                                </span>
-                                <span className="flex items-center gap-2 text-white">
-                                    <svg
-                                        className="h-6 w-6 text-white"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                                        />
-                                    </svg>
-                                    Experienced Staff
-                                </span>
-                            </div>
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                    />
+                                </svg>
+                            </a>
                         </div>
 
-                        {/* Right Column - Image */}
-                        <div className="relative flex-1">
+                        <div className="w-full max-w-xl">
                             <div className="relative">
                                 <Image
-                                    width={800}
-                                    height={800}
+                                    width={1000}
+                                    height={1000}
                                     quality={100}
                                     alt="Healthcare professional with patient"
                                     src="/1-Home Banner azul.png"
-                                    className="h-auto w-full rounded-lg object-contain"
+                                    className="h-auto w-full rounded-lg"
                                     priority
                                 />
-                                <div
-                                    className="absolute inset-0"
-                                    style={{
-                                        background: `linear-gradient(45deg, var(--tw-color-primary) 0%, transparent 50%), 
-                                                   linear-gradient(135deg, transparent 50%, var(--tw-color-primary) 100%)`,
-                                    }}
-                                ></div>
+                                <div className="absolute bottom-0 h-20 w-full rounded-b-lg bg-gradient-to-t from-primary to-transparent" />
                             </div>
-
-                            {/* Floating Stats Card */}
-                            <Card className="mx-auto flex w-72 justify-center bg-white/95 shadow-xl backdrop-blur-sm sm:absolute sm:bottom-8 sm:right-8">
-                                <CardBody className="p-6">
-                                    <div className="space-y-6">
-                                        <div>
-                                            <p className="text-sm font-medium text-gray-600">
-                                                Patient Satisfaction
-                                            </p>
-                                            <p className="text-3xl font-bold text-primary">
-                                                100%
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p className="text-sm font-medium text-gray-600">
-                                                Professional Staff
-                                            </p>
-                                            <p className="text-3xl font-bold text-primary">
-                                                Fully Certified
-                                            </p>
-                                        </div>
-                                    </div>
-                                </CardBody>
-                            </Card>
                         </div>
                     </div>
-                </Card>
+                </div>
             </div>
 
-            {/* Mission Statement Section */}
-            <div className="mb-20 rounded-2xl bg-primary/5 p-10">
+            <div className="mb-20 mt-10 rounded-2xl bg-primary/5 p-10">
                 <h2 className="mb-6 text-3xl font-bold text-primary">
                     Evan Home Care
                 </h2>
                 <p className="text-left text-lg leading-relaxed text-primary/90">
                     {dictionary.Home.texts.agencyFor}
                 </p>
-            </div>
-
-            {/* Services Cards Grid */}
-            <div className="mt-10 sm:mt-20">
-                <div className="my-10 grid grid-cols-1 gap-10 gap-y-10 lg:grid-cols-2">
-                    <SmallCard
-                        img="/2- Mission.png"
-                        alt="Draw of a gift"
-                        type="filled"
-                        title={dictionary.Home.texts.missionTitle as string}
-                        text={dictionary.Home.texts.missionText as string}
-                    />
-
-                    <SmallCard
-                        img="/3-Goals.png"
-                        alt="Draw of people jumping"
-                        title={dictionary.Home.texts.goalsTitle as string}
-                        text={dictionary.Home.texts.goalsText as string}
-                    />
-
-                    <SmallCard
-                        img="/4-Our people.png"
-                        alt="Draw of 3 co-workers"
-                        title={dictionary.Home.texts.ourPleopleTitle as string}
-                        text={dictionary.Home.texts.ourPleopleText as string}
-                    />
-                    <SmallCard
-                        img="/5-Our promise.png"
-                        alt="Draw of a whiteboard with bussiness cards"
-                        type="filled"
-                        title={dictionary.Home.texts.ourPromiseTitle as string}
-                        text={dictionary.Home.texts.ourPromiseText as string}
-                    />
-                </div>
             </div>
         </div>
     );

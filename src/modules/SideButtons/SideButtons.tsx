@@ -6,51 +6,58 @@ import {
     InstagramIcon,
     LinkedinIcon,
 } from "~/components/Icons/Icons";
-import styles from "./SideButtons.module.css";
+import { SearchInput } from "../Search/SearchInput";
 
-export function SideButtons() {
+export function SocialButtons() {
     const clickLink = (url: string) => {
         window.open(url, "_blank");
     };
 
     return (
-        <div className={styles.side}>
-            <Button
-                onPress={() => {
-                    clickLink(
-                        "https://www.linkedin.com/company/evan-home-care/",
-                    );
-                }}
-                aria-label="linkedin button"
-                isIconOnly={true}
-                variant="light"
-            >
-                <LinkedinIcon />
-            </Button>
+        <div className="flex flex-col items-start gap-2">
+            <div className="flex items-start gap-2">
+                <Button
+                    onPress={() => {
+                        clickLink(
+                            "https://www.linkedin.com/company/evan-home-care/",
+                        );
+                    }}
+                    aria-label="linkedin button"
+                    isIconOnly={true}
+                    size="lg"
+                    variant="light"
+                >
+                    <LinkedinIcon />
+                </Button>
 
-            <Button
-                onPress={() => {
-                    clickLink(
-                        "https://www.facebook.com/EvanHomecare?checkpoint_src=any",
-                    );
-                }}
-                aria-label="facebook button"
-                isIconOnly={true}
-                variant="light"
-            >
-                <FacebookIcon />
-            </Button>
+                <Button
+                    onPress={() => {
+                        clickLink(
+                            "https://www.facebook.com/EvanHomecare?checkpoint_src=any",
+                        );
+                    }}
+                    aria-label="facebook button"
+                    isIconOnly={true}
+                    variant="light"
+                    size="lg"
+                >
+                    <FacebookIcon />
+                </Button>
 
-            <Button
-                onPress={() => {
-                    clickLink("https://www.instagram.com/evan_homecare/");
-                }}
-                aria-label="instagram button"
-                isIconOnly={true}
-                variant="light"
-            >
-                <InstagramIcon />
-            </Button>
+                <Button
+                    onPress={() => {
+                        clickLink("https://www.instagram.com/evan_homecare/");
+                    }}
+                    aria-label="instagram button"
+                    isIconOnly={true}
+                    variant="light"
+                    size="lg"
+                >
+                    <InstagramIcon />
+                </Button>
+            </div>
+
+            <SearchInput />
         </div>
     );
 }

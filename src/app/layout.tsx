@@ -89,9 +89,9 @@ export default function RootLayout({
         <html lang="en">
             <body className={`font-sans ${inter.variable} ${myFont.variable}`}>
                 <Providers>
-                    <div className="mb-2">
+                    {/* <div className="mb-2">
                         <CustomNavbar />
-                    </div>
+                    </div> */}
 
                     {children}
                 </Providers>

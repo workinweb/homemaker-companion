@@ -1,18 +1,17 @@
-import React from "react";
-import dictionary from "~/dictionary/dictionaryLink";
-import { AccordionCard } from "~/components/Cards/AccordionCard/AccordionCard";
+import { ServiceCard } from "~/components/Cards/ServiceCard/ServiceCard";
 import { Title } from "~/components/Titles/Title";
+import dictionary from "~/dictionary/dictionaryLink";
 
 export function ServicesSection() {
     return (
-        <div id="Services" className="mt-10 sm:mt-20">
+        <div id="Services" className="mt-10">
             <Title
                 title={dictionary.Services.texts.serviceTitle as string}
                 subtitle="Professional Healthcare Services Tailored to Your Needs"
             />
 
-            <div className="flex flex-col items-start justify-evenly gap-8 sm:flex-row sm:flex-wrap lg:flex-nowrap">
-                <AccordionCard
+            <div className="flex flex-col justify-center gap-8 md:flex-row">
+                <ServiceCard
                     img="/10-Personal Supports.png"
                     alt="Draw of a whiteboard with bussiness cards"
                     title={
@@ -22,46 +21,22 @@ export function ServicesSection() {
                         dictionary.Services.texts
                             .personalSupportShowText as string
                     }
-                    hiddenText={[
-                        dictionary.Services.texts.personalHiddenText as string,
-                        dictionary.Services.texts
-                            .personalSupportPlaceOfServiceTitle as string,
-                        dictionary.Services.texts
-                            .personalSupportPlaceOfServiceText as string,
-                    ]}
                 />
 
-                <AccordionCard
+                <ServiceCard
                     img="/11-Life Skill.png"
                     alt="Draw of a whiteboard with bussiness cards"
                     title={dictionary.Services.texts.lifeSkillsTilte as string}
                     text={
                         dictionary.Services.texts.lifeSkillsShowText as string
                     }
-                    hiddenText={[
-                        dictionary.Services.texts
-                            .lifeSkillsHiddenText as string,
-                        dictionary.Services.texts
-                            .lifeSkillsTiltePlaceOfServiceTitle as string,
-                        dictionary.Services.texts
-                            .lifeSkillsTiltePlaceOfServiceText as string,
-                        dictionary.Services.texts
-                            .lifeSkillsTiltePlaceOfService2Text as string,
-                    ]}
                 />
 
-                <AccordionCard
+                <ServiceCard
                     img="/12-Respite Care.png"
                     alt="Draw of a whiteboard with bussiness cards"
                     title={dictionary.Services.texts.under21Title as string}
                     text={dictionary.Services.texts.under21ShowText as string}
-                    hiddenText={[
-                        dictionary.Services.texts.under21HiddenText as string,
-                        dictionary.Services.texts
-                            .under21TitlePlaceOfServiceTitle as string,
-                        dictionary.Services.texts
-                            .under21TitlePlaceOfServiceText as string,
-                    ]}
                 />
             </div>
         </div>

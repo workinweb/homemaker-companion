@@ -12,9 +12,16 @@ export function ContactUsForm() {
     const [phone, setPhone] = React.useState("");
     const [message, setMessage] = React.useState("");
     const [loading, setLoading] = React.useState(false);
+    const [isSubmitted, setIsSubmitted] = React.useState(false);
 
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
+        setIsSubmitted(true);
+
+        if (!name || !email || !phone) {
+            return;
+        }
+
         setLoading(true);
 
         try {
@@ -59,10 +66,11 @@ export function ContactUsForm() {
         setEmail("");
         setPhone("");
         setMessage("");
+        setIsSubmitted(false);
     };
 
     return (
-        <Card className="h-[720px] w-full max-w-[520px] px-2 py-8">
+        <Card className="h-[750px] w-full max-w-[520px] px-2 py-8">
             <CardBody>
                 <div id="ContactUs" className="mb-5">
                     <h2 className="text-xl font-bold text-primary">
@@ -81,25 +89,37 @@ export function ContactUsForm() {
                         <Input
                             fullWidth
                             required={true}
-                            placeholder="Add your Name *"
+                            placeholder="Name *"
                             value={name}
                             onValueChange={setName}
+                            isInvalid={isSubmitted && !name}
+                            errorMessage={
+                                isSubmitted && !name ? "Name is required" : ""
+                            }
                         />
 
                         <Input
                             fullWidth
                             required={true}
-                            placeholder="Add your email *"
+                            placeholder="Email *"
                             value={email}
                             onValueChange={setEmail}
+                            isInvalid={isSubmitted && !email}
+                            errorMessage={
+                                isSubmitted && !email ? "Email is required" : ""
+                            }
                         />
 
                         <Input
                             fullWidth
                             required={true}
-                            placeholder="Add your phone *"
+                            placeholder="Phone *"
                             value={phone}
                             onValueChange={setPhone}
+                            isInvalid={isSubmitted && !phone}
+                            errorMessage={
+                                isSubmitted && !phone ? "Phone is required" : ""
+                            }
                         />
 
                         <Textarea
@@ -107,7 +127,7 @@ export function ContactUsForm() {
                             maxRows={8}
                             minRows={8}
                             labelPlacement="outside"
-                            placeholder="Special requests? Add them here"
+                            placeholder="Your Message"
                             className="w-full"
                             value={message}
                             onValueChange={setMessage}
@@ -120,7 +140,7 @@ export function ContactUsForm() {
                         size="md"
                         color="primary"
                         variant="shadow"
-                        className="mt-5 sm:mt-0"
+                        className="mt-5"
                     >
                         {!loading ? (
                             "Send"

@@ -142,7 +142,7 @@ export function SearchInput() {
                     value={searchQuery}
                     onValueChange={handleChangeQuery}
                     onKeyDown={onKeyDown}
-                    className="hidden sm:block"
+                    className=""
                     classNames={{
                         inputWrapper:
                             "h-[40px] rounded-none rounded-tl-md rounded-bl-md border border-blue-200",
