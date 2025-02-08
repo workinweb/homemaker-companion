@@ -6,6 +6,7 @@ import { PiPhoneCallThin } from "react-icons/pi";
 import { LiaFaxSolid } from "react-icons/lia";
 import { ImLocation } from "react-icons/im";
 import { FooterActionsWrapper } from "./FooterWrapper";
+import { MdOutlineBadge } from "react-icons/md";
 
 export function Footer() {
     return (
@@ -31,43 +32,52 @@ export function Footer() {
 
                 <div className="px-4">
                     <div className="mt-[-40px] flex items-center justify-center py-10">
-                        <div className="flex w-full max-w-[520px] flex-col gap-10 rounded-2xl bg-white px-8 py-5 lg:w-auto lg:max-w-max lg:flex-row">
-                            <div className="flex items-center gap-2">
-                                <ImLocation className="h-6 w-6 text-primary" />
-                                <span className="text-primary">
-                                    <a
-                                        href="https://maps.google.com/?q=1101+Miranda+Ln+Suite+127+Kissimmee+FL+34741"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        1101 Miranda Ln. Suite 127 Kissimmee, FL
-                                        34741
-                                    </a>
-                                </span>
+                        <div className="w-full max-w-[520px] gap-10 rounded-2xl bg-white px-8 py-5 lg:w-auto lg:max-w-max ">
+                            <div className="flex w-full flex-col gap-10 lg:flex-row">
+                                <div className="flex items-center gap-2">
+                                    <ImLocation className="h-6 w-6 text-primary" />
+                                    <span className="text-primary">
+                                        <a
+                                            href="https://maps.google.com/?q=1101+Miranda+Ln+Suite+127+Kissimmee+FL+34741"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            1101 Miranda Ln. Suite 127
+                                            Kissimmee, FL 34741
+                                        </a>
+                                    </span>
+                                </div>
+
+                                <div className="flex items-center gap-2">
+                                    <PiPhoneCallThin className="h-6 w-6 text-primary" />
+                                    <span className="text-primary">
+                                        <a href="tel:+13213009077">
+                                            (321) 300-9077
+                                        </a>
+                                    </span>
+                                </div>
+
+                                <div className="flex items-center gap-2">
+                                    <LiaFaxSolid className="h-6 w-6 text-primary" />
+                                    <span className="text-primary">
+                                        (321) 291-5124
+                                    </span>
+                                </div>
+
+                                <div className="flex items-center gap-2">
+                                    <IoMail className="h-6 w-6 text-primary" />
+                                    <span className="text-primary underline">
+                                        <a href="mailto:evanhomecare@gmail.com">
+                                            evanhomecare@gmail.com
+                                        </a>
+                                    </span>
+                                </div>
                             </div>
 
-                            <div className="flex items-center gap-2">
-                                <PiPhoneCallThin className="h-6 w-6 text-primary" />
-                                <span className="text-primary">
-                                    <a href="tel:+13213009077">
-                                        (321) 300-9077
-                                    </a>
-                                </span>
-                            </div>
-
-                            <div className="flex items-center gap-2">
-                                <LiaFaxSolid className="h-6 w-6 text-primary" />
-                                <span className="text-primary">
-                                    (321) 291-5124
-                                </span>
-                            </div>
-
-                            <div className="flex items-center gap-2">
-                                <IoMail className="h-6 w-6 text-primary" />
-                                <span className="text-primary underline">
-                                    <a href="mailto:evanhomecare@gmail.com">
-                                        evanhomecare@gmail.com
-                                    </a>
+                            <div className="mt-10 flex items-center gap-2 lg:mt-3 lg:justify-center">
+                                <MdOutlineBadge className="h-6 w-6 text-primary" />
+                                <span className="text-primary ">
+                                    <a>Provider Medicaid ID: 113497700 </a>
                                 </span>
                             </div>
                         </div>
