@@ -42,12 +42,10 @@ const dictionary: DictionaryType = {
             goalsText: `Our goal is to provide high quality care to all our clients with a continued focus on the detailed individual needs of each person we serve, such as participating in social and community activities to become more independent. practicing appropriate physical activities to maintain good health, thus helping people to be safer and healthier and in turn thus increasing their independence and improving their quality of life. `,
 
             ourPleopleTitle: `Our People`,
-            ourPleopleText: `Evan Home Care Agency providers and employees must be 18 years of age or older, have a 75-hour Home Health Aide Certificate or a High School Diploma or GED, and have at least one year of verifiable practical experience working directly with persons receiving services in a medical, psychiatric, nursing, or childcare setting or working with beneficiaries who have a developmental disability.
-            In lieu of required work experience, providers and employees may have 30 semester hours, 45 quarter hours, or 720 college or vocational school class hours per the Budget Waiver Services Manual, AHCA, May 2023.`,
+            ourPleopleText: `The Evan Home Care caregiver must be a Home Health Aide (HHA) or Certified Nursing Assistant (CNA) with experience in home care, with approved Level 2 background check, CPR & First Aid and other certifications and training ensuring that Evan Home Care hires the best talent available.`,
 
             ourPromiseTitle: `Our Promise`,
-            ourPromiseText: `At Evan Home Care Agency, we develop a client-provider relationship plan with a synergistic approach, considering the conditions and personalities of each client, ensuring that they receive a personalized service of the highest quality. \n
-            If you want a provider who will go the extra mile for you and your family members, choose Evan Home Care. That is our commitment to you and your family, we hope to exceed that expectation. Success is achieved through values when clients and their families obtain the benefits through our systematic services, allowing themselves to be helped and guided, increasing their independence, and raising their quality of life.`,
+            ourPromiseText: `At Evan Home Care Agency, we continually work to provide you with the highest quality customer service experience, if you want a partner who will go the extra mile for you and your family members, choose Evan Home Care. That is our commitment to you and your family, and we hope to exceed that expectation.`,
         },
     },
 
