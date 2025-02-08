@@ -31,7 +31,7 @@ export function ServiceCard({ img, alt, title, text }: ServiceCardProps) {
             </div>
 
             <div className="mb-6">
-                <h2 className="text-center text-4xl font-bold tracking-wider text-primary">
+                <h2 className="text-center text-3xl font-bold tracking-wider text-primary">
                     {title}
                 </h2>
             </div>

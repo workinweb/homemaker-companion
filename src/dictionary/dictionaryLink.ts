@@ -78,8 +78,8 @@ const dictionary: DictionaryType = {
             Evan Home Care providers and employees are trustworthy and trained to assist with all types of needs and provide exceptional care experience in any setting as needed.`,
 
             approvedAgency: `Evan Home Care is an Approved APD Medicaid Waiver Agency.`,
-            intellectualDisabilities: `Intellectual Disabilities:`,
             disabilities: [
+                `Intellectual Disabilities`,
                 `Down Syndrome`,
                 `Prader-Willi Syndrome`,
                 `Cerebral Palsy`,
@@ -99,29 +99,12 @@ const dictionary: DictionaryType = {
 
             personalSupportTilte: `Personal Supports`,
             personalSupportShowText: `Personal supports services provide assistance and training to the recipient in activities of daily living, such as eating, bathing, dressing, personal hygiene, and preparation of meals.`,
-            personalHiddenText:
-                `When specified in the support plan, this service can also include heavy household chores to make the home safer, such as washing floors, windows, and walls; tacking down loose rugs and tiles; or moving heavy items or furniture. Services also include non-medical care, and supervision. This service can provide access to community-based activities that cannot be provided by natural or unpaid community support and are likely to result in an increased ability to access community resources without paid support.\n` +
-                `Personal support is designed to encourage community integration. Personal Support in supported living is also designated to teach the recipient about home-related responsibilities.`,
-            personalSupportPlaceOfServiceTitle: `Place of Service:`,
-            personalSupportPlaceOfServiceText: `Personal Supports are provided in the recipient’s own home, family home, licensed residential facility if being used as respite, or when or engaged in a community activity. Personal Supports can also be provided at the recipient’s place of employment. No service can be provided or received in the provider’s home, the home of a relative or friend of the provider, a hospital, an ICF/IID or other institutional environment.`,
 
             lifeSkillsTilte: `Life Skills Development 1 (Companion)`,
             lifeSkillsShowText: `Companion services consist of non-medical care, supervision, and socialization activities provided to recipients age 21 years or older.`,
-            lifeSkillsHiddenText: `This service must be provided in direct relation to the achievement of the recipient’s goals as specified in the recipient’s support plan. The service provides access to community-based activities that cannot be provided by natural or other unpaid supports and should be defined as activities most likely to result in increased ability to access community resources without paid support. These services can be scheduled on a regular, long-term basis.`,
-            lifeSkillsTiltePlaceOfServiceTitle: `​Place of Service:`,
-            lifeSkillsTiltePlaceOfServiceText: `Companion services can be provided in the following settings:`,
-            lifeSkillsTiltePlaceOfService2Text: [
-                "Recipient’s own home",
-                "Recipient’s family home",
-                "This service may be provided to individuals who resided in a licensed facility while the recipient is engaged in a community activity if the companion service is not duplicative of what is required by the residential provider licensing requirements.",
-                "The community.",
-            ],
 
             under21Title: `Respite Care (under 21)`,
             under21ShowText: `Respite care is a service that provides supportive care and supervision to recipients under the age of 21 when the primary caregiver is unable to perform the duties of a caregiver.`,
-            under21HiddenText: `This service is generally used due to a brief planned or emergency absence, or when the primary caregiver is available, but temporarily physically unable to care for or supervise the recipient for a brief period. Respite care is not intended to be used as after school care or supplement personal care assistance when daily limits for personal care assistance is exceeded.`,
-            under21TitlePlaceOfServiceTitle: `Place of Service:`,
-            under21TitlePlaceOfServiceText: ` Respite can be provided in the recipient’s family home, while involved with activities in the community, in a licensed group home, foster home or assisted living facility.`,
         },
     },
 

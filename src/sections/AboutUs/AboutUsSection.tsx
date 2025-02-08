@@ -50,7 +50,7 @@ export function AboutUsSection() {
                                 </motion.span>
                             </AnimatePresence>
 
-                            <span className="block font-semibold italic">
+                            <span className="block font-semibold">
                                 {dictionary.AboutUs.texts.aboutUsBanner2}
                             </span>
                         </p>
