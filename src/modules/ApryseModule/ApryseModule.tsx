@@ -236,8 +236,16 @@ export function ApryseModule() {
                         <ul className="space-y-2 text-gray-700">
                             <li className="flex items-center">
                                 <span className="mr-2">•</span>
-                                Please complete all required fields in the
-                                application form
+                                Please complete all required fields (in red) in
+                                the application form
+                            </li>
+                            <li className="flex items-center">
+                                <span className="mr-2">•</span>
+                                Contractor field is just your initials
+                            </li>
+                            <li className="flex items-center">
+                                <span className="mr-2">•</span>
+                                Signatures and Initials must be drawn
                             </li>
                             <li className="flex items-center">
                                 <span className="mr-2">•</span>
