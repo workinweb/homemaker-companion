@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { SmallCard } from "~/components/Cards/SmallCard/SmallCard";
 import { Title } from "~/components/Titles/Title";
+import dictionary from "~/dictionary/dictionaryLink";
 import { ContactHomemaker } from "~/modules/ContactUs/ContactHomemaker";
 import { FloatingButton } from "~/modules/FloatingButton/FloatingButton";
 import { CustomNavbar } from "~/modules/Navbar/Navbar";
@@ -20,6 +21,10 @@ const ApryseModuleHomemaker = dynamic(
 );
 
 export default function Homemaker() {
+    const texts = dictionary.Homemaker.texts;
+    const phone = typeof texts.phone === "string" ? texts.phone : "";
+    const phoneDigits = phone.replace(/[^0-9]/g, "");
+
     return (
         <main className="pb-5">
             <div className="hidden sm:block">
@@ -41,10 +46,10 @@ export default function Homemaker() {
                                 href="tel:+13213009077"
                                 className="text-blue-600 hover:text-blue-800"
                             >
-                                (321) 300-9077
+                                {phone}
                             </a>
                         </p>
-                        <p>We are available 24 hours a day, 7 days a week</p>
+                        <p>{texts.availability}</p>
                     </div>
                 </div>
             </div>
@@ -75,29 +80,20 @@ export default function Homemaker() {
                     </div>
                     <div className="mb-20 mt-10 rounded-2xl bg-primary/5 p-10">
                         <p className="text-left text-lg leading-relaxed text-primary/90">
-                            Evan Home Care Services is a Homemaker and Companion
-                            service provider based in Central Florida, including
-                            several counties including Orange, Osceola, and
-                            Seminole. We offer services in the comfort of your
-                            home, hospital, assisted living facility, or nursing
-                            home, enhancing your well-being and quality of life
-                            under the supervision of our caregivers, who strive
-                            to provide you with the comprehensive care you
-                            deserve, with excellent value and flexibility
-                            scheduling. To request Homemaker and Companion
-                            services, please call{" "}
+                            {texts.description}
+                            {
+                                " To request Homemaker and Companion services, please call "
+                            }
                             <a
-                                href="tel:+13213009077"
+                                href={`tel:+1${phoneDigits}`}
                                 className="text-blue-600 hover:text-blue-800"
                             >
-                                (321) 300-9077
+                                {phone}
                             </a>
-                            . We are available 24/7, year-round, for in-home
-                            visits. Let&#39;s get started! We&#39;re here to
-                            help you maintain your service in your own home.
-                            These services do not include any type of Personal
-                            Care or Skilled Nursing in accordance with state
-                            law.
+                            {
+                                ". We are available 24/7, year-round, for in-home visits. Let's get started! We're here to help you maintain your service in your own home. "
+                            }
+                            {texts.legalDisclaimer}
                         </p>
                     </div>
                     <div className="mt-10 sm:mt-20">
@@ -108,17 +104,25 @@ export default function Homemaker() {
                                         img="/3.jpg"
                                         alt="Our Mission"
                                         type="filled"
-                                        title={"Mission"}
-                                        text={`Our mission is to improve the lives of our clients by providing the highest quality care services in their homes and companionships. We are committed to fostering independence, promoting well-being, and ensuring a safe, comfortable, and nurturing family environment.`}
+                                        title="Mission"
+                                        text={
+                                            typeof texts.mission === "string"
+                                                ? texts.mission
+                                                : ""
+                                        }
                                     />
                                 </div>
                                 <div className="flex-1">
                                     <SmallCard
                                         img="/4.jpg"
-                                        alt="Our Vission"
+                                        alt="Our Vision"
                                         type="filled"
-                                        title={"Vission"}
-                                        text={`To create a compassionate and supportive environment where people can maintain their independence and dignity while receiving the highest quality care in their homes and companionships.`}
+                                        title="Vision"
+                                        text={
+                                            typeof texts.vision === "string"
+                                                ? texts.vision
+                                                : ""
+                                        }
                                     />
                                 </div>
                             </div>
@@ -129,8 +133,12 @@ export default function Homemaker() {
                                         img="/photo_7.jpg"
                                         alt="Draw of a gift"
                                         type="filled"
-                                        title={"Core Values"}
-                                        text={`Compassion: We treat each client with kindness, empathy, and respect.\nIntegrity: We uphold honesty, transparency, and professionalism in everything we do.\nDignity: We honor and respect each person's individuality and choices.\nExcellence: We strive for the highest standards of care for our clients.\nCommunity: We foster meaningful relationships and social engagement for overall well-being.`}
+                                        title="Core Values"
+                                        text={
+                                            typeof texts.coreValues === "string"
+                                                ? texts.coreValues
+                                                : ""
+                                        }
                                     />
                                 </div>
                             </div>
@@ -140,21 +148,39 @@ export default function Homemaker() {
                         <TeamSection />
                     </div>
                     <div>
-                        <Title title={"Service Aggreetment"} />
+                        <Title title="Service Agreement" />
                         <ApryseModuleHomemaker />
                     </div>
+
+                    <div className="mb-20 mt-10 rounded-2xl bg-primary/5 p-10">
+                        <h2 className="mb-6 text-3xl font-bold text-primary">
+                            Non-Discrimination Policy
+                        </h2>
+                        <p className="text-left text-lg leading-relaxed text-primary/90">
+                            Evan Home Care Services promotes equality in the
+                            provision of services and employment. Our company
+                            does not exclude, discriminate against, or deny
+                            benefits to any eligible individual, client, or
+                            employee based on race, gender, sexual orientation,
+                            color, religion, age, disability, ancestry, or
+                            citizenship.
+                        </p>
+                    </div>
+
                     <div id="ContactUs">
                         <Title
-                            title={"Contact Us"}
+                            title="Contact Us"
                             subtitle={
-                                "At Evan Home Care Services LLC, we are happy to hear from you. Please send us a message with your comments and suggestions. We will get back to you as soon as possible."
+                                typeof texts.contactSubtitle === "string"
+                                    ? texts.contactSubtitle
+                                    : undefined
                             }
                         />
 
                         <div className="flex justify-center">
                             <ContactHomemaker />
                         </div>
-                    </div>{" "}
+                    </div>
                 </div>
 
                 <FloatingButton />
