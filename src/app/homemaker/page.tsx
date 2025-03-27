@@ -1,15 +1,25 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { SmallCard } from "~/components/Cards/SmallCard/SmallCard";
 import { Title } from "~/components/Titles/Title";
-import { ApryseModuleHomemaker } from "~/modules/ApryseModuleHomemaker/ApryseModuleHomemaker";
 import { ContactHomemaker } from "~/modules/ContactUs/ContactHomemaker";
 import { FloatingButton } from "~/modules/FloatingButton/FloatingButton";
 import { CustomNavbar } from "~/modules/Navbar/Navbar";
 import TeamSection from "~/sections/Team/TeamSection";
 
-function Homemaker() {
+const ApryseModuleHomemaker = dynamic(
+    () =>
+        import("~/modules/ApryseModuleHomemaker/ApryseModuleHomemaker").then(
+            (mod) => mod.ApryseModuleHomemaker,
+        ),
+    {
+        ssr: false,
+    },
+);
+
+export default function Homemaker() {
     return (
         <main className="pb-5">
             <div className="hidden sm:block">
@@ -116,7 +126,7 @@ function Homemaker() {
                             <div className="flex justify-center">
                                 <div className="w-full lg:w-1/2">
                                     <SmallCard
-                                        img="/7-core_values.jpg"
+                                        img="/photo_7.jpg"
                                         alt="Draw of a gift"
                                         type="filled"
                                         title={"Core Values"}
@@ -152,5 +162,3 @@ function Homemaker() {
         </main>
     );
 }
-
-export default Homemaker;
