@@ -9,7 +9,7 @@ import { FloatingButton } from "~/modules/FloatingButton/FloatingButton";
 import { CustomNavbar } from "~/modules/Navbar/Navbar";
 import TeamSection from "~/sections/Team/TeamSection";
 
-function page() {
+function Homemaker() {
     return (
         <main className="pb-5">
             <div className="hidden sm:block">
@@ -153,4 +153,4 @@ function page() {
     );
 }
 
-export default page;
+export default Homemaker;
