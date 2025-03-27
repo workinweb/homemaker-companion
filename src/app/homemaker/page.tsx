@@ -1,9 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import { SmallCard } from "~/components/Cards/SmallCard/SmallCard";
 import { Title } from "~/components/Titles/Title";
 import { ApryseModuleHomemaker } from "~/modules/ApryseModuleHomemaker/ApryseModuleHomemaker";
 import { ContactHomemaker } from "~/modules/ContactUs/ContactHomemaker";
-import { ContactUsForm } from "~/modules/ContactUs/ContactUsForm";
 import { FloatingButton } from "~/modules/FloatingButton/FloatingButton";
 import { CustomNavbar } from "~/modules/Navbar/Navbar";
 import TeamSection from "~/sections/Team/TeamSection";
