@@ -79,15 +79,6 @@ export function HomeSection() {
                     </div>
                 </div>
             </div>
-
-            <div className="mb-20 mt-10 rounded-2xl bg-primary/5 p-10">
-                <h2 className="mb-6 text-3xl font-bold text-primary">
-                    Evan Home Care
-                </h2>
-                <p className="text-left text-lg leading-relaxed text-primary/90">
-                    {dictionary.Home.texts.agencyFor}
-                </p>
-            </div>
         </div>
     );
 }

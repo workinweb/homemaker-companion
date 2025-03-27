@@ -43,6 +43,11 @@ export function CustomNavbar() {
             href: pathName === "/" ? "#Services" : "/#Services",
         },
         {
+            icon: <MdOutlineMedicalServices />,
+            label: "Home Maker & Companion ",
+            href: "/homemaker",
+        },
+        {
             icon: <MdConnectWithoutContact />,
             label: "Contact Us",
             href: pathName === "/" ? "#ContactUs" : "/#ContactUs",
@@ -98,7 +103,18 @@ export function CustomNavbar() {
                                 href="/#Services"
                             >
                                 <p className="font-bold text-primary">
-                                    MEDICAID WAIVER SERVICES
+                                    Medicaid Waiver Services
+                                </p>
+                            </Link>
+                        </DropdownItem>
+
+                        <DropdownItem key="services" className="mt-1">
+                            <Link
+                                className="transition hover:text-gray-400"
+                                href="/homemaker"
+                            >
+                                <p className="font-bold text-primary">
+                                    Home Maker & Companion
                                 </p>
                             </Link>
                         </DropdownItem>
@@ -143,7 +159,7 @@ export function CustomNavbar() {
                 <NavbarItem>
                     <Link
                         className="rounded-lg bg-primary px-6 py-2.5 text-lg font-medium text-white transition hover:bg-primary/90"
-                        href="/#ContactUs"
+                        href="#ContactUs"
                     >
                         Contact Us
                     </Link>

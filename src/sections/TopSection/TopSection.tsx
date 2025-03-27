@@ -20,31 +20,3 @@ function TopSection() {
 }
 
 export default TopSection;
-
-{
-    /* Floating Stats Card */
-}
-{
-    /* <Card className="mx-auto flex w-72 justify-center bg-white/95 shadow-xl backdrop-blur-sm sm:absolute sm:bottom-8 sm:right-8">
-                                    <CardBody className="p-6">
-                                        <div className="space-y-6">
-                                            <div>
-                                                <p className="text-sm font-medium text-gray-600">
-                                                    Patient Satisfaction
-                                                </p>
-                                                <p className="text-3xl font-bold text-primary">
-                                                    100%
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <p className="text-sm font-medium text-gray-600">
-                                                    Professional Staff
-                                                </p>
-                                                <p className="text-3xl font-bold text-primary">
-                                                    Fully Certified
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </CardBody>
-                                </Card> */
-}

@@ -5,11 +5,12 @@ interface ContactUsEmailTemplateProps {
     email: string;
     phone: string;
     message: string;
+    address?: string;
 }
 
 export const ContactUsEmailTemplate: React.FC<
     Readonly<ContactUsEmailTemplateProps>
-> = ({ name, email, phone, message }) => (
+> = ({ name, email, address, phone, message }) => (
     <div
         style={{
             fontFamily: "Arial, sans-serif",
@@ -69,6 +70,22 @@ export const ContactUsEmailTemplate: React.FC<
                 >
                     <strong style={{ color: "#2b7fa8" }}>Phone:</strong> {phone}
                 </p>
+                {address && (
+                    <div style={{ marginTop: "20px" }}>
+                        <h3 style={{ color: "#2b7fa8", marginBottom: "10px" }}>
+                            Address:
+                        </h3>
+                        <p
+                            style={{
+                                fontSize: "16px",
+                                color: "#666",
+                                lineHeight: "1.6",
+                            }}
+                        >
+                            {address}
+                        </p>
+                    </div>
+                )}
                 <div style={{ marginTop: "20px" }}>
                     <h3 style={{ color: "#2b7fa8", marginBottom: "10px" }}>
                         Message:

@@ -55,9 +55,11 @@ export function SmallCard({ img, title, text, type, alt }: SmallCardProps) {
                             : "translate-y-4 opacity-0"
                     }`}
                 >
-                    <p className="text-left text-base leading-relaxed text-white sm:text-lg">
-                        {text}
-                    </p>
+                    <div className="w-full text-white sm:text-lg">
+                        {text.split("\n").map((line, index) => (
+                            <p key={index}>{line}</p>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
