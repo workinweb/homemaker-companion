@@ -156,7 +156,7 @@ export function SearchInput() {
                     color="primary"
                     aria-label="Search button"
                     isIconOnly
-                    className="rounded-md sm:rounded-none sm:rounded-br-md sm:rounded-tr-md"
+                    className="rounded-none rounded-br-md rounded-tr-md"
                 >
                     <SearchIcon />
                 </Button>

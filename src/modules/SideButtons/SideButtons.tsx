@@ -7,6 +7,7 @@ import {
     LinkedinIcon,
 } from "~/components/Icons/Icons";
 import { SearchInput } from "../Search/SearchInput";
+import Image from "next/image";
 
 export function SocialButtons() {
     const clickLink = (url: string) => {
@@ -53,7 +54,16 @@ export function SocialButtons() {
                     variant="light"
                     size="lg"
                 >
-                    <InstagramIcon />
+                    {window.innerWidth < 640 ? (
+                        <Image
+                            src="/Instagram_icon.png"
+                            alt="Instagram"
+                            width="38"
+                            height="38"
+                        />
+                    ) : (
+                        <InstagramIcon />
+                    )}
                 </Button>
             </div>
 

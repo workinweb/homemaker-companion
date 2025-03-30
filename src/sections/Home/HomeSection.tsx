@@ -5,7 +5,7 @@ import styles from "./home.module.css";
 export function HomeSection() {
     return (
         <div id="Home">
-            <div className="relative -mx-[calc((100vw-100%)/2)] overflow-hidden py-32">
+            <div className="relative -mx-[calc((100vw-100%)/2)] overflow-hidden  py-32 lg:-mx-[calc((100vw-100%-15px)/2)]">
                 <div className="absolute inset-0 ">
                     <svg
                         className="h-full w-full"
