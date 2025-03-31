@@ -1,13 +1,9 @@
 "use client";
 
 import { Button } from "@nextui-org/react";
-import {
-    FacebookIcon,
-    InstagramIcon,
-    LinkedinIcon,
-} from "~/components/Icons/Icons";
-import { SearchInput } from "../Search/SearchInput";
 import Image from "next/image";
+import { FacebookIcon, LinkedinIcon } from "~/components/Icons/Icons";
+import { SearchInput } from "../Search/SearchInput";
 
 export function SocialButtons() {
     const clickLink = (url: string) => {
@@ -54,16 +50,12 @@ export function SocialButtons() {
                     variant="light"
                     size="lg"
                 >
-                    {window.innerWidth < 640 ? (
-                        <Image
-                            src="/Instagram_icon.png"
-                            alt="Instagram"
-                            width="38"
-                            height="38"
-                        />
-                    ) : (
-                        <InstagramIcon />
-                    )}
+                    <Image
+                        src="/Instagram_icon.png"
+                        alt="Instagram"
+                        width="38"
+                        height="38"
+                    />
                 </Button>
             </div>
 
