@@ -8,7 +8,13 @@ import { ImLocation } from "react-icons/im";
 import { FooterActionsWrapper } from "./FooterWrapper";
 import { MdOutlineBadge } from "react-icons/md";
 
-export function Footer({ withActions = true }: { withActions?: boolean }) {
+export function Footer({
+    withActions = true,
+    isHomemaker = false,
+}: {
+    withActions?: boolean;
+    isHomemaker?: boolean;
+}) {
     return (
         <div className="pt-16">
             <div className="custom-shape-divider-bottom-1702225207">
@@ -79,7 +85,11 @@ export function Footer({ withActions = true }: { withActions?: boolean }) {
                             <div className="mt-10 flex items-center gap-2 lg:mt-3 lg:justify-center">
                                 <MdOutlineBadge className="h-6 w-6 text-primary" />
                                 <span className="text-primary ">
-                                    <a>Provider Medicaid ID: 113497700 </a>
+                                    <a>
+                                        {!isHomemaker
+                                            ? "Provider Medicaid ID: 113497700 "
+                                            : "Homemaker Companion License # 239355"}
+                                    </a>
                                 </span>
                             </div>
                         </div>

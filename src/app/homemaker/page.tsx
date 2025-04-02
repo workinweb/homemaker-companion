@@ -163,44 +163,14 @@ export default function Homemaker() {
 
                             <div className="flex flex-col justify-center gap-8 md:flex-row">
                                 <ServiceCard
-                                    img="/2.jpg"
-                                    alt="Draw of a whiteboard with bussiness cards"
-                                    title={"Companion Services"}
-                                    text={`Errands/Transportation/ prescription pickup.
-                                Accompany consumers for a walk outside
-                                Accompany to Activities / Restaurants/ Events
-                                Mobility Assistance
-                                Playing games/Watching TV/Cards/Bingo/Crafts/
-                                Reading a book aloud
-
-                                Eating ensuring consumers is safe
-                                Letter writing and checking the mail
-                                Monitoring the home/ Safeguard Checks
-                                Escort to medical and hospital appointments.`}
-                                />
-
-                                <ServiceCard
-                                    img="/1.jpg"
-                                    alt="Homemaker Services"
-                                    title={"Homemaker Services"}
-                                    text={`Meal Planning and Preparation
-                                    Laundry and Linens
-                                    Light housekeeping services
-                                    Grocery Shopping
-                                    Taking out the garbage
-                                    Room Organization                                    
-                                    We are cost-effective and offer flexible scheduling`}
-                                />
-
-                                <ServiceCard
                                     img="/14.jpg"
                                     alt="We are cost effective and offer flexible schedules"
                                     title={`We are cost effective and offer flexible schedules`}
                                     text={`No contracts
-                                Choose the service you want, when to start, 
-                                and how often.
-                                Change services whenever you need. 
-                                Available 24 hours a day, 7 days a week!
+                                    Choose the service you want, when to start, 
+                                    and how often.
+                                    Change services whenever you need. 
+                                    Available 24 hours a day, 7 days a week!
                                 `}
                                 />
 
@@ -209,9 +179,9 @@ export default function Homemaker() {
                                     alt="Payment forms"
                                     title={`Payment forms`}
                                     text={`The following payment forms are accepted at Evan Home Care Services:
-                                Personal Funds or Private Pay:
-                                Credit cards, such as Visa, MasterCard, American Express, and Discover
-                                Personal checks
+                                    Personal Funds or Private Pay:
+                                    Credit cards, such as\n Visa\n MasterCard\n American Express\n Discover
+                                    Personal checks
                                 `}
                                 />
                             </div>
@@ -257,7 +227,7 @@ export default function Homemaker() {
                 </div>
             </main>
 
-            <Footer withActions={false} />
+            <Footer withActions={false} isHomemaker={true} />
         </>
     );
 }

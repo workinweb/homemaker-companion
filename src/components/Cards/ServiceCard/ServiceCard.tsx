@@ -43,7 +43,7 @@ export function ServiceCard({ img, alt, title, text }: ServiceCardProps) {
                         : "mb-0 max-h-0 opacity-0"
                 }`}
             >
-                <p className="text-left text-lg font-medium leading-relaxed text-primary/90">
+                <p className="whitespace-pre-line text-left text-lg font-medium leading-relaxed text-primary/90">
                     {text}
                 </p>
             </div>
