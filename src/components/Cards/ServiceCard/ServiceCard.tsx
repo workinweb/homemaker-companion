@@ -8,9 +8,16 @@ type ServiceCardProps = {
     alt: string;
     title: string;
     text: string;
+    displayText?: string;
 };
 
-export function ServiceCard({ img, alt, title, text }: ServiceCardProps) {
+export function ServiceCard({
+    img,
+    alt,
+    title,
+    displayText = "",
+    text,
+}: ServiceCardProps) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
@@ -34,6 +41,12 @@ export function ServiceCard({ img, alt, title, text }: ServiceCardProps) {
                 <h2 className="text-center text-3xl font-bold tracking-wider text-primary">
                     {title}
                 </h2>
+
+                {displayText && (
+                    <p className=" whitespace-pre-line text-lg font-medium leading-relaxed text-primary/90">
+                        {displayText}
+                    </p>
+                )}
             </div>
 
             <div

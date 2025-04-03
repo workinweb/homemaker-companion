@@ -165,11 +165,20 @@ export default function Homemaker() {
                                 <ServiceCard
                                     img="/14.jpg"
                                     alt="We are cost effective and offer flexible schedules"
-                                    title={`We are cost effective and offer flexible schedules`}
-                                    text={`No contracts
+                                    title={`Homemaker Services`}
+                                    displayText={`Meal Planing and Preparation
+                                        Laundry andlLinens
+                                        Light housekeeping services
+                                        Grocery Shopping
+                                        Medication reminders
+                                        Taking out the garbage
+                                        Room organization
+                                        and more!`}
+                                    text={`We are cost effective and offer flexible schedules
+                                    No contracts
                                     Choose the service you want, when to start, 
                                     and how often.
-                                    Change services whenever you need. 
+                                    Change services whenever you need.
                                     Available 24 hours a day, 7 days a week!
                                 `}
                                 />
@@ -177,10 +186,21 @@ export default function Homemaker() {
                                 <ServiceCard
                                     img="/15.jpg"
                                     alt="Payment forms"
-                                    title={`Payment forms`}
-                                    text={`The following payment forms are accepted at Evan Home Care Services:
+                                    title={`Companion Services`}
+                                    displayText={`Errands/Transportation/Prescription pickup
+                                        Accompanying consumers for a walk outside
+                                        Accompanying to activities/Restaurants/Events
+                                        Mobility assistance
+                                        Playing games/Watching TV/Cards/Bingo/Crafts
+                                        Reading a book aloud`}
+                                    text={`Payment forms
+                                    The following payment forms are accepted at Evan Home Care Services:
                                     Personal Funds or Private Pay:
-                                    Credit cards, such as\n Visa\n MasterCard\n American Express\n Discover
+                                    Credit cards, such as 
+                                    Visa
+                                    MasterCard
+                                    American Express 
+                                    Discover
                                     Personal checks
                                 `}
                                 />
@@ -227,7 +247,7 @@ export default function Homemaker() {
                 </div>
             </main>
 
-            <Footer withActions={false} isHomemaker={true} />
+            <Footer withActions={false} />
         </>
     );
 }
