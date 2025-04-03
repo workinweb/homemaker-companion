@@ -173,7 +173,7 @@ export default function Homemaker() {
                                         Medication reminders
                                         Taking out the garbage
                                         Room organization
-                                        and more!`}
+                                        Safety`}
                                     text={`We are cost effective and offer flexible schedules
                                     No contracts
                                     Choose the service you want, when to start, 
