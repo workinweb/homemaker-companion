@@ -81,13 +81,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${myFont.variable}`}>
-                <Providers>
-                    {/* <div className="mb-2">
-                        <CustomNavbar />
-                    </div> */}
-
-                    {children}
-                </Providers>
+                <Providers>{children}</Providers>
                 <SpeedInsights />
                 <Analytics />
             </body>

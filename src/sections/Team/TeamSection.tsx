@@ -54,7 +54,6 @@ function TeamSection() {
                                     width={600}
                                     height={400}
                                     className="h-full w-full rounded-lg object-cover shadow-lg"
-                                    layout="responsive"
                                 />
                             </div>
                         </div>
@@ -90,11 +89,11 @@ function TeamSection() {
                                             : "max-h-0 overflow-hidden opacity-0"
                                     }`}
                                 >
-                                    <div className="grid gap-6 md:grid-cols-2">
+                                    <div className="flex flex-wrap gap-6">
                                         {teamMembers.map((member, index) => (
                                             <div
                                                 key={index}
-                                                className="rounded-lg bg-white p-6 shadow-md"
+                                                className="min-w-[250px] flex-1 rounded-lg bg-white p-6 shadow-md"
                                             >
                                                 <h3 className="mb-2 text-xl font-semibold">
                                                     {member.name}

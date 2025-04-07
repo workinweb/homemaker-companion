@@ -207,8 +207,7 @@ export default function Homemaker() {
                             </div>
                         </div>
 
-                        <div className="mb-20 mt-10 rounded-2xl bg-primary/5 p-10">
-                            <Title title="Service Agreement" />
+                        <div className="mb-10 mt-10">
                             <ApryseModuleHomemaker />
                         </div>
 

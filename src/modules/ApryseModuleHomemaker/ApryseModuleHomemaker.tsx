@@ -155,7 +155,7 @@ export function ApryseModuleHomemaker() {
     }, [showPdfViewer]);
 
     return (
-        <div className="mx-auto  px-2 sm:py-10">
+        <div className="mx-auto sm:py-10">
             <Card className="mb-6 overflow-hidden border border-gray-200 bg-white shadow-xl">
                 <CardBody className="p-0">
                     <div className="bg-primary p-6 text-center">
@@ -170,7 +170,7 @@ export function ApryseModuleHomemaker() {
 
                     <Divider />
 
-                    <div className="p-6">
+                    <div className="p-2 sm:p-6">
                         {!showPdfViewer ? (
                             <div className="flex flex-col items-center py-10">
                                 <div className="mb-6 text-center">
@@ -204,7 +204,7 @@ export function ApryseModuleHomemaker() {
                             </div>
                         ) : (
                             <div className="flex flex-col">
-                                <div className="mb-4 rounded-lg border border-gray-200 bg-white p-2 shadow-lg">
+                                <div className="mb-4 rounded-lg border border-gray-200 bg-white shadow-lg">
                                     <div
                                         className={`${styles.pdfViewerWrapper} h-[70vh] rounded-lg border border-gray-200`}
                                         ref={viewer}
@@ -218,7 +218,7 @@ export function ApryseModuleHomemaker() {
                                     </p>
                                 </div>
 
-                                <div className="mx-auto mt-6 flex gap-4">
+                                <div className="mx-auto mb-4 mt-6 flex w-full flex-col gap-4 sm:flex-row">
                                     <Button
                                         variant="solid"
                                         color="primary"
