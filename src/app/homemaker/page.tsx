@@ -31,12 +31,12 @@ export default function Homemaker() {
         <>
             <main className="pb-5">
                 <div className="hidden sm:block">
-                    <div className="mx-auto mb-5 flex max-w-[1440px] items-center justify-between px-10 ">
-                        <div className="  flex items-center gap-4">
+                    <div className="mx-auto mb-5 flex max-w-[1440px] items-center justify-between px-10">
+                        <div className="mt-2 flex items-center gap-4">
                             <Image
-                                width={250}
-                                height={250}
-                                src="/logo.webp"
+                                width={260}
+                                height={260}
+                                src="/logo2.webp"
                                 alt="Evan Home Care Logo"
                                 className="h-48 w-48 object-contain sm:h-48 sm:w-48"
                             />

@@ -170,11 +170,16 @@ export function CustomNavbar() {
                 <div className="flex w-full items-center justify-between ">
                     <NavbarItem>
                         <Image
-                            width={100}
-                            height={100}
-                            src="/logo.webp"
+                            width={1024}
+                            height={1024}
+                            src={
+                                pathName === "/homemaker"
+                                    ? "/logo2.webp"
+                                    : "/logo.webp"
+                            }
+                            quality={100}
                             alt="Evan Home Care Logo"
-                            className="h-16 w-16 object-contain"
+                            className=" h-20 w-20 object-contain"
                         />
                     </NavbarItem>
 
