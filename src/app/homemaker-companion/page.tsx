@@ -42,12 +42,12 @@ export default function Homemaker() {
                             />
                         </div>
 
-                        <div>
+                        <div className="text-xl font-bold text-primary">
                             <p>
                                 For inquiries, call us today{" "}
                                 <a
                                     href="tel:+13213009077"
-                                    className="text-blue-600 hover:text-blue-800"
+                                    className="underline hover:font-bold"
                                 >
                                     {phone}
                                 </a>
