@@ -79,7 +79,7 @@ export function CustomNavbar() {
             <NavbarContent className="hidden gap-8 sm:flex" justify="start">
                 <NavbarItem>
                     <Link
-                        className={`text-lg font-medium transition hover:text-gray-400 ${
+                        className={`text-lg font-medium text-primary transition hover:text-gray-400 ${
                             pathName == "/" ? "text-primary" : ""
                         }`}
                         href="/"
@@ -91,7 +91,7 @@ export function CustomNavbar() {
                 <Dropdown>
                     <DropdownTrigger>
                         <li>
-                            <button className="text-lg font-medium transition hover:text-gray-400">
+                            <button className="text-lg  font-medium text-primary transition hover:text-gray-400">
                                 Services
                             </button>
                         </li>
@@ -123,7 +123,7 @@ export function CustomNavbar() {
 
                 <NavbarItem>
                     <Link
-                        className="text-lg font-medium transition hover:text-gray-400"
+                        className="text-lg font-medium text-primary transition hover:text-gray-400"
                         href="/#AboutUs"
                     >
                         About Us
@@ -132,7 +132,7 @@ export function CustomNavbar() {
 
                 <NavbarItem>
                     <Link
-                        className={`text-lg font-medium transition hover:text-gray-400 ${
+                        className={`text-lg font-medium text-primary transition hover:text-gray-400 ${
                             pathName.includes("employment")
                                 ? "text-primary"
                                 : ""
@@ -145,7 +145,7 @@ export function CustomNavbar() {
 
                 <NavbarItem>
                     <Link
-                        className={`text-lg font-medium transition hover:text-gray-400 ${
+                        className={`text-lg font-medium text-primary transition hover:text-gray-400 ${
                             pathName.includes("training") ? "text-primary" : ""
                         }`}
                         href="/training"
