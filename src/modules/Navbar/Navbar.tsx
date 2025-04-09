@@ -44,8 +44,8 @@ export function CustomNavbar() {
         },
         {
             icon: <MdOutlineMedicalServices />,
-            label: "Home Maker & Companion ",
-            href: "/homemaker",
+            label: "Homemaker & Companion ",
+            href: "/homemaker-companion",
         },
         {
             icon: <MdConnectWithoutContact />,
@@ -111,10 +111,10 @@ export function CustomNavbar() {
                         <DropdownItem key="services" className="mt-1">
                             <Link
                                 className="transition hover:text-gray-400"
-                                href="/homemaker"
+                                href="/homemaker-companion"
                             >
                                 <p className="font-bold text-primary">
-                                    Home Maker & Companion
+                                    Homemaker & Companion
                                 </p>
                             </Link>
                         </DropdownItem>
@@ -173,7 +173,7 @@ export function CustomNavbar() {
                             width={1024}
                             height={1024}
                             src={
-                                pathName === "/homemaker"
+                                pathName === "/homemaker-companion"
                                     ? "/logo2.webp"
                                     : "/logo.webp"
                             }

@@ -166,7 +166,7 @@ const dictionary: DictionaryType = {
     },
 
     Homemaker: {
-        link: `/homemaker`,
+        link: `/homemaker-companion`,
         name: `Homemaker`,
         texts: {
             description: `Evan Home Care Services is a Homemaker and Companion service provider based in Central Florida, including several counties including Orange, Osceola, and Seminole. We offer services in the comfort of your home, hospital, assisted living facility, or nursing home, enhancing your well-being and quality of life under the supervision of our caregivers, who strive to provide you with the comprehensive care you deserve, with excellent value and flexibility scheduling.`,
