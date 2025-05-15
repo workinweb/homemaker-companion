@@ -7,7 +7,7 @@ function Squares() {
         <div className="mt-10 sm:mt-20">
             <div className="my-10 grid grid-cols-1 gap-10 gap-y-10 lg:grid-cols-2">
                 <SmallCard
-                    img="/2- Mission.png"
+                    img="/2-Mission.png"
                     alt="Draw of a gift"
                     type="filled"
                     title={dictionary.Home.texts.missionTitle as string}

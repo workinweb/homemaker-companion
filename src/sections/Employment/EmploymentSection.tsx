@@ -92,7 +92,7 @@ export function EmploymentSection() {
                             quality={100}
                             alt="Doctor Image"
                             className={`${styles.imageMasked} rounded-lg`}
-                            src="/13-Employment.PNG"
+                            src="/13-Employment.png"
                         />
                     </CardBody>
                 </Card>
