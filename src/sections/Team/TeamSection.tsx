@@ -41,9 +41,9 @@ function TeamSection() {
     ];
 
     return (
-        <>
+        <section id="Team">
             <Title title={"Meet Our Team"} />
-            <section className="mb-20 mt-10 rounded-2xl bg-primary/5 p-10">
+            <div className="mb-20 mt-10 rounded-2xl bg-primary/5 p-10">
                 <div className="container mx-auto px-4">
                     <div className="mb-8 flex flex-col items-center gap-8 md:flex-row">
                         <div className="md:w-1/2">
@@ -138,8 +138,8 @@ function TeamSection() {
                         </div>
                     </div>
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     );
 }
 

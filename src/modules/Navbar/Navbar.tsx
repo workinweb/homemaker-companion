@@ -14,33 +14,29 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React from "react";
 
-import { FaPlayCircle } from "react-icons/fa";
 import { IoHome } from "react-icons/io5";
 import {
     MdConnectWithoutContact,
     MdOutlineMedicalInformation,
     MdOutlineMedicalServices,
 } from "react-icons/md";
-import { SiReacthookform } from "react-icons/si";
 
 export function CustomNavbar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const pathName = usePathname();
 
     const menuItems = [
         { icon: <IoHome />, label: "Home", href: "/" },
         {
             icon: <MdOutlineMedicalInformation />,
-            label: "About Us",
-            href: pathName === "/" ? "#AboutUs" : "/#AboutUs",
+            label: "Our Team",
+            href: "/#Team",
         },
         {
             icon: <MdOutlineMedicalServices />,
-            label: "Medicaid Waiver Services:",
-            href: pathName === "/" ? "#Services" : "/#Services",
+            label: "Medicaid Waiver Services",
+            href: "/#Services",
         },
         {
             icon: <MdOutlineMedicalServices />,
@@ -50,17 +46,7 @@ export function CustomNavbar() {
         {
             icon: <MdConnectWithoutContact />,
             label: "Contact Us",
-            href: pathName === "/" ? "#ContactUs" : "/#ContactUs",
-        },
-        {
-            icon: <SiReacthookform />,
-            label: "Employment",
-            href: "/employment",
-        },
-        {
-            icon: <FaPlayCircle />,
-            label: "Training",
-            href: "/training",
+            href: "/#ContactUs",
         },
     ];
 
@@ -79,9 +65,7 @@ export function CustomNavbar() {
             <NavbarContent className="hidden gap-8 sm:flex" justify="start">
                 <NavbarItem>
                     <Link
-                        className={`text-lg font-medium text-primary transition hover:text-gray-400 ${
-                            pathName == "/" ? "text-primary" : ""
-                        }`}
+                        className={`text-lg font-medium text-primary transition hover:text-gray-400`}
                         href="/"
                     >
                         Home
@@ -124,33 +108,9 @@ export function CustomNavbar() {
                 <NavbarItem>
                     <Link
                         className="text-lg font-medium text-primary transition hover:text-gray-400"
-                        href="/#AboutUs"
+                        href="/#Team"
                     >
-                        About Us
-                    </Link>
-                </NavbarItem>
-
-                <NavbarItem>
-                    <Link
-                        className={`text-lg font-medium text-primary transition hover:text-gray-400 ${
-                            pathName.includes("employment")
-                                ? "text-primary"
-                                : ""
-                        }`}
-                        href="/employment"
-                    >
-                        Employment
-                    </Link>
-                </NavbarItem>
-
-                <NavbarItem>
-                    <Link
-                        className={`text-lg font-medium text-primary transition hover:text-gray-400 ${
-                            pathName.includes("training") ? "text-primary" : ""
-                        }`}
-                        href="/training"
-                    >
-                        Training
+                        Our Team
                     </Link>
                 </NavbarItem>
             </NavbarContent>
@@ -172,11 +132,7 @@ export function CustomNavbar() {
                         <Image
                             width={1024}
                             height={1024}
-                            src={
-                                pathName === "/homemaker-companion"
-                                    ? "/logo2.webp"
-                                    : "/logo.webp"
-                            }
+                            src={"/logo2.webp"}
                             quality={100}
                             alt="Evan Home Care Logo"
                             className=" h-20 w-20 object-contain"
@@ -196,9 +152,7 @@ export function CustomNavbar() {
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item.label}-${index}`}>
                         <Link
-                            className={`w-full text-2xl font-bold transition hover:text-gray-400 ${
-                                pathName === item.href ? "text-primary" : ""
-                            }`}
+                            className={`w-full text-2xl font-bold transition hover:text-gray-400`}
                             href={item.href}
                             onClick={() => {
                                 setIsMenuOpen(false);

@@ -1,5 +1,0 @@
-.imageMasked {
-    @apply mb-[-20px] object-cover lg:mb-[0px] lg:mr-[-35px] lg:h-[380px] lg:w-full;
-
-    mask-image: linear-gradient(black 80%, transparent);
-}
