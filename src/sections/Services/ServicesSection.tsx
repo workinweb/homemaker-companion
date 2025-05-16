@@ -1,11 +1,10 @@
 import { ServiceCard } from "~/components/Cards/ServiceCard/ServiceCard";
 import { Title } from "~/components/Titles/Title";
-import dictionary from "~/dictionary/dictionaryLink";
 
 export function ServicesSection() {
     return (
         <section id="Services">
-            <Title title={dictionary.Services.texts.serviceTitle as string} />
+            <Title title={"Services"} />
 
             <div className="flex flex-col justify-center gap-8 md:flex-row">
                 <ServiceCard
