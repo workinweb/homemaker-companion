@@ -36,7 +36,9 @@ export function CustomNavbar() {
         {
             icon: <MdOutlineMedicalServices />,
             label: "Medicaid Waiver Services",
-            href: "/#Services",
+            href: "https://www.evanhomecare.com/",
+            target: "_blank",
+            rel: "noopener noreferrer",
         },
         {
             icon: <MdOutlineMedicalServices />,
@@ -84,7 +86,8 @@ export function CustomNavbar() {
                         <DropdownItem key="services">
                             <Link
                                 className="transition hover:text-gray-400"
-                                href="/#Services"
+                                href="https://www.evanhomecare.com/"
+                                target="_blank"
                             >
                                 <p className="font-bold text-primary">
                                     Medicaid Waiver Services
@@ -95,7 +98,7 @@ export function CustomNavbar() {
                         <DropdownItem key="services" className="mt-1">
                             <Link
                                 className="transition hover:text-gray-400"
-                                href="/homemaker-companion"
+                                href="/#Services"
                             >
                                 <p className="font-bold text-primary">
                                     Homemaker & Companion
@@ -154,6 +157,7 @@ export function CustomNavbar() {
                         <Link
                             className={`w-full text-2xl font-bold transition hover:text-gray-400`}
                             href={item.href}
+                            target={item.target || "_self"}
                             onClick={() => {
                                 setIsMenuOpen(false);
                             }}
