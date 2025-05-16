@@ -43,7 +43,7 @@ export function CustomNavbar() {
         {
             icon: <MdOutlineMedicalServices />,
             label: "Homemaker & Companion ",
-            href: "/homemaker-companion",
+            href: "/#Services",
         },
         {
             icon: <MdConnectWithoutContact />,
