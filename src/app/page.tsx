@@ -42,13 +42,33 @@ export default function Homemaker() {
                                 alt="Evan Home Care Logo"
                                 className="h-48 w-48 object-contain sm:h-48 sm:w-48"
                             />
-                            <div className="flex items-center gap-2 rounded-lg bg-primary/5 px-4 py-2">
-                                <span className="text-sm font-medium text-primary/80">
+                            <div className="flex items-center gap-2 rounded-lg bg-primary/5 px-4 py-2 ">
+                                <p
+                                    className="font-bold text-primary/80"
+                                    style={{
+                                        textShadow:
+                                            "0 0 0.5px currentColor, -0.3px 0 0 currentColor, 0.3px 0 0 currentColor",
+                                        WebkitTextStroke: "0.15px currentColor",
+                                        //@ts-ignore
+                                        textStroke: "0.15px currentColor",
+                                        letterSpacing: "0.05em",
+                                    }}
+                                >
                                     License #
-                                </span>
-                                <span className="font-bold text-primary">
+                                </p>
+                                <p
+                                    className="font-bold text-primary/80"
+                                    style={{
+                                        textShadow:
+                                            "0 0 0.5px currentColor, -0.3px 0 0 currentColor, 0.3px 0 0 currentColor",
+                                        WebkitTextStroke: "0.15px currentColor",
+                                        //@ts-ignore
+                                        textStroke: "0.15px currentColor",
+                                        letterSpacing: "0.05em",
+                                    }}
+                                >
                                     239355
-                                </span>
+                                </p>
                             </div>
                         </div>
 
