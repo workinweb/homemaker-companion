@@ -61,8 +61,8 @@ export function Footer() {
                                 <div className="flex items-center gap-2">
                                     <IoMail className="h-6 w-6 text-primary" />
                                     <span className="text-primary underline">
-                                        <a href="mailto:evanhomecare@gmail.com">
-                                            evanhomecare@gmail.com
+                                        <a href="mailto:admin@evanhomecare.com">
+                                            admin@evanhomecare.com
                                         </a>
                                     </span>
                                 </div>

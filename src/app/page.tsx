@@ -34,7 +34,7 @@ export default function Homemaker() {
             <main className="pb-5">
                 <div className="hidden sm:block">
                     <div className="mx-auto mb-5 flex max-w-[1440px] items-center justify-between px-10">
-                        <div className="mt-2 flex items-center gap-4">
+                        <div className="mt-2 flex flex-col items-center">
                             <Image
                                 width={260}
                                 height={260}
@@ -42,6 +42,14 @@ export default function Homemaker() {
                                 alt="Evan Home Care Logo"
                                 className="h-48 w-48 object-contain sm:h-48 sm:w-48"
                             />
+                            <div className="flex items-center gap-2 rounded-lg bg-primary/5 px-4 py-2">
+                                <span className="text-sm font-medium text-primary/80">
+                                    License #
+                                </span>
+                                <span className="font-bold text-primary">
+                                    239355
+                                </span>
+                            </div>
                         </div>
 
                         <div className="text-xl font-bold text-primary">
