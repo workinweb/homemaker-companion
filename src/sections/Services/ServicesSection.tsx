@@ -35,7 +35,6 @@ export function ServicesSection() {
                     displayText={`Errands/Transportation/Prescription pickup
                     Accompanying consumers for a walk outside
                     Accompanying to activities/Restaurants/Events
-                    Mobility assistance
                     Playing games/Watching TV/Cards/Bingo/Crafts
                     Reading a book aloud`}
                     text={`Payment forms

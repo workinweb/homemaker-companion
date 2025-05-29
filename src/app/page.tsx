@@ -2,8 +2,6 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { ServiceCard } from "~/components/Cards/ServiceCard/ServiceCard";
-import { SmallCard } from "~/components/Cards/SmallCard/SmallCard";
 import { Title } from "~/components/Titles/Title";
 import dictionary from "~/dictionary/dictionaryLink";
 import { ContactHomemaker } from "~/modules/ContactUs/ContactHomemaker";
